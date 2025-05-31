@@ -1,0 +1,606 @@
+
+
+
+### Operadores
+
+Primero, vamos a ver los básicos y luego iremos subiendo en complejidad.
+
+Deberá memorizar todas las tablas de verdad de los operadores básicos que se
+presentan aquí. No es complicado.
+
+Una vez que las tenga memorizadas, para aplicarlas en los ejercicios
+conviene fijarse en los resultados que aparecen con menor frecuencia en la
+tabla. Esto le ahorrará trabajo.
+
+
+
+
+
+#### Negación
+
+Dada la proposición
+
+::: proposiciones
+[$p$]{.prop-var} [El 4 es un número par.]{.prop-stat}
+:::
+
+la negación de esta proposición es:
+
+::: proposiciones
+[$\neg p$]{.prop-var} [El 4 no es un número par.]{.prop-stat}
+:::
+
+y se puede designar de varias maneras: $\neg p$, ${\sim\! p}$, "no $p$", $p'$.
+Se trata de un operador que actúa sobre una única proposición, es decir, es
+un operador unario, aunque nada impide que esa proposición sea compuesta.
+
+Concretamente, en este ejemplo se tiene que $p = 1$ (verdad), mientras que
+$\neg p = 0$ (falso).
+
+En general, la negación de una proposición $p$ es otra proposición $\neg p$
+que es cierta si $p$ es falsa, y falsa si $p$ es cierta. La tabla
+siguiente indica los valores de $\neg p$ en función del valor de $p$, es
+decir, es la tabla de verdad de este operador.
+
+$$
+\begin{array}{c|c}
+  p & \neg p \\
+  \hline
+  0 & 1 \\
+  1 & 0 \\
+\end{array}
+$$
+
+En realidad, las lenguas naturales pueden dar lugar a cierta confusión, y el
+operador de negación no está a salvo de esta. Para asegurarse de que obtiene
+realmente una negación de una proposición dada, lo que puede hacer es
+anteponer, a su enunciado, "No es verdad que...". Esa sería la forma
+infalible de obtener su negación. A partir de esta, podrá crear si lo desea
+enunciados alternativos que signifiquen lo mismo. Para el ejemplo anterior
+se tendría
+
+::: proposiciones
+[$\neg p$]{.prop-var} [No es verdad que el 4 es un número par.]{.prop-stat}
+:::
+
+que veríamos fácilmente que se puede convertir en
+
+::: proposiciones
+[$\neg p$]{.prop-var} [El 4 no es un número par.]{.prop-stat}
+:::
+
+
+
+
+
+#### Disyunción
+
+La disyunción es una operación sobre dos o más proposiciones, de ahí que
+también se la pueda calificar de _conector_ o _conectiva_ (_conective_). Las
+demás que aparecerán en esta sección también lo serán. De momento, nos
+limitaremos a la que une dos proposiciones, pero luego veremos esta misma
+operación para más.
+
+Dadas las proposiciones
+
+::: proposiciones
+[$p$]{.prop-var} [El 4 es un número par.]{.prop-stat}
+[$q$]{.prop-var} [El 4 es un número impar.]{.prop-stat}
+:::
+
+la proposición disyunción de $p$ y $q$, expresada como "$p \lor q$", es
+
+::: proposiciones
+[$p \lor q$]{.prop-var} [El 4 es un número par o el 4 es un número
+impar.]{.prop-stat}
+:::
+
+que se podría decir de una forma más breve y elegante como
+
+::: proposiciones
+[$p \lor q$]{.prop-var} [El 4 es un número par o impar.]{.prop-stat}
+:::
+
+Se representa en notación simbólica como $p \lor q$, $p + q$, $p \cup q$,
+etc.
+
+Concretamente, en este ejemplo, "el 4 es un número par o impar", se tiene
+que $p = 1$ y $q = 0$, y la disyunción es la proposición compuesta $p \lor q
+= 1$.
+
+La tabla siguiente representa el comportamiento de este operador.
+
+$$
+\begin{array}{cc|c}
+  p & q & p \lor q \\
+  \hline
+  0 & 0 & 0 \\
+  0 & 1 & 1 \\
+  1 & 0 & 1 \\
+  1 & 1 & 1 \\
+\end{array}
+$$
+
+La proposición será verdadera cuando al menos una de sus dos proposiciones
+constituyentes sea verdadera, y solo puede ser falsa si son ambas falsas
+simultáneamente.
+
+
+
+
+##### Dos tipos de disyunciones
+
+En español, un lenguaje natural, la palabra que indica una disyunción es
+_o_. Esta puede aparecer en dos variantes. Veámoslo mediante dos ejemplos.
+En el enunciado
+
+::: proposiciones
+[El medicamento está indicado para el dolor de cabeza o la
+fiebre.]{.prop-stat}
+:::
+
+se indica que se debe tomar el medicamento si se cumple al menos uno de los
+dos requisitos: tener dolor de cabeza o tener fiebre; pudiendo darse que se
+tengan ambos síntomas simultáneamente. Se trataría de una disyunción
+inclusiva. Sin embargo, en
+
+::: proposiciones
+[Compraré el regalo hoy o mañana.]{.prop-stat}
+:::
+
+parece que el _o_ es excluyente ya que, si compro el regalo hoy, no lo
+compraré mañana.
+
+El significado de operador lógico disyunción, '$\lor$', es como en el
+primero de estos casos, es decir, se trata de lo que suelen llamar una **_o_
+inclusiva**. La del segundo ejemplo sería una **_o_ exclusiva**. También
+veremos más adelante las de este último tipo, pero tienen menos importancia
+que las anteriores.
+
+En los lenguajes naturales, al contrario que en la lógica, la variedad de
+disyunción de la que se trata no será siempre la misma y la única forma de
+saber de cuál se trata será deducirlo de la información contextual. Este
+sería un ejemplo de la ambigüedad que existe en los lenguajes naturales.
+
+
+
+
+
+
+#### Conjunción
+
+Dadas las proposiciones
+
+::: proposiciones
+[$p$]{.prop-var} [el 4 es un número par.]{.prop-stat}
+[$q$]{.prop-var} [el 9 es un número impar.]{.prop-stat}
+:::
+
+la proposición conjunción de $p$ y $q$, que se suele designar por "$p \land
+q$", es:
+
+::: proposiciones
+[$p \land q$]{.prop-var} [El 4 es un número par y el 9 es un número
+impar.]{.prop-stat}
+:::
+
+y se representa con alguna de las expresiones $p \land q$, $p \cdot q$, $p
+\cap q$, etc.
+
+En este caso, $p = 1$, $q = 1$ y $p \land q = 1$.
+
+En la tabla siguiente se muestra su comportamiento. La proposición $p \land
+q$ es verdadera solo si $p$ y $q$ son verdaderas y es falsa si al menos una
+de las dos proposiciones es falsa.
+
+$$
+\begin{array}{cc|c}
+  p & q & p \land q \\
+  \hline
+  0 & 0 & 0 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{array}
+$$
+
+
+
+
+
+#### Condicional
+
+Dadas las proposiciones
+
+::: proposiciones
+[$p$]{.prop-var} [El 8 es un número par.]{.prop-stat}
+[$q$]{.prop-var} [El 8 es suma de dos números iguales.]{.prop-stat}
+:::
+
+la proposición condicional con forma abstracta
+
+::: proposiciones
+[Si $p$, entonces $q$]{.prop-stat}
+:::
+
+sería, concretando para este ejemplo,
+
+::: proposiciones
+[$p \to q$]{.prop-var} [Si el 8 es un número par, entonces es suma de dos
+números iguales.]{.prop-stat}
+:::
+
+y se representa con alguna de las notaciones siguientes: $p \to q$, $p
+\Rightarrow q$, $p \implies q$, etc.
+
+En este caso, $p = 1$, $q = 1$ y $p \to q = 1$.
+
+::: { #tbl-verdad-cond data-label="Tabla de Verdad del Operador Condicional"
+}
+$$
+\begin{array}{cc|c}
+  p & q & p \to q \\
+  \hline
+  0 & 0 & 1 \\
+  0 & 1 & 1 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{array}
+$$
+:::
+
+La proposición $p \to q$ es falsa únicamente si $p$ es verdadera y $q$ es
+falsa.
+
+De la proposición $p \to q$, se suele decir que $p$ es el _antecedente_ y
+$q$ el _consecuente_.
+
+
+
+
+##### Proposición vacuamente cierta { #vacuamente-cierta }
+
+A la vista de la [](#tbl-verdad-cond){.nameref}, puede que le llame la
+atención cómo se comporta cuando el antecedente es falso.
+
+Existen razones para argumentar que la tabla tiene que ser esta y no otra,
+pero no entraremos en tanto detalle, pues en esta asignatura la lógica la
+usaremos más bien como una herramienta para las matemáticas. Si no le
+convence que sea así, piense que se trata de un "tecnicismo" que le
+permitirá ahorrarse trabajo mental en bastantes situaciones. Ya lo verá,
+pues esos casos aparecen con bastante frecuencia en esta asignatura, y en
+otras.
+
+Cuando se determina que una proposición condicional es cierta por ser falso
+su antecedente, ha quien dice que se trata de una proposición **vacuamente
+cierta** (_vacuously true_). Puede que vea enunciados como "De un
+antecedente falso se deduce cualquier cosa". Así, por ejemplo, podríamos
+afirmar que todos los unicornios son de color rosa. La carga de la prueba
+TKTK.
+
+
+
+
+##### Condición necesaria y condición suficiente { #cond-nec-y-suf }
+
+Otra terminología que verá muy a menudo en matemáticas es la de condición
+necesaria y condición suficiente, que aparecen cuando se tiene un
+condicional. Si se tienen dos proposiciones $p$ y $q$ y una proposición
+compuesta $p \to q$, se tendrá que $p$ es una _condición suficiente_ para
+que se dé $q$ y, por otro lado, que $q$ es una _condición necesaria_ para
+que se dé $p$.
+
+A este respecto, creo que es fácil comprender por qué se da la condición de
+suficiencia, pero quizás no comprenda la otra, la de necesariedad.
+
+Veamos primero la de suficiencia. Fijándonos en la
+[](#tbl-verdad-cond){.nameref}, se tiene que, para los valores en los que $p
+=1$, la proposición compuesta $p \longrightarrow q$ es verdadera solo cuando
+se tiene la combinación $p = 1$ y $q = 1$. En la otra, es decir, cuando $p =
+1$ y $q = 0$, se tiene que $p \longrightarrow q$ es falsa. Debido a esto, se
+puede afirmar que basta con que $p$ sea cierta para que también lo sea $q$.
+
+Veamos ahora la condición de necesariedad. Esta puede pensarla fijándose en
+cómo varían los valores de $p$ en función de los de $q$ en la misma tabla de
+verdad. En cualquier caso, si no lo comprende, no se preocupe. Después
+veremos una herramienta que le servirá para comprenderlo de forma muy
+sencilla. Cuando vea esa herramienta, comprenderá por qué dije que la lógica
+permite sistematizar el razonamiento. Es como si le permitiera razonar en
+"piloto automático".
+
+
+
+
+
+#### Bicondicional
+
+Dadas las proposiciones
+
+::: proposiciones
+[$p$]{.prop-var} [El 8 es un número par.]{.prop-stat}
+[$q$]{.prop-var} [El 8 es divisible por 2.]{.prop-stat}
+:::
+
+la proposición bicondicional
+
+::: proposiciones
+[$p$ si y solo si $q$]{.prop-stat}
+:::
+
+sería
+
+::: proposiciones
+[$p \leftrightarrow q$]{.prop-var} [El 8 es un número par si y solo si
+también es divisible por 2.]{.prop-stat}
+:::
+
+y se puede representar simbólicamente de diversas formas: $p
+\longleftrightarrow q$, $p \leftrightarrow q$, $p \Leftrightarrow q$, $p
+\iff q$, etc.
+
+En este ejemplo, $p = 1$, $q = 1$ y $p \leftrightarrow q = 1$.
+
+Se comporta como indica la tabla de verdad siguiente:
+
+$$
+\begin{array}{cc|c}
+  p & q & p \leftrightarrow q \\
+  \hline
+  0 & 0 & 1 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{array}
+$$
+
+La proposición $p \leftrightarrow q$ es verdadera solo si $p$ y $q$ toman el
+mismo valor. A la vista de esta tabla, es evidente que el bicondicional
+sería algo así como una igualdad, solo que en la lógica no existe la
+igualdad, en principio TKTK. Si se tiene una proposición con un
+bicondicional y es, en general, verdadera, las proposiciones que la
+constituyen se dice que son *equivalentes*.
+
+Cuando se sabe que una proposición con un bicondicional es verdadera, tan
+solo hay que estudiar si alguna de las proposiciones es verdadera, para
+concluir que la otra también lo es. O que es falsa para demostrar que la
+otra también lo es. Esto es algo que se puede usar para hacer
+demostraciones, y, de hecho, se usa bastante; por ejemplo, en combinatoria.
+Es decir, esto nos permite, en muchos casos, demostrar algo indirectamente
+simplemente demostrando otra cosa que nos parezca más sencilla.
+
+Otras formas frecuentes de expresar esta equivalencia entre proposiciones en
+la literatura matemática son: "$p$ si y solo si $q$", que se resume en la
+expresión "$p$ ssi $q$" ("$p$ iff $q$").
+
+::: {.example}
+Dentro del contexto matemático, podemos encontrar proposiciones con
+los operadores anteriores.
+
+::: proposiciones
+[La función $f(x) = 1/x$ no está definida para $x = 0$.]{.prop-stat}
+:::
+
+Se trata de una proposición de negación verdadera, $\neg p$, donde la
+proposición $p$ es:
+
+::: proposiciones
+[$p$]{.prop-var} [La función $f(x) = 1/x$ está definida para $x =
+0$.]{.prop-stat}
+:::
+
+que es falsa.
+
+La proposición
+
+::: proposiciones
+[El punto $(1,1)$ está contenido en la región del plano $x^2 + y^2 \leq
+4$.]{.prop-stat}
+:::
+
+se puede ver como una proposición de disyunción, $p \lor q$, donde
+
+::: proposiciones
+[$p$]{.prop-var} [El punto $(1,1)$ está contenido en la región del plano
+$x^2 + y^2 < 4$.]{.prop-stat}
+[$q$]{.prop-var} [El punto $(1,1)$ está contenido en la región del plano
+$x^2 + y^2 = 4$.]{.prop-stat}
+:::
+
+Se tiene que $p = 1$, $q = 0$ y $p \lor q = 1$.
+
+La proposición
+
+::: proposiciones
+[La función $f(x) = x^2$ es continua en $[0,1]$ y derivable en
+$(0,1)$.]{.prop-stat}
+:::
+
+se puede ver como una proposición de conjunción verdadera, $p \land q$,
+donde las proposiciones
+
+::: proposiciones
+[$p$]{.prop-var} [La función $f(x) = x^2$ es continua en
+$[0,1]$.]{.prop-stat}
+[$q$]{.prop-var} [La función $f(x) = x^2$ es derivable en
+$(0,1)$.]{.prop-stat}
+:::
+
+son ambas verdaderas.
+:::
+
+
+::: {.example}
+Dentro del contexto matemático, podemos encontrar proposiciones con
+conectores condicionales como:
+
+<!-- TODO Hacer wrapping del div .proposiciones -->
+
+::: proposiciones
+[Al ser $f(x) = 3x^3 + 2x^2 + x$ una función derivable en $\mathbb{R}$, entonces
+$f(x)$ es continua en todo $\mathbb{R}$.]{.prop-stat}
+:::
+
+Se trata de una proposición condicional verdadera, $p \rightarrow q$,
+donde la proposición
+
+::: proposiciones
+[$p$]{.prop-var} [La función $f(x) = 3x^3 + 2x^2 + x$ es derivable en
+$\mathbb{R}$.]{.prop-stat}
+:::
+
+es verdadera y la proposición
+
+::: proposiciones
+[$q$]{.prop-var} [La función $f(x) = 3x^3 + 2x^2 + x$ es continua en
+$\mathbb{R}$.]{.prop-stat}
+:::
+
+también es verdadera.
+
+En este caso decimos que la derivabilidad de la función $f(x) = 3x^3 + 2x^2
+x$ en $\mathbb{R}$ implica la continuidad de esta en todo $\mathbb{R}$.
+:::
+
+::: {.example}
+Tenemos
+
+::: proposiciones
+[La dimensión de $\mathbb{R}^2$ es dos si y solo si el conjunto $\{(1, 0), (0,
+1)\}$ constituye una base de $\mathbb{R}^2$.]{.prop-stat}
+:::
+
+Se trata de una proposición bicondicional verdadera, $p \leftrightarrow q$,
+donde la proposición
+
+::: proposiciones
+[$p$]{.prop-var} [La dimensión de $\mathbb{R}^2$ es dos.]{.prop-stat}
+:::
+
+es verdadera y la proposición
+
+::: proposiciones
+[$q$]{.prop-var} [El conjunto $\{(1, 0), (0, 1)\}$ es una base de
+$\mathbb{R}^2$.]{.prop-stat}
+:::
+
+también es verdadera.
+:::
+
+Si nos fijamos en la proposición condicional $p \to q$, podemos tener otras
+proposiciones condicionales que tomarán ciertas designaciones respecto a
+esta:
+
+  Proposición                       Designación respecto a $p \to q$
+  -----------------------------     ----------------------------------
+  $q \rightarrow p$                 su condicional recíproco
+  $\neg p \rightarrow \neg q$       su condicional contrario
+  $\neg q \rightarrow \neg p$       su condicional contrarrecíproco
+
+De estos, el más importante es el contrarrecíproco, y se usa en muchas
+demostraciones. También hay quien lo llama _contrapositivo_
+(_contrapositive_). Se volverá a ver en este capítulo.
+
+
+
+
+
+
+#### Operadores que actúan sobre una proposición
+
+¿Cuántos operadores que actúen sobre una única proposición se pueden
+definir? Hay tantos como tablas de verdad distintas se puedan construir con
+una única proposición $p$. En la tabla siguiente mostramos sus respectivas
+tablas de verdad.
+
+$$
+\begin{array}{|c|cccc|}
+  \hline
+  p & C_0 p & C_1 p & C_2 p & C_3 p \\
+  \hline\hline
+  0 & 0 & 0 & 1 & 1 \\
+  1 & 0 & 1 & 0 & 1 \\
+  \hline
+\end{array}
+$$
+
+Hemos designado a los operadores por $C_0$, $C_1$, $C_2$ y $C_3$, que se
+corresponden con las expresiones de los números del 0 al 3 en notación
+binaria: $00$, $01$, $10$ y $11$.
+
+El operador $C_1$ es el conector identidad, es decir, $C_1 p \iff p$,
+mientras que la $C_2$ es la negación, es decir, $C_2 p \iff \neg p$.
+Recuerde que, tal y como explicamos antes, la equivalencia la marca el
+operador [bicondicional][].
+
+Advierta que la notación que usamos para un operador sobre una sola
+proposición es la notación prefija, ya que es la que se suele usar en los
+operadores unarios.
+
+
+
+
+
+
+#### Operadores que actúan sobre dos proposiciones
+
+¿Cuántas operaciones que actúen sobre dos proposiciones se pueden definir?
+Si se escriben todas las posibles tablas de verdad para dos proposiciones
+$p$ y $q$, se comprueba que hay 16 tablas distintas.
+
+$$
+\begin{array}{|cc|cccccccc|}
+  \hline
+  p & q & p C_0 q & p C_1 q & p C_2 q & p C_3 q & p C_4 q & p C_5 q & p C_6
+    q & p C_7 q \\
+  \hline\hline
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+  1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+  \hline
+  p & q & p C_8 q & p C_9 q & p C_{10} q & p C_{11} q & p C_{12} q & p
+    C_{13} q & p C_{14} q & p C_{15} q \\
+  \hline\hline
+  0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+  1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+  \hline
+\end{array}
+$$
+
+Por tanto, se pueden definir 16 operadores distintos, uno por cada una de
+las tablas, y los representamos por esos símbolos: $C_0, C_1, \ldots,
+C_{15}$, que se corresponden con los números del 0 al 15 en notación
+binaria: $0000, 0001, 0010, \ldots, 1111$.
+
+Observemos que a algunos de estos operadores ya los conocemos. Por ejemplo,
+$C_1$ es el operador conjunción, $p \land q$, $C_7$ el disyunción, $p \lor
+q$, $C_9$ el bicondicional, $p \longleftrightarrow q$, y $C_{13}$ el
+condicional, $p \longrightarrow q$.
+
+Como ve, se usa la notación infija, al tratarse de un operador binario.
+
+::: {.example}
+En la tabla anterior, al operador $C_6$ se le denomina _disyunción
+excluyente_, y sería como la otra variedad de la disyunción _o_ en español
+que se mencionó antes. Si recuerda, se usaba en la proposición
+
+::: proposiciones
+[Compraré el regalo hoy o mañana.]{.prop-stat}
+:::
+
+Se trataría de una proposición compuesta por las proposiciones simples
+siguientes:
+
+::: proposiciones
+[$p$]{.prop-var} [Compraré el regalo hoy.]{.prop-stat}
+[$q$]{.prop-var} [Compraré el regalo mañana.]{.prop-stat}
+:::
+
+Se suele denotar por el símbolo '$\oplus$'. En este caso, se tendría que la
+proposición $p \oplus q$ es cierta.
+:::
+
+
+

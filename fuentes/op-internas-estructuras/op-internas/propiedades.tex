@@ -1,0 +1,261 @@
+
+
+
+
+
+
+\subsection{Propiedad asociativa}
+
+Propiedad. Dado un conjunto $E$ y una operación interna $\star$ sobre este.
+La operación $\star$ es \emph{asociativa} si para todo $a, b, c \in E$ se
+cumple
+
+$$ (a \star b) \star c = a \star (b \star c) $$
+
+Una de las ventajas de la propiedad asociativa es que nos podemos permitir
+eliminar los paréntesis de expresiones como las anteriores. Para estas,
+tendríamos que son equivalentes a $a \star b \star c$, que también sería una
+fórmula bien definida, es decir, tiene asociado un único significado, sin
+ambigüedad.
+
+Otra ventaja es que permite definir por recurrencia cómo se operan $n + 1$
+elementos, ya que se cumple que
+
+$$ a_1 \star a_2 \star \cdots \star a_n \star a_{n+1} = (a_1 \star a_2 \star
+\cdots \star a_n) \star a_{n+1} $$
+
+Ejemplo. De las operaciones del ejemplo de la sección anterior TKTK, hemos
+visto en capítulos anteriores que son asociativas las leyes $\land$ y $\lor$
+en el conjunto de proposiciones lógicas, $\cap$ y $\cup$ en
+$\powset(\Omega)$ y la composición de aplicaciones en $\mathcal{F}(\Omega)$.
+Veremos en los capítulos~\ref{ch:naturales} y~\ref{ch:enteros} que las
+operaciones $+$ y $\cdot$ son asociativas en $\nset$, $\zset$, $\qset$ y
+$\rset$. También son asociativas las operaciones $\land$ y $\lor$, máximo
+común divisor y mínimo común múltiplo, en $\nset^*$; o suma, $+$, y
+producto, $\times$, en el conjunto de matrices cuadradas de orden $n$. Sin
+embargo, no son asociativa la resta ni la división de números, pues $(9 - 5)
+- 1 \neq 9 - (5 - 1)$ y $(16/4)/2 \neq 16/(4/2)$.
+
+
+
+
+\subsection{Propiedad conmutativa}
+
+Propiedad. Dado un conjunto $E$ y una operación interna $\star$ sobre este.
+La operación $\star$ es \emph{conmutativa} (\emph{commutative}) si para todo
+$a, b \in E$ se cumple
+
+$$ a \star b = b \star a $$
+
+Si una operación $\star$ es asociativa y conmutativa, entonces $a_1 \star
+a_2 \star \cdots \star a_n$ permanece invariable cuando se permutan o se
+reagrupan de manera arbitraria los elementos. Tiene sentido, por tanto, la
+notación
+
+$$ \star_{i=1}^n a_i $$
+
+\noindent para indicar
+
+$$ a_1 \star a_2 \star \cdots \star a_n $$
+
+\noindent siendo indiferente el orden de los mismos.
+
+En particular, cuando se utiliza la notación aditiva o la multiplicativa,
+cosa que veremos luego, para operaciones que sean asociativas y
+conmutativas, se usan
+
+$$ \sum_{i=1}^n a_i \quad \text{y} \quad \prod_{i=1}^n a_i $$
+
+\noindent respectivamente, para la suma y el producto de $a_1, a_2, \ldots,
+a_n$. En el caso de que todos los $a_i$ sean iguales a $a$, la suma se
+indica por $na$, y, el producto, por $a^n$.
+
+También, se utilizan para la intersección y unión de conjuntos las
+notaciones siguientes:
+
+$$ \bigcap_{i=1}^n A_i \quad \text{y} \quad \bigcup_{i=1}^n A_i $$
+
+\noindent para indicar, respectivamente, la intersección y la unión de los
+conjuntos $A_1, A_2, \ldots, A_n$.
+
+Ejemplo. De las operaciones del ejemplo 4.1 TKTK, no son conmutativas la
+composición de aplicaciones o el producto de matrices. Esto conlleva que
+cuando se manejen igualdades, por ejemplo, de matrices, hay que proceder con
+cautela a la hora de multiplicar los dos miembros de la igualdad,
+multiplicando ambos miembros a la izquierda, o ambos a la derecha. Es decir,
+de $A = B$ se deduce que $AC = BC$ o $CA = CB$ pero no se deduce que $AC =
+CB$. Tampoco son conmutativas la resta ni la división en los conjuntos
+numéricos $\zset$, $\rset$, etc.
+
+
+
+
+\subsection{Elemento neutro}
+
+Propiedad. Dado un conjunto $E$ y una operación interna $\star$ sobre este.
+Se denomina \emph{elemento neutro} de la operación interna $\star$ en $E$ a
+un elemento $e \in E$ que cumple, para todo $a \in E$,
+
+$$ a \star e = e \star a = a $$
+
+En lo que respecta a la terminología, en inglés, en lugar de llamarlo
+\emph{neutral element} se le suele llamar \emph{identity element}, que en
+español podríamos traducir como \emph{elemento identidad}. Si consulta
+textos en inglés, conviene que conozca esto.
+
+Ejemplo. Los elementos neutros de $+$ y $\cdot$ en $\nset$, $\zset$, $\qset$
+y $\rset$ son, respectivamente, $0$ y $1$.
+
+Los de $\cap$ y $\cup$ en $\powset(\Omega)$ son respectivamente $\Omega$ y
+$\emptyset$, cosa que es fácil de demostrar. Con la intersección de los
+elementos de $\powset(\Omega)$, $\cap$, se ha de obtener un elemento $B \in
+\powset(\Omega)$ tal que se cumpla, para todo $A \in \powset(\Omega)$, $A
+\cap B = A$. Es fácil ver que ese elemento $B$ es el conjunto $\Omega$. De
+forma análoga, para $A \cup B = A$ podemos ver que el único elemento $B \in
+\powset(\Omega)$ que lo comple es $\emptyset$.
+
+El elemento neutro de la composición en $\mathcal{F}(\Omega)$ es la
+aplicación identidad $I_\Omega$. Dada una función $f \in
+\mathcal{F}(\Omega)$ y la función identidad $I_\Omega$,
+
+\begin{center}
+\begin{minipage}[t]{.45\textwidth}
+  \centering
+  $$
+    \begin{array}{llll}
+      f:  & \Omega  & \longrightarrow & \Omega \\
+          & x       & \longmapsto     & f(x)
+    \end{array}
+  $$
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+  \centering
+  $$
+    \begin{array}{llll}
+      I_\Omega: & \Omega  & \longrightarrow & \Omega \\
+                & x       & \longmapsto     & I_\Omega (x) = x
+    \end{array}
+  $$
+\end{minipage}
+\end{center}
+
+\noindent se tiene que
+
+\begin{align*}
+  I_\Omega \circ f (x) &= I_\Omega (f(x)) = f(x) \\
+  f \circ I_\Omega (x) &= f(I_\Omega (x)) = f(x) \\
+\end{align*}
+
+\noindent con lo que $I_\Omega$ será el elemento neutro de la composición de
+funciones en $\mathcal{F}(\Omega)$.
+
+El elemento neutro en el producto de matrices cuadradas de orden 2 es la
+matriz siguiente
+
+$$
+  I =
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}
+$$
+
+\noindent a la que se suele conocer como \emph{matriz identidad} (de orden
+2).
+
+No existe elemento neutro en la resta o división en $\rset^*$, $-$ y $/$, ni
+en el máximo común divisor en $\nset^*$, $\land$.
+
+Proposición. Unicidad del elemento neutro. En caso de que exista el elemento
+neutro de una operación sobre un conjunto, dicho elemento será único.
+
+Demostración. Lo único que hay que hacer para demostrarlo es cambiar el
+punto de vista. Supongamos que $e$ y $e'$ son ambos elementos neutros del
+conjunto $E$ con la operación interna $\star$. Se tiene entonces,
+considerando que $e'$ es elemento neutro, que $e \star e' = e$. Por otro
+lado, considerando que $e$ es elemento neutro, se tiene que $e \star e' =
+e'$. De ambas conclusiones se deduce que $e = e'$.
+
+
+
+
+
+\subsection{Elemento simétrico}
+
+Definición. Elemento simétrico. Dado un conjunto $E$ con una operación
+interna $\star$ sobre $E$ con elemento neutro $e \in E$. Se denomina
+\emph{elemento simétrico} del elemento $a \in E$ a un elemento $a' \in E$
+tal que
+
+$$ a \star a' = a' \star a = e $$
+
+Observación. De la propia definición del elemento simétrico se deduce que si
+$a'$ es elemento simétrico de $a$, entonces $a$ es elemento simétrico de
+$a'$. Es decir, que $(a')' = a$. TKTK. En realidad, creo que ha de darse la
+propiedad asociativa, tal y como indica la propiedad que vemos más adelante.
+De lo contrario, se podría tener más de uno.
+
+% TODO Comprobar esto último. Por lo que tengo entendido, estructuras
+% algebraicas no asociativas, como los loops o los pseudogrupos, no cumplen
+% esta propiedad de $(a')' = a$.
+
+Advierta que el elemento neutro es un elemento para todo el conjunto y la
+operación, mientras que el simétrico será uno para cada elemento del
+conjunto, bajo esa operación. Es decir,
+
+\begin{align*}
+  \exists e \in E \ \text{tal que} \ \forall a \in E, \, a \star e = e \star
+    a = a \\
+  \forall a \in E \, \exists a' \in E \ \text{tal que} \ a \star a' = a'
+    \star a = e \\
+\end{align*}
+
+En la terminología, en inglés, no se suele ver que se hable del elemento
+simétrico. A este lo suelen denominar \emph{inverse element}, que en español
+a veces traducen como \emph{elemento inverso}. El problema está en que esto
+último puede causar confusión, pues muchas veces se llama así a un inverso
+en concreto: el de la operación producto en alguno de los conjuntos
+numéricos $\nset$, $\zset$, etc. TKTK. Cuando se habla de forma concreta del
+inverso por la división, en inglés lo llaman normalmente \emph{reciprocal
+element}.
+
+Advierta que, según la definición, está permitido que el elemento simétrico
+de un elemento sea él mismo.
+
+Ejemplo. En $\nset$, ningún elemento tiene simétrico respecto de la suma,
+salvo $a = 0$, o el producto, salvo $a = 1$. En ambos casos el simétrico del
+elemento sería él mismo.
+
+En $\zset$, $\qset$ y $\rset$, el simétrico de $a$ para la suma es ${-a}$.
+En $\zset$, no existe el simétrico de $a$ para el producto salvo si $a =
+{-1}$ o $a = 1$. En $\qset^*$ y $\rset^*$, el simétrico de $a$ para el
+producto es $1/a$.
+
+Según vimos en el capítulo anterior, en el conjunto $\mathcal{F}(\Omega)$ de
+las aplicaciones de un conjunto dado en sí mismo las aplicaciones biyectivas
+son las únicas que tienen simétrico respecto de la composición. El simétrico
+de la biyección $f$ es la biyección inversa $f^{-1}$.
+
+En el conjunto de matrices cuadradas de orden $n$, solo tienen simétrico
+respecto del producto las matrices cuyo determinante es distinto de $0$.
+
+Proposición. Unicidad del Elemento Simétrico. Sea $\star$ una operación
+interna asociativa en $E$ con elemento neutro $e \in E$. Si $a \in E$ tiene
+elemento simétrico, este es único.
+
+Demostración. Supongamos que $a'$ y $a''$ son ambos elementos simétricos de
+$a$. Utilizamos la propiedad asociativa para calcular de dos maneras
+distintas $a' \star a \star a''$:
+
+\begin{align*}
+  a' \star a \star a''  &= (a' \star a) \star a'' = e \star a'' = a'' \\
+  a' \star a \star a''  &= a' \star (a \star a'') = a' \star e = a' \\
+\end{align*}
+
+\noindent En consecuencia, $a' = a''$.
+
+Ahora, pasamos a ver las estructuras algebraicas.
+
+
+
+

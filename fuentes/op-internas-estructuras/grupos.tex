@@ -1,0 +1,800 @@
+
+
+
+
+
+Definición. Grupo. Sea $G$ un conjunto y $\star$ una operación interna en
+$G$. Se dice que el par $(G, \star)$ es un \emph{grupo} (\emph{group}) si se
+satisfacen las propiedades siguientes:
+
+\begin{itemize}
+  \item La operación $\star$ es asociativa.
+  \item Existe elemento neutro de $\star$ en $G$.
+  \item Para todo elemento $a \in G$, existe en $G$ el elemento simétrico de
+    $a$ respecto de $\star$.
+\end{itemize}
+
+Otra forma de decir que $(G, \star)$ es un grupo es decir que ``$(G, \star)$
+tiene estructura de grupo''. Otras formas de expresar esto es decir que
+``$G$ es un grupo respecto de $\star$'', o incluso, si el contexto es
+suficientemente claro respecto de la operación considerada, que ``$G$ es un
+grupo''.
+
+Si además la operación $\star$ es conmutativa, se dice que el grupo es
+\emph{conmutativo} (\emph{commutative}) o \emph{abeliano} (\emph{abelian}).
+
+En cuanto a la terminología, por comodidad, al hablar de las estructuras, a
+veces seremos algo vagos y nos referiremos al conjunto hablando de la
+estructura, sobrentendiendo que TKTK. Así, por ejemplo, a veces diremos ``el
+grupo $G$'', en lugar de ``el grupo $(G, \star)$'', que es lo que se debería
+decir.
+
+Existen ciertas convenciones que se suelen seguir respecto a los operadores
+internos. En realidad, esto es simplemente una cuestión de notación y
+terminología, con lo que no afecta a los resultados TKTK. Es decir, con
+cualquier otra terminología y notación se podría expresar lo mismo y llegar
+a las mismas conclusiones TKTK. En cualquier caso, conviene conocer estas
+``costumbres''. Son las siguientes.
+
+
+
+
+\subsection{Notación aditiva}
+
+Cuando la operación de un grupo se representa con el símbolo `$+$', el grupo
+se llama \emph{aditivo}. También, a su elemento neutro se le llama
+\emph{elemento nulo}, o \emph{cero}, y se denota por `$0$'. El elemento
+simétrico de $a$ se denotará entonces por `${-a}$' y se denomina
+\emph{elemento opuesto}.
+
+Se crea así también la operación resta, que no sería más que la suma del
+opuesto, denotada como $a - b$; es decir, esta expresión expresa lo mismo
+que $a + ({-b})$. Advierta que el signo \emph{menos}, `$-$', lo acabamos de
+usar de dos formas distintas. En la expresión `${-a}$' o `${-b}$', es un
+operador unario prefijo que representa al elemento simétrico de $a$. Por
+otro lado, en `$a - b$' es un operador binario infijo TKTK.
+
+La expresión $na$ indica la suma de $n$ veces $a$, siendo $n \in \nset^*$.
+La propiedad asociativa de la operación $+$ hace que $a + a + \cdots + a$
+permanezca invariable cuando se reagrupan de manera arbitraria los factores,
+y se escribe:
+
+$$ na = \overbrace{a + a + \cdots + a}^{\text{$n$ veces}} $$
+
+Al elemento neutro, tal y como hemos dicho, hay quien lo llama
+\emph{elemento identidad}. En el caso de la notación aditiva, a veces lo
+llaman la \emph{identidad aditiva} (\emph{additive identity}).
+
+
+
+
+
+\subsection{Notación multiplicativa}
+
+Cuando la operación se representa con el símbolo `$\cdot$', el grupo se dice
+\emph{multiplicativo}, y a su elemento neutro se denota por `$1$' y se llama
+\emph{unidad}. El elemento simétrico de $a$, que se denota por `$a'$',
+se llama \emph{elemento inverso} de $a$.
+
+En realidad, hay que tener cuidado con esta última teminología, ya que, en
+muchos textos en inglés llaman \emph{inverse element} a lo que aquí llamamos
+\emph{elemento simétrico}. Al elemento simétrico de un producto en inglés lo
+suelen llamar \emph{reciprocal element}.
+
+Análogamente al caso aditivo, la expresión $a^n$ indica el producto de $n$
+veces $a$, siendo $n \in \nset^*$. Además, $a \cdot a \cdot \cdots \cdot a$
+permanece invariable cuando se reagrupan de manera arbitraria los factores,
+y se escribe:
+
+$$ a^n = \overbrace{a \cdot a \cdot \cdots \cdot a}^{\text{$n$ veces}} $$
+
+Las notaciones $\frac{1}{a}$ o $1/a$ por $a'$ se utilizan exclusivamente
+para los números. De hecho, la notación $\frac{b}{a}$ sería confusa si la
+operación no es conmutativa, ya que a priori $\frac{1}{a} b$ y $b
+\frac{1}{a}$ pueden ser distintos. Así, por ejemplo, si $A$ es una matriz
+cuadrada invertible de orden 2, su inversa se denota por $A'$ y nunca se
+utiliza la notación $\frac{1}{A}$, ya que el producto de matrices no es
+conmutativo.
+
+Ejemplo. Veamos algunos grupos que ya conocemos. Los conjuntos $\zset$,
+$\qset$, $\rset$ y $\cset$ son grupos conmutativos respecto de la suma, cosa
+que demostraremos en los capítulos posteriores. Los conjuntos $\qset^*$,
+$\rset^*$ y $\cset^*$, junto con la operación producto, también son grupos.
+El conjunto de matrices de orden $n \times m$ junto con su suma es un grupo
+conmutativo. El conjunto de matrices cuadradas invertibles de orden $n$ es
+un grupo no conmutativo respecto del producto. El conjunto
+$\mathcal{B}(\Omega)$ de las aplicaciones biyectivas de un conjunto $\Omega$
+en sí mismo es un grupo no conmutativo respecto de la composición de
+aplicaciones.
+
+Ejercicio. Demuestre que el conjunto de las partes de un conjunto $\Omega$
+junto con la diferencia simétrica de conjuntos, $(\powset(\Omega),
+\triangle)$, es un grupo conmutativo.
+
+Solución. Recordemos que si $A, B \in \powset(\Omega)$, entonces 
+
+$$ A \triangle B = (A \setminus B) \cup (B \setminus A) = (A \cap
+\overline{B}) \cup (\overline{A} \cap B) $$
+
+Es evidente que la operación $\triangle$ es interna y conmutativa en
+$\powset(\Omega)$. Veamos si es asociativa. Sean $A, B, C \in
+\powset(\Omega)$. Se cumple:
+
+\iffalse
+\begin{align*}
+  (A \triangle B) \triangle C
+    &= [(A \cap \overline{B}) \cup (\overline{A} \cap B)] \triangle C \\
+
+    &= \left\{[(A \cap \overline{B}) \cup (\overline{A} \cap B)] \cap
+      \overline{C}\right\} \cup [\overline{(A \cap \overline{B}) \cup
+      (\overline{A} \cap B)} \cap C] \\
+
+    &= [(A \cap \overline{B} \cap \overline{C}) \cup (\overline{A} \cap B
+      \cap \overline{C})] \cup \left\{[\overline{(A \cap \overline{B}) \cap \
+      \overline{(\overline{A} \cap B)}] \cap C\right\} \\
+
+    &= [(A \cap \overline{B} \cap \overline{C}) \cup (\overline{A} \cap B
+      \cap \overline{C})] \cup [(\overline{A} \cup B) \cap (A \cup
+      \overline{B})] \cap C \\
+\end{align*}
+\fi
+
+Vamos a desarrollar de forma independiente la parte derecha de esta
+expresión.
+
+\begin{align*}
+  (A \triangle B) \triangle C
+    &= \left\{[(\overline{A} \cup B) \cap A] \cup [(\overline{A} \cup B)
+      \cap \overline{B}]\right\} \cap C \\
+    &= \left\{[(\overline{A} \cap A) \cup (B \cap A)] \cup [(\overline{A}
+      \cap \overline{B}) \cup (B \cup \overline{B})]\right\} \cap C \\
+    &= \left\{[\emptyset \cup (A \cap B)] \cup [(\overline{A} \cap
+      \overline{B}) \cup \emptyset]\right\} \cap C \\
+    &= [(A \cap B) \cup (\overline{A} \cap \overline{B})] \cap C \\
+    &= (A \cap B \cap C) \cup (\overline{A} \cap \overline{B} \cap C) \\
+\end{align*}
+
+\noindent Se tiene, entonces,
+
+$$ (A \triangle B) \triangle C = (A \cap \overline{B} \cap \overline{C})
+\cup (\overline{A} \cap B \cap \overline{C}) \cup (A \cap \overline{B} \cap
+C) \cup (\overline{A} \cap B \cap C) $$
+
+Utilizando la fórmula anterior, junto con la propiedad conmutativa de
+$\triangle$ y las propiedades conmutativa y asociativa de la unión y la
+intersección, se deduce que
+
+\begin{align*}
+  A \triangle (B \triangle C) &= (B \triangle C) \triangle A \\
+    &= (B \cap \overline{C} \cap A) \cup (\overline{B} \cap C \cap
+      \overline{A}) \cup (\overline{B} \cap \overline{C} \cap A) \cup (B
+      \cap C \cap A) \\
+    &= (A \triangle B) \triangle C \\
+\end{align*}
+
+El elemento neutro de este grupo es el conjunto vacío, $\emptyset$, pues $A
+\triangle \emptyset = \emptyset \triangle A = A$ para todo $A$, y el
+elemento simétrico de un elemento arbitrario $A \in \powset(\Omega)$ es el
+propio $A$, pues $A \triangle A = \emptyset$.
+
+Ejemplo. Vamos a ver ahora casos en los que no se tienen grupos.
+
+$(\nset, +)$ y $(\rset, \cdot)$. Sólo el $0$ tiene elemento opuesto en el
+primer caso, mientras que, en el segundo, el $0$ no tiene inverso.
+
+En $(\powset(\Omega), \cap)$ ningún elemento, salvo el elemento neutro,
+tiene elemento simétrico, pues, si $A \cap B = \Omega$, se tiene
+necesariamente que $A = B = \Omega$; recuerde que en dicho grupo el elemento
+neutro era $\Omega$. En $(\powset(\Omega), \cup)$ sucede algo análogo. Si $A
+\cup B = \emptyset$, entonces $A = B = \emptyset$; recuerde que en este
+grupo el elemento neutro era $\emptyset$.
+
+El conjunto de matrices cuadradas de orden $n$ con la multiplicación de
+matrices no es un grupo pues las matrices cuyo determinante es cero no
+tienen inversa.
+
+Proposición. Propiedades en un grupo.
+
+Sea $(G, \star)$ un grupo y unos elementos arbitrarios de este $a, b, c \in
+G$. Se tiene:
+
+\begin{enumerate}
+  % TODO Quizás ampliarla para añadir en el otro sentido.
+  \item Si $a \star b = a \star c$, entonces $b = c$. Se la conoce como
+    \emph{propiedad cancelativa}.
+  \item Existe un único $x \in G$ tal que $a \star x = b$.
+  \item Si $a'$ y $b'$ son los elementos simétricos de $a$ y $b$,
+    respectivamente, entonces $(a \star b)' = b' \star a'$.
+\end{enumerate}
+
+Demostración.
+
+1. Basta operar por la izquierda con el elemento simétrico de $a$:
+
+\begin{align*}
+  a \star b &= a \star c \\
+  a' \star (a \star b) &= a' \star (a \star c) \\
+  (a' \star a) \star b &= (a' \star a) \star c \\
+  e \star b &= e \star c \\
+  b &= c \\
+\end{align*}
+
+\noindent Las manipulaciones que hemos hecho en la expresión para llegar a
+este resultado se justifican por ser condiciones que han de darse para que
+$(G, \star)$ sea un grupo; por ejemplo, hemos usado la asociativa.
+
+Como es fácil de comprobar, se daría también en el otro sentido, es decir,
+de $b \star a = c \star a$ se deduce también que $b = c$.
+
+2. Se sigue la misma estrategia que en la anterior.
+
+\begin{align*}
+  b &= a \star x \\
+  a' \star b &= a' \star (a \star x) = (a' \star a) \star x = e \star x = x
+\end{align*}
+
+\noindent Esto demuestra que es único, ya que es la imagen del par $(a, b')
+\in G \times G$ en la aplicación que es la operación interna. Ojo, esto no
+quiere decir que, dados $a, b, c, d \in G$, los elementos $x, y \in G$ tales
+que $a \star x = b$ y $c \star y = d$ sean distintos necesariamente.
+
+3. Basta observar que
+
+$$ (b' \star a') \star (a \star b) = b' \star (a' \star a) \star b = b'
+\star e \star b = b' \star (e \star b) = b' \star b = e = (a \star b)' \star
+(a \star b) $$
+
+\noindent y, aplicando la propiedad cancelativa (la del punto 1), se tiene
+que $(a \star b)' = b' \star a'$. Análogamente, se tiene que
+
+$$ (a \star b) \star (b' \star a') = e $$
+
+\noindent pero no lo demostraremos.
+
+Observaciones. En las tres propiedades ha de observarse que el orden en el
+que se disponen los elementos es importante cuando el grupo no es
+conmutativo. El inverso de $a \star b$ es $b' \star a'$, que no tiene por
+qué coincidir con $a' \star b'$. También, en la segunda propiedad, se ha
+obtenido el elemento $x = a' \star b$ tal que $a \star x = b$, que puede ser
+diferente de $b \star a'$.
+
+La propiedad cancelativa indica que en un grupo $(G, \star)$ la aplicación
+
+$$
+\begin{array}{llll}
+  f_a:  & G & \longrightarrow & G \\
+        & x & \longmapsto     & f_a(x) = a \star x \\
+\end{array}
+$$
+
+\noindent es inyectiva.
+
+Para demostrarlo, tomemos dos valores arbitrarios del conjunto imagen de la
+aplicación. Serán $y_1, y_2 \in G$ tales que existen $x_1, x_2 \in G$ de tal
+forma que $y_1 = f_a(x_1)$ y $y_2 = f_a(x_2)$. Entonces,
+
+\begin{align*}
+  y_1 &= y_2 \\
+  f_a(x_1) &= f_a(x_2) \\
+  a \star x_1 &= a \star x_2
+\end{align*}
+
+\noindent y, por la propiedad cancelativa, de esto se deduce que $x_1 =
+x_2$. Si se fija, este hecho es lo mismo que afirmar que la función $f_a$ es
+inyectiva.
+
+Ejemplo. Las siguientes tablas representan operaciones internas. Las dos
+primeras tablas representan dos operaciones, $\odot$ y $\star$, en el
+conjunto $G = \{e, a\}$ mientras que la tercera tabla representa la
+operación $\star$ en el conjunto $G' = \{e, a, b, c\}$.
+
+$$
+  \begin{array}{c|cc}
+    \odot & e & a \\
+    \hline
+    e & e & a \\
+    a & a & a \\
+  \end{array}
+  \quad
+  \begin{array}{c|cc}
+    \star & e & a \\
+    \hline
+    e & e & a \\
+    a & a & e \\
+  \end{array}
+  \quad
+  \begin{array}{c|cccc}
+    \star & e & a & b & c \\
+    \hline
+    e & e & a & b & c \\
+    a & a & e & c & b \\
+    b & b & c & e & a \\
+    c & c & b & a & e \\
+  \end{array}
+$$
+
+Así, por ejemplo, el elemento que está situado en la intersección de la
+línea de $b$ con la columna de $c$ en la tercera tabla es $b \star c$, y, en
+este caso, $b \star c = a$. Veamos si definen o no una estructura de grupo
+conmutativo.
+
+En los tres casos, $e$ es el elemento neutro pues la fila y columna de $e$
+dejan invariante la primera fila y la primera columna respectivamente.
+
+También se observa a primera vista que las tres operaciones son conmutativas
+pues las tablas son simétricas respecto de la diagonal principal (la que
+baja de izquierda a derecha).
+
+En el primer caso, el elemento $a$ no tiene simétrico, pues no existe ningún
+elemento $a'$ tal que $a \odot a' = e$. Aunque sí tiene simétrico el
+elemento $e$, que sería él mismo, para que se dé esta propiedad, han de
+tenerlos todos los elementos del conjunto $G$, con lo que podemos afirmar
+que $(G, \odot)$ no es un grupo.
+
+En el segundo caso, el simétrico de $a$ es el propio $a$, y, el de $e$, $e$.
+Entonces, todos los elementos de $G$ tienen simétrico, con lo que se cumple
+la propiedad del elemento simétrico.
+
+En el tercer ejemplo los elementos simétricos de $a$, $b$ y $c$ son
+respectivamente los propios $a$, $b$ y $c$, respectivamente.
+
+La propiedad asociativa en el segundo caso se cumple comprobando que $x
+\star (y \star z) = (x \star y) \star z$ en todos los casos posibles de las
+variables $x, y, z \in G$. Esto es fácil de ver para las dos primeras
+tablas, pues, claramente se cumple si uno de los tres elementos es el
+elemento neutro $e$ por tanto sólo hay que comprobar que $a \star (a \star
+a) = (a \star a) \star a$ que se cumple pues la operación es conmutativa.
+
+Esta propiedad es bastante más tediosa de demostrar para el tercer cuadro.
+Hay que comprobar que 
+
+\iffalse
+% TODO Hacerlo más elegante
+\begin{align*}
+  a \star (b \star c) &= (a \star b) \star c, \quad a \star (c \star b) = (a
+    \star c) \star b, \quad a \star ((a \star c)) = ((a \star a) \star c) \\
+
+  a \star (c \star a) &= ((a \star c) \star a), \quad a \star (a \star b) =
+    ((a \star a) \star b), \quad a \star (b \star c) = ((b \star b) \star c)
+    \\
+
+  b \star (c \star b) &= ((b \star c) \star b), \quad b \star (b \star a) =
+    ((b \star b) \star a), \quad b \star (a \star b) = ((b \star a) \star b)
+    \\
+
+  c \star (a \star c) = ((c \star a) \star c), \quad c \star ((c \star b)) =
+    ((c \star c) \star b), \quad c \star (b \star c) = ((c \star b) \star c)
+    \\
+\end{align*}
+\fi
+
+Todos los demás casos se deducirían de los casos anteriores, la propiedad
+conmutativa y la del elemento neutro.
+
+Al comprobar si un conjunto junto con una operación son un grupo, o
+cualquiera de las estructuras que vemos más adelante, algo que nos puede
+facilitar el trabajo es que este cumpla la propiedad conmutativa. Así, si la
+cumple, nos ahorraríamos el trabajo a la mitad, peus TKTK.
+
+El grupo que corresponde a la tercera de las tablas se denomina \emph{grupo
+de Klein}, y tiene una representación geométrica en el que $e$ es la
+identidad en el espacio tridimensional y $a$, $b$ y $c$ representan las
+simetrías axiales de eje $O_x$, $O_y$ y $O_z$. La operación $\star$ es la
+composición de movimientos.
+
+Ahora, vamos a ver una subestructura de grupo. Concretamente, la de
+subgrupo. La norma que se suele seguir es llamar con el mismo nombre
+precedido del prefijo \emph{sub} a la subestructura que es igual que la que
+la engloba, es decir, TKTK. Tal y como veremos, ese prefijo solo aporta
+información contextual TKTK.
+
+Tal y como verá en otras asignaturas posteriores de álgebra abstracta, a
+veces, la subestructura más interesante no es la subestructura principal
+TKTK.
+
+
+
+
+
+\subsection{Subgrupos}
+
+Definición. Subgrupo. Dados un grupo $(G, \star)$ y un subconjunto $H$ de
+$G$, $H \subseteq G$. Se dice que $(H, \star)$ es un \emph{subgrupo} de $(G,
+\star)$ si cumple las condiciones para ser un grupo.
+
+Hay quien pone la condición de que $H$ no sea vacío, pero en realidad no es
+necesario, pues, en ese caso, no cumplirá las condiciones de grupo; por
+ejemplo, la del elemento neutro. TKTK. No estoy muy seguro de esto.
+
+Vuelvo a recalcar aquí que es bastante común ser vago cuando hablamos de
+estructuras algebraicas, y es bastante normal que vea expresiones como ``el
+subgrupo $H$'', en lugar de ``el subgrupo $(H, +)$''. Este ahorro en la
+notación se hará cuando se sobrentienda a qué estructura nos referimos en
+ese caso.
+
+Para un grupo cualquiera $(G, \star)$, se tiene, en particular, que $(H,
+\star)$ es un subgrupo de $(G, \star)$ siendo $H = \{e\}$ para $e$ el
+elemento neutro del grupo $(G, \star)$. Veamos por qué. Ya que $e$ es el
+elemento neutro, se cumple $e \star e = e$, que, ya que es el único elemento
+de $H$, la operación $\star$ es interna en dicho conjunto. Veamos si se
+cumple la propiedad asociativa:
+
+$$ (e \star e) \star e = e \star e = e \star (e \star e) $$
+
+Las propiedades del elemento neutro y el simétrico son evidentes
+directamente del hecho de que $e \star e = e$.
+
+También, se considera que todo grupo es un subgrupo de sí mismo; es decir,
+$(G, \star)$ es un subgrupo del grupo $(G, \star)$, cosa que es evidente ya
+que se trata de lo mismo y no hace falta, por tanto, volver a demostrar que
+cumple las condiciones para ser un grupo.
+
+Sabiendo que $(G, \star)$ es un grupo, para un subconjunto $H$ de $G$ no
+habría que estudiar todas las condiciones de grupo para ver si $(H, \star)$
+es un grupo. Observemos que, si para todos los elementos de $G$ se cumple la
+propiedad asociativa mediante $\star$, entonces, también se cumplirá en
+particular para todos los de elementos de $H$. Gracias a esto, nos
+ahorraremos la comprobación de esta propiedad cuando tengamos que averiguar
+si una estructura es un subgrupo de un grupo en concreto. Sucedería lo mismo
+con la propiedad conmutativa, en caso de que se tratase de un grupo
+conmutativo.
+
+Por tanto, para averiguar si un par $(H, \star)$ es un subgrupo de $(G,
+\star)$, en realidad no hay por qué hacer todas las comprobaciones de grupo,
+como se explica en la proposición siguiente.
+
+Proposición. Caracterización de Subgrupo. Sea un grupo $(G, \star)$ y $H$ un
+subconjunto no vacío de $G$, $H \subseteq G$. Se tiene que $(H, \star)$ es
+un subgrupo de $(G, \star)$ si y solo si, para todo $a, b \in H$, $a \star
+b' \in H$ siendo $b'$ el elemento simétrico de $b$ en el grupo $(G, \star)$.
+
+% TODO Significado de caracterización.
+
+Creo que se podría quitar la condición de que $H$ no sea vacío. Si lo es, no
+se cumplirá la condición y será, por tanto, vacuamente cierto. TKTK.
+
+Advierta que, simplemente con esa condición, estamos garantizando que la
+operación $\star$ sea interna también en $H$, así como que se cumplen las
+propiedades del elemento neutro y del simétrico. Por cierto, en lo que
+respecta al elemento neutro, en realidad no es necesario ``buscarlo'', sino
+que, si el elemento neutro de $(G, \star)$ pertenece a $H$, será este el
+elemento neutro de este último. Esto es evidente porque TKTK.
+
+Respecto a la propiedad asociativa, tal y como dijimos, se cumple siempre,
+ya que se cumple en $G$.
+
+Esto también nos permite descartar rápidamente que $(H, \star)$ sea un
+subgrupo del grupo $(G, \star)$ simplemente comprobando que el elemento
+neutro de este último no se encuentra en el primero. Bueno, en realidad, con
+cualquiera de las otras condiciones se pueden hacer descartes también.
+
+Demostración. Es evidente que la condición es necesaria para que $(H,
+\star)$ sea un subgrupo, ya que, si no se da alguna de las condiciones de
+grupo, entonces no se dará $a \star b' \in H$ para todo $a, b \in H$. Es
+decir, la condición $a \star b' \in H$ lleva implícitas a las demás. Así,
+por ejemplo, si no se da la condición de que la operación $\star$ sea
+interna en $H$, entonces ya no se cumpliría que $a \star b' \in H$ para todo
+$a, b \in H$. Lo mismo, con las demás.
+
+Veamos que es suficiente. Supongamos que para todo $a, b \in H$ se cumple $a
+\star b' \in H$. De esto se deduce que $\star$ es una operación interna en
+$H$ para todo $a, b \in H$.
+
+Como $H \neq \emptyset$, existe un elemento $a$ en $H$, $a \in H$. Además,
+como $H$ es un subconjunto de $G$, $H \subseteq G$, se tiene que $a \in G$.
+Como $(G, \star)$ es un grupo, sabemos entonces que existen $a', e \in G$
+para los que se cumple $a \star a' = e$, siendo, en dicho grupo, $e$ el
+elemento neutro y $a'$ el inverso de $a$. Pero, ojo, aún no hemos demostrado
+que esos elementos pertenezcan a $H$.
+
+Si tomamos como caso particular de $b$ al elemento $a$, es decir, $b = a$,
+tenemos, por la hipótesis de la que partimos, que $a \star a' \in H$.
+Advierta que, de momento, $a'$ no tiene por qué pertenecer a $H$. Pero en
+$(G, \star)$ se cumple que $a \star a' = e$, con lo que, por lo anterior, se
+tiene que $e \in H$, siendo $e$ el elemento neutro de $(G, \star)$\ldots{} y
+también el de $(H, \star)$, ya que su comportamiento será el de elemento
+neutro tanto con los elementos de $G$ como con los de $H$ ya que estos son
+casos particulares de los anteriores. Debido a que $e \in H$, se cumple la
+condición del elemento neutro.
+
+Tomando ahora al elemento $e$ como valor de la variable $a$, tenemos, por la
+hipótesis, que $e \star b' \in H$. Además, como por $(G, \star)$ se tiene
+que $e \star b' = b'$, se tendrá entonces que $b' \in H$, cumpliéndose así
+la condición del elemento simétrico.
+
+En cuanto a la propiedad asociativa, tal y como ya dijimos, en $H$ se
+``hereda'' automáticamente de que se cumpla en $G$.
+
+\iffalse
+En consecuencia, $e = a \star a' \in H$. Luego el elemento neutro es un
+elemento de $H$ y se cumple ii). En consecuencia, para todo $b \in H$ se
+tiene que $e \star b' = b' \in H$ y se cumple iii). Finalmente, la operación
+$\star$ es interna en $H$ pues si $a, b \in H$, acabamos de ver que $b' \in
+H$ y por tanto $a \star (b')' = a \star b \in H$.
+\fi
+
+La ventaja de esta caracterización es que muchas veces se puede demostrar
+que un $(H, \star)$ es un grupo simplemente mediante la demostración de que
+es un subgrupo de un grupo conocido.
+
+Ejercicio. Sea $\zset[\sqrt{2}] = \{a + b\sqrt{2} \st a, b \in \zset\}$.
+Demuestre que $(\zset[\sqrt{2}], +)$ es un grupo siendo $+$ la suma habitual
+de números reales restringida a $\zset[\sqrt{2}]$, y siendo $b\sqrt{2}$ el
+producto usual en $\rset$.
+
+Solución. Basta ver que $(\zset[\sqrt{2}], +)$ es un subgrupo de $(\rset,
++)$ gracias a la caracterización de grupo. En primer lugar,
+$\zset[\sqrt{2}]$ no es vacío, ya que contiene al elemento 0, pues
+
+$$ 0 = 0 + 0\sqrt{2} \in \zset[\sqrt{2}] $$
+
+Dados dos elementos arbitrarios de $\zset[\sqrt{2}]$,
+
+\begin{align*}
+  z &= a + b\sqrt{2} \\
+  y &= c + d\sqrt{2} \\
+\end{align*}
+
+\noindent siendo $a, b, c, d \in \zset$, debemos comprobar que $z + ({-y})
+\in \zset[\sqrt{2}]$, siendo ${-y} \in \rset$ el elemento simétrico de $y$
+en $(\rset, +)$, es decir,
+
+$$ {-y} = {-(c + d\sqrt{2})} = {-c} - d\sqrt{2} $$
+
+\noindent Entonces,
+
+$$ z + ({-y}) = a + b\sqrt{2} + (-c - d\sqrt{2}) = (a - c) + (b - d)\sqrt{2}
+$$
+
+\noindent Es evidente que $a - c, b - d \in \zset$, con lo que $z + ({-y})
+\in \zset[\sqrt{2}]$, cosa que demuestra que $(\zset[\sqrt{2}], +)$ es un
+grupo. Como ve, no hemos tenido que hacer todas las comprobaciones de la
+definición de grupo.
+
+Ejercicio. Sea $n\zset = \{kn \st k \in \zset\}$, con $n \in \nset^*$.
+Demuestre que es un grupo respecto de la suma de números reales restringida
+a dicho conjunto.
+
+Haciendo uso de la caracterización de subgrupo, vamos a comprobar si
+$(n\zset, +)$ es un subgrupo de $(\zset, +)$. Lo primero será comprobar que
+$n\zset$ no es vacío. Es evidente que $n \in n\zset$, con lo que se cumple
+esta condición.
+
+Ahora, tomemos dos elemntos cualesquiera de $n\zset$. Serán $a$ y $b$, que
+son
+
+\begin{align*}
+  a &= kn \\
+  b &= hn \\
+\end{align*}
+
+\noindent El simétrico de $b$ en $(\zset, +)$ es ${-b} = {-(hn)}$.
+Entonces, se tiene que
+
+$$ a + ({-b}) = kn + [{-(hn)}] = kn + ({-h})n = [k + ({-h})]n = (k - h)n $$
+
+\noindent y es evidente que $(k - h)n \in n\zset$, con lo que $(n\zset, +)$
+será un grupo, al haber quedado demostrado que es un subgrupo de $(\zset,
++)$.
+
+Advierta que hemos usado, en el último paso, algunas propiedades de $(\zset,
++)$ que conocemos de nuestros estudios previos de matemáticas, aunque sea de
+forma intuitiva. Por ejemplo, la propiedad distributive del producto
+respecto a la suma o que ${-(hn)} = ({-h})n$. Estas se demostrarán en un
+capítulo posterior, cuando se definan de forma rigurosa los números enteros.
+
+Ejercicio. Lo mismo que el anterior pero para el conjunto $2\pi\zset =
+\{2\pi k \st k \in \zset\}$.
+
+Para demostrar que $(2\pi \zset, +)$ es un grupo, se hará de forma indirecta
+simplemente demostrando que es un subgrupo de $(\rset, +)$ haciendo uso de
+la caracterización de grupo.
+
+Lo primero será comprobar que $2\pi \zset$ es no vacío. Por ejemplo, se
+tiene que $2\pi \in 2\pi \zset$.
+
+Ahora, tomemos dos elementos arbitrarios de $2\pi \zset$:
+
+\begin{align*}
+  a &= 2\pi k \\
+  b &= 2\pi h \\
+\end{align*}
+
+\noindent El simétrico por $(\rset, +)$ de $b$ será ${-b} = {-(2\pi h)}$.
+Ahora, vemos qué nos da $a + ({-b})$:
+
+$$ a + ({-b}) = 2\pi k + [{-(2\pi h)}] = 2\pi k + 2\pi({-h}) = 2\pi(k - h)
+$$
+
+\noindent que es un elemento de $2\pi\zset$, con lo que queda demostrado que
+$(2\pi \zset, +)$ subgrupo de $(\rset, +)$, y, evidentemente, es un grupo.
+Como ve, se trata de un ejercicio prácticamente igual que el anterior.
+
+
+
+
+
+\subsection{Congruencia módulo un subgrupo}
+
+Sea $(G,\star)$ un grupo conmutativo y sea $(H, \star)$ un subgrupo de este.
+La relación $\rrel_H$ en $G$ definida para todo $a, b \in G$ por
+
+$$ a \rrel_H b \ \text{si y solo si} \ a \star b' \in H $$
+
+\noindent es una relación de equivalencia que se denomina \emph{congruencia
+módulo $H$}. Concretamente, esta es la congruencia módulo $H$ por la
+derecha. Existiría también una por la izquierda, que no sería más que
+cambiando lo último por $a' \star b$.
+
+Comprobemos que efectivamente se trata de una relación de equivalencia. Es
+reflexiva, pues para todo $a \in G$ se cumple $a \star a' = e$, y, por ser
+$(H, \star)$ un grupo, se tiene que $e \in H$, con lo que se cumple que $a
+\rrel_H a$.
+
+Es simétrica. Veamos una demostración. Si $a \rrel_H b$, entonces $a \star
+b' \in H$. Al tratarse de un grupo $(H, \star)$, el simétrico de $a \star
+b'$ debe pertenecer también a $H$. Este sería $(a \star b')'$, y, por una de
+las propiedades de grupo se tendrá que $(a \star b')' = (b')' \star a' \in
+H$. Al tratarse de un grupo, se cumple la propiedad asociativa y por tanto
+se tiene que $(b')' = b$, con lo que se tiene $b \star a' \in H$ y, por
+tanto, $b \rrel_H a$.
+
+% TODO Creo que se debería demostrar en algún punto que $(a')' = a$, en todo
+% grupo.
+
+Se cumple la propiedad transitiva. Si $a \rrel_H b$ y $b \rrel_H c$,
+entonces $a \star b' \in H$ y $b \star c' \in H$. Como la operación $\star$
+es interna en $H$, resulta que
+
+\begin{align*}
+  (a \star b') \star (b \star c')
+    &= a \star (b' \star b) \star c' \\
+    &= a \star e \star c' \\
+    &= (a \star e) \star c' \\
+    &= a \star c' \\
+\end{align*}
+
+\noindent ya que en todo grupo se cumple la propiedad asociativa de sus
+elementos. Por tanto, $a \rrel_H c$.
+
+
+% TODO Definición de clase lateral por la derecha y por la izquierda.
+
+Estudiemos cómo son las clases de equivalencia de $\rrel_H$.
+
+
+% ----------------------------------
+
+
+Primero, demostraremos que esta clase de equivalencia induce una clase
+lateral por la derecha.
+
+Dirección 1: Si $a \mathcal{R}_H b$, entonces $a \in H \star b$.
+
+Dado que $a \star b' \in H$, podemos escribir:
+
+$$ \exists h \in H. \ a \star b' = h $$
+
+Multiplicando por $b$ a la derecha,
+
+\begin{align*}
+  h &= a \star b' \\
+  h \star b &= (a \star b') \star b = a \star (b' \star b) = a \star e = a \\
+\end{align*}
+
+\noindent Esto muestra que $a$ pertenece a la clase lateral derecha de $b$:
+
+$$ a \in H \star b = \{ h \star b \st h \in H \} $$
+
+Por lo tanto, la relación de equivalencia $a \mathcal{R}_H b$ implica que
+$a$ pertenece a la clase lateral derecha $H \star b$.
+
+Dirección 2: Si $a \in H \star b$, entonces $a \rrel_H b$.
+
+Supongamos ahora que $a \in H \star b$, es decir, existe $h \in H$ tal que:
+
+$$ a = h \star b $$
+
+Multiplicando por $b'$ a la derecha, tenemos que
+
+$$ a \star b' = h \in H $$
+
+\noindent Esto implica que la relación de equivalencia $a \rrel_H b$ se
+cumple.
+
+Conclusión. Hemos probado que:
+
+$$ a \rrel_H b \iff a \star b' \in H \iff a \in H \star b $$
+
+Esto demuestra que la relación de congruencia definida por $a \star b' \in
+H$ induce la clase lateral derecha:
+
+$$ H \star b = \{ h \star b \st h \in H \} $$
+
+Comentario sobre unicidad de clases laterales.
+
+Dado que $H$ es un subgrupo, las clases laterales derechas $H \star b$
+forman una partición del grupo $G$. Cada elemento pertenece exactamente a
+una clase lateral derecha, lo que confirma que la relación de congruencia $a
+\star b' \in H$ clasifica los elementos de $G$ en clases laterales derechas.
+
+Conclusión final
+
+La clase de equivalencia de un elemento $a$ bajo la relación $a \star b' \in
+H$ está dada por:
+
+$$ [a] = H \star a = \{ h \star a \st h \in H \} $$
+
+Esto demuestra formalmente que la relación $a \rrel_H b \iff a \star b' \in
+H$ genera clases laterales por la derecha.
+
+
+
+% ------------------------------------------
+
+
+
+\iffalse
+Por un lado,
+tenemos que
+
+Sea $a \in G$,
+se tiene que la clase de equivalencia del elemento $a$ por $\rrel_H$ es
+
+$$ [a] = a \star H = \{a \star h \st h \in H\} $$
+
+% TODO Esta notación a \star H ...
+
+En efecto, si $b \in [a]$, entonces el elemento $h = b \star a'$ pertenecerá
+a $H$. De esto se deduce que $b = h \star a = a \star h$. Recíprocamente, si
+$b = a \star h$ con $h \in H$, entonces $b \star a' = h \in H$. 
+
+% En el libro hay un error. La relación de equivalencia congruencia módulo
+% un subgrupo definida así es por la derecha y las clases de equivalencia
+% serán clases de equivalencia por la derecha, tal y como pongo aquí.
+\fi
+
+La expresión de las clases de equivalencia permite deducir las propiedades
+siguientes:
+
+Propiedad. Toda clase de equivalencia de la relación $\rrel_H$ es
+equipotente a $H$.
+
+En efecto, sea $a \in G$ y $[a]$ la clase de $a$. Sea la aplicación $\phi: H
+\longrightarrow [a]$ definida por $\phi(h) = a \star h$ para todo $h \in H$.
+De la expresión de $[a]$ se deduce que $\phi$ es sobreyectiva. La
+inyectividad de $\phi$ resulta de la propiedad cancelativa que se satisface
+en todo grupo.
+
+Propiedades. Si $\card(G)$ es finito, entonces cualquier subgrupo $H$ cumple
+que $\card(H)$ es un divisor de $\card(G)$.
+
+Supongamos que $G$ tiene $n$ elementos y sea $k$ el número de elementos de
+$H$. Por la propiedad anterior, todas las clases de equivalencia tienen $k$
+elmentos. Denotaremos al conjunto cociente $G/\rrel_H$ por $G/H$. Como
+
+$$ G = \bigcup_{[a] \in G/H} [a] \ \text{y si} \ [a], [b] \in G/H.
+\quad [a] \neq [b] \implies [a] \cap [b] = \emptyset $$
+
+\noindent resulta que $n = ck$, siendo $c$ el número de clases distintas. En
+consecuencia, $k$ es un divisor de $n$.
+
+En un grupo con un número finito de elmentos, a $\card(G)$ se le denomina
+\emph{orden} del grupo $C$.
+
+Ejemplo. Entre los conjuntos cocientes que hemos estudiado, ya nos hemos
+encontrado algunos que pueden ser considerados como conjuntos cocientes
+asociados a un subgrupo dado. En concreto, si tomamos $n\zset$ como subgrupo
+de $\zset$, o $2\pi\zset$ como subgrupo de $\rset$, véase el ejercicio 4.16
+TKTK, obtenemos precisamente los conjuntos cocientes de los ejemplos 3.10 y
+3.11 TKTK, los enteros módulo $n$, $\zset/n\zset$ y los números reales
+módulo $2\pi$, $\rset/2\pi\zset$.
+
+
+
+
+
+
+
+
+

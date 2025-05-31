@@ -1,0 +1,123 @@
+
+
+
+
+Para comenzar a hablar de estructuras algebraicas, debemos definir primero
+las operaciones, que son un tipo de aplicaciones. Según las propiedades que
+cumpla una operación sobre un conjunto, se tendrá un tipo de estructura
+algebraica.
+
+Definición. Operación interna. Dado un conjunto $E$, una \emph{operación
+interna} $R$ en $E$ es una aplicación de $E \times E$ en $E$, es decir, $R
+\in \mathcal{F}(E \times E, E)$.
+
+Se trata, por tanto, de una aplicación que asocia un elemento de $E$ a todo
+par ordenado $(a, b)$ de elementos de $E$.
+
+Hay quien prefiere llamar \emph{ley de composición interna} a las
+operaciones internas.
+
+% TODO Operación binaria interna??
+
+% TODO Operaciones externas.
+
+En lugar de usar una notación de tipo función, como $R(a, b)$, lo usual es
+usar la notación mediante un operador infijo, es decir, escribir los dos
+argumentos entre un símbolo que represente a la operación, como $a \star b$,
+$a \circ b$, $a + b$, etc. Esto es lo más común, aunque algunas operaciones
+internas se representan en simbología de función.
+
+Por cierto, si se fija, en uno de los ejemplos hemos usado el signo de la
+suma, $+$, que evidentemente, ya conoce desde hace muchos años. La suma en
+los números reales, así como en los otros conjuntos en los que se suele
+definir, es una operación interna.
+
+A este respecto, tal y como dijimos antes, vamos a aumentar el grado de
+abstracción y puede que hablemos de la suma, `$+$', con un sentido diferente
+al que suele tener, incluyendo aquí a operaciones distintas. Por ejemplo, la
+operación suma existe tanto para números reales como para matrices
+cuadradas. Tal y como veremos aquí, se trata en realidad de dos operaciones
+distintas, aunque las representemos por el mismo signo, $+$, y las llamemos
+igual. La prueba está en que algunas de sus propiedades son distintas. Así,
+aunque para la suma de números reales se cumple lo que se conoce como la
+propiedad cancelativa, que viene a decir que, para $a, b \in \rset$, si $ax
+= ay$ y $a \neq 0$, entonces $x = y$, esta propiedad no se da para la suma
+de matrices cuadradas. Bastaría el siguiente contraejemplo para demostrarlo:
+
+$$
+  \begin{pmatrix}
+  1 & 2 \\
+  3 & 6
+  \end{pmatrix}
+  \begin{pmatrix}
+  5 & 3 \\
+  -1 & 1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+  1 & 2 \\
+  3 & 6
+  \end{pmatrix}
+  \begin{pmatrix}
+  3 & 1 \\
+  0 & 2
+  \end{pmatrix}
+$$
+
+\noindent siendo, evidentemente,
+
+$$
+  \begin{pmatrix}
+  5 & 3 \\
+  -1 & 1
+  \end{pmatrix}
+  \neq
+  \begin{pmatrix}
+  3 & 1 \\
+  0 & 2
+  \end{pmatrix}
+$$
+
+Se podría decir que el álgebra abstracta es un área muy básica de las
+matemáticas. Básica no en el sentido de fácil, sino en que en esta nos
+movemos cerca de la base matemática. Una prueba de ello es que estamos
+constantemente hablando de conjuntos.
+
+Veamos algunos ejemplos más de operaciones internas que ya conocemos. La
+intersección y la unión en el conjunto $\powset(\Omega)$ de las partes de un
+conjunto $\Omega$, que representamos por los símbolos `$\cap$' y `$\cup$',
+respectivamente, serían operaciones internas, ya que, para todo $A, B \in
+\powset(\Omega)$, se tiene que $A \cap B \in \powset(\Omega)$ y $A \cup B
+\in \powset(\Omega)$.
+
+También, la composición en el conjunto $\mathcal{F}(\Omega)$ de las
+aplicaciones de un conjunto $\Omega$ en sí mismo; símbolo `$\circ$'.
+
+La suma, la resta y el producto en los conjuntos $\nset$, $\zset$, $\qset$ o
+$\rset$; `$+$', `$-$' y `$\cdot$', aunque el producto también se representa
+a veces como `$\times$' o por la notación en aposición.
+
+La división en los conjuntos $\qset^*$ o $\rset^*$; `$/$'.
+
+La suma y el producto en el conjunto de matrices cuadradas de orden $n$;
+`$+$' y `$\times$'.
+
+La conjunción y la disyunción en el conjunto de proposiciones lógicas;
+`$\land$' y `$\lor$'.
+
+El máximo común divisor y el mínimo común múltiplo en $\nset^*$; `$\gcd()$'
+y TKTK. También hay quien usa notación infija, como `$\land$' y `$\lor$',
+para estas operaciones TKTK.
+
+El producto vectorial en el espacio euclídeo tridimensional; `$\times$' o
+`$\wedge$'.
+
+La resta en $\nset$, `$-$', o el producto escalar en el espacio euclídeo
+tridimensional, `$\cdot$', no son operaciones internas, sino externas. No
+vamos a necesitar de las operaciones externas en esta asignatura.
+
+% TODO Definir operación externa.
+
+
+
+

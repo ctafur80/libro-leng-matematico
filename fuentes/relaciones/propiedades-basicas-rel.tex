@@ -1,0 +1,84 @@
+
+
+
+
+Dada una relación homogénea $\rrel \subseteq U \times U$, definimos las
+propiedades siguientes:
+
+1. Propiedad. Reflexiva. Cuando
+
+\[ \forall x \in U. \ x \rrel x \]
+
+\noindent Dicho de otra forma, si
+
+\[ \{(x, x) \st x \in U\} \subseteq \rrel \]
+
+2. Propiedad. Simétrica. Cuando
+
+$$ \forall x, y \in U. \ \text{Si} \ x \rrel y, \ \text{entonces} \ y \rrel
+x $$
+
+\noindent Se puede definir también como
+
+\[ \rrel^{-1} \subseteq \rrel \]
+
+La justificación de este hecho se podría deducir de la definición anterior.
+Además de esa expresión, sería evidente que para cualquier $(x, y) \in
+\rrel$ se tiene que $(y, x) \in \rrel^{-1}$. Así, uniendo ambas, se tiene
+
+\[ \rrel^{-1} \subseteq \rrel \]
+
+% TODO
+
+No lo tengo del todo claro. Quizás esto requeriría que se diera la propiedad
+transitiva. TKTK. ¿No sería al revés? $\rrel \subseteq \rrel^{-1}$.
+
+3. Propiedad. Antisimétrica. Cuando
+
+\[ \forall x, y \in U \ \text{Si} \ x \rrel y \ \text{e} \ y \rrel x, \
+\text{entonces} \ x = y \]
+
+\noindent Dicho de otro modo,
+
+\[ \rrel^{1} \cap \rrel \subseteq \{(x, x) \st x \in U\} \]
+
+4. Propiedad. Transitiva. Cuando
+
+\[ \forall x, y, z \in U \ \text{se cumple que, si} \ x \rrel y \ \text{e} \
+y \rrel z, \ \text{entonces} \ x \rrel z \]
+
+\noindent También se puede definir del modo siguiente
+
+\[ \rrel \circ \rrel \subseteq \rrel \]
+
+Advierta que, aunque diga ``cuando'' o ``si'', para estas definiciones, en
+realidad sería ``si y solo si''. En estos casos tampoco hay que ser tan
+exacto en el lenguaje, pues sería un engorro TKTK. Se sobrentiende que en
+las definiciones se está usando en realidad una bicondicional, aunque no se
+haga realmente.
+
+En realidad, se podría haber definido sobre relaciones en el sentido amplio,
+es decir, no solo sobre las homogéneas, pero tampoco nos interesa en esta
+asignatura. Ya que nos centramos en las homogéneas, vamos a definir más
+adelante otros términos centrándonos en estas.
+
+Observaciones. La relación del ejemplo TKTK no es reflexiva. Para que una
+relación en $\rset$ sea reflexiva, la representación del grafo de la
+relación debe contener a la diagonal, $y = x$.
+
+La relación del ejemplo TKTK es simétrica, pero no la relación del ejemplo
+TKTK. Para que una relación en $\rrel$ sea simétrica, la representación del
+grafo de la relación debe ser simétrica respecto a la recta diagonal del
+primer cuadrante.
+
+
+
+
+
+
+
+
+
+
+
+

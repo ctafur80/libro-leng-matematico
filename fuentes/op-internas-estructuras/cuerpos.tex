@@ -1,0 +1,230 @@
+
+
+
+Definición. Cuerpo. Un \emph{cuerpo} (\emph{field}) es un anillo conmutativo
+unitario en el que todo elemento no nulo es invertible respecto del
+producto.
+
+Al añadir la propiedad del elemento inverso ---eso sí, solo para los
+elementos no nulos---, se cumplirá también la del elemento neutro. Por
+tanto, se podría dar también la definición siguiente. Sea $\mathbb{K}$ un
+conjunto y sean $+$ y $\cdot$ dos operaciones internas definidas en
+$\mathbb{K}$. La terna ordenada $(\mathbb{K}, +, \cdot)$ es un cuerpo si se
+satisfacen las condiciones siguientes:
+
+\begin{enumerate}
+  \item $(\mathbb{K}, +)$ es un grupo conmutativo.
+  \item $(\mathbb{K}^*, \cdot)$ es un grupo conmutativo.
+  \item La operación $\cdot$ es distributiva respecto de la operación $+$ en
+    $\mathbb{K}$.
+\end{enumerate}
+
+\noindent o, si desea la lista de todas las propiedades:
+
+\begin{enumerate}
+  \item Las operaciones $+$ y $\cdot$ son asociativas en $\mathbb{K}$.
+  \item Las operaciones $+$ y $\cdot$ son conmutativas en $\mathbb{K}$.
+  \item La operación $\cdot$ es distributiva respecto de la operación $+$ en
+    $\mathbb{K}$.
+  \item Existen los elementos neutros de la suma y el producto en
+    $\mathbb{K}$, designados por 0 y 1, respectivamente.
+  \item Para todo elemento $a$ de $\mathbb{K}$, existe el simétrico de $a$
+    respecto de la suma; que se designa por ${-a}$ y se le llama
+    \emph{opuesto} de $a$.
+  \item Para todo elemento $a \neq 0$ de $\mathbb{K}$, existe el simétrico
+    de $a$ para el producto; que se designa por $a^{-1}$ y se le llama el
+    \emph{inverso} de $a$.
+\end{enumerate}
+
+En cualquier caos, algunas de estas no sería necesario demostrarlas. Por
+ejemplo, al cumplirse la propiedad conmutativa del producto, bastaría con
+demostrar uno de los dos casos de la propiedad distributiva del producto
+respecto de la suma.
+
+No existe un consenso ampliamente extendido sobre la definición de
+\emph{cuerpo}. Así, en esta no siempre se incluye la conmutatividad del
+producto. En esa terminología, cuando el producto es conmutativo lo indican
+denominándolo \emph{cuerpo conmutativo}. Nosotros entenderemos que en un
+cuerpo el producto es siempre conmutativo. Seguimos en este sentido la
+terminología inglesa que denomina \emph{field} a lo que hemos denominado
+\emph{cuerpo}, mientras que, si el producto no es conmutativo, se denomina
+\emph{anillo de división} (\emph{division ring}).
+
+Como ve, el conjunto de un cuerpo se suele representar en una tipografía
+algo extraña; como con barras dobles. TKTK. Se trata de la misma que se usa
+para los conjuntos numéricos típicos, como los enteros, $\zset$, los reales,
+$\rset$, etc., sean o no cuerpos, que llevamos viendo a lo largo de toda la
+asignatura. TKTK.
+
+Definición. Subcuerpo. Si $(\mathbb{K}, +, \cdot)$ es un cuerpo y $H$ es un
+subconjunto de $\mathbb{K}$, consideramos las restricciones a $H$ de las
+operaciones en $\mathbb{K}$. Se dice que $(H, +, \cdot)$ es un
+\emph{subcuerpo} de $(\mathbb{K}, +, \cdot)$ si es a su vez un cuerpo.
+
+Ejemplo. En los capítulos siguientes, veremos que $(\qset, +, \cdot)$,
+$(\rset, +, \cdot)$ y $(\cset, +, \cdot)$ son cuerpos. Sin embargo, $(\zset,
++, \cdot)$ o $(\zset[\sqrt{2}], +, \cdot)$ no son cuerpos, pues en estos no
+todos los elementos no nulos son invertibles; por ejemplo, $x = 2$ no es
+invertible para las operaciones típicas $+$ y $\cdot$, tanto en $\zset$ como
+en $\zset[\sqrt{2}]$.
+
+Ejemplo. Consideramos el conjunto cociente de los enteros módulo 3,
+$\zset/3\zset = \{0, 1, 2\}$, de los ejemplos 3.10 y 4.17, y definimos las
+operaciones $+$ y $\cdot$ tomando representantes en cada clase de
+equivalencia; esto es:
+
+$$ [a] + [b] = [a + b] \quad \text{y} \quad [a] \cdot [b] = [a \cdot b] $$
+
+Se comprueba que las operaciones no dependen de los representantes escogidos
+(véase el ejercicio 9 TKTK) y se obtienen las tablas siguientes:
+
+$$
+  \begin{array}{c|ccc}
+  + & 0 & 1 & 2 \\
+  \hline
+  0 & 0 & 1 & 2 \\
+  1 & 1 & 2 & 0 \\
+  2 & 2 & 0 & 1
+  \end{array}
+  \qquad
+  \begin{array}{c|ccc}
+  \cdot & 0 & 1 & 2 \\
+  \hline
+  0 & 0 & 0 & 0 \\
+  1 & 0 & 1 & 2 \\
+  2 & 0 & 2 & 1
+  \end{array}
+$$
+
+Es fácil comprobar que $(\zset/3\zset, +, \cdot)$ es un cuerpo. Veámoslo.
+
+Las propiedades asociativa y conmutativa de ambas operaciones se ``heredan''
+de las de la suma y del producto en $\zset$. Si desea demostrar de otra
+forma la conmutativa, simplemente basta con que compruebe que las tablas son
+simétricas respecto de la diagonal principal.
+
+En cuanto a la propiedad distributiva del producto respecto a la suma,
+aunque serían dos, para todo $a, b, c \in \zset/3\zset$,
+
+\begin{align*}
+  a(b + c) &= ab + ac \\
+  (b + c)a &= ba + ca \\
+\end{align*}
+
+\noindent en realidad basta con demostrar una de las dos, tal y como
+dijimos, ya que se cumple la propiedad conmutativa. Habría que ir probando
+con valores. Por ejemplo, si $a = 0$, es fácil ver que se cumple. En
+realidad, habría que comprobarlo para todos los casos posibles en la tabla.
+
+Elemento neutro de la suma. Es el valor 0 ya que no altera al valor con el
+que se le opere. En general, debe comprobarlo tanto en filas como en
+columnas, pero, como se cumple la propiedad conmutativa para esta operación,
+bastaría con hacerlo para las filas solamente, por ejemplo. Con el del
+producto sería similar. Se trata del elemento 1.
+
+Elemento simétrico de la suma. Serían $1' = 2$, $2' = 1$ y $0' = 0$, tanto
+en filas y en columnas. El del producto también se daría, excepto para el 0,
+pero en este no es neceario que se dé ya que es el elemento neutro de la
+suma. Concretamente, se tendría que $1' = 1$ y $2' = 2$.
+
+Todo esto hace que $(\zset/3\zset, +, \cdot)$ cumpla todas las condiciones
+para ser un cuerpo.
+
+Ejemplo. Consideremos ahora el conjunto cociente de los enteros módulo 4,
+$\zset/4\zset = \{0,1,2,3\}$,  y definiendo de nuevo las operaciones $+$ y
+$\cdot$ mediante
+
+$$ [a] + [b] = [a + b] \quad \text{y} \quad [a] \cdot [b] = [a \cdot b] $$
+
+\noindent se obtiene:
+
+$$
+  \begin{array}{c|cccc}
+  + & 0 & 1 & 2 & 3 \\
+  \hline
+  0 & 0 & 1 & 2 & 3 \\
+  1 & 1 & 2 & 3 & 0 \\
+  2 & 2 & 3 & 0 & 1 \\
+  3 & 3 & 0 & 1 & 2
+  \end{array}
+  \qquad
+  \begin{array}{c|cccc}
+  \cdot & 0 & 1 & 2 & 3 \\
+  \hline
+  0 & 0 & 0 & 0 & 0 \\
+  1 & 0 & 1 & 2 & 3 \\
+  2 & 0 & 2 & 0 & 2 \\
+  3 & 0 & 3 & 2 & 1
+  \end{array}
+$$
+
+En este caso, $(\zset/4\zset, +, \cdot)$ es un anillo conmutativo unitario
+pero no es un cuerpo  pues 2 no es invertible para el producto. Basta
+recorrer la fila o columna del 2 para observar que no existe ningún elemento
+$a$ tal que $2 \cdot a = 1$.
+
+Del ejercicio 4.23 se deduce que un cuerpo no puede tener divisores de cero.
+Por tanto  si $\mathbb{K}$ es un cuerpo, entonces el producto es una
+operación interna en $\mathbb{K}^* = \mathbb{K} \setminus \{0\}$.
+
+Propiedades. Como todo cuerpo $(\mathbb{K}, +, \cdot)$ es un anillo
+conmutativo, se satisfacen en particular todas las propiedades, válidas para
+anillos, de la proposición 4.21. Asimismo, $(\mathbb{K}^*, \cdot)$ satisface
+todas las propiedades válidas para grupos de la proposición 4.12. En
+particular, en un cuerpo $(\mathbb{K}, +, \cdot)$ se cumple:
+
+\begin{itemize}
+  \item $a \cdot 0 = 0 \cdot a = 0$ para todo $a \in \mathbb{K}$.
+  \item Si $a \cdot b = 0$ entonces $a = 0$ o $b = 0$. Es decir, no hay
+    divisores de $0$.
+  \item Si $ab = ac$ y $a \neq 0$ entonces $b = c$. Propiedad cancelativa en
+    $(\mathbb{K}^*, \cdot)$.
+  \item Si $a \neq 0$ y $b \in \mathbb{K}$, la ecuación $ax + b = 0$ tiene
+    solución única en $\mathbb{K}$, siendo esta $x = -ba^{-1}$.
+\end{itemize}
+
+Al igual que para los anillos se introdujo el concepto de subanillo, el
+concepto de subcuerpo es análogo.
+
+Definición. Subcuerpo. Sea $(\mathbb{K}, +, \cdot)$ un cuerpo y sea $H$ un
+subconjunto no vacío de $\mathbb{K}$ donde consideramos las restricciones de
+las operaciones de $\mathbb{K}$. Si $(H, +, \cdot)$ cumple las condiciones
+de cuerpo, será entonces un \emph{subcuerpo} (\emph{subfield}) de
+$(\mathbb{K}, +, \cdot)$.
+
+Teniendo en cuenta las proposiciones 4.14 y 4.33, resulta inmediata la
+proposición siguiente.
+
+Proposición. Caracterización de Subcuerpo. Sean $(\mathbb{K}, +, \cdot)$ un
+cuerpo y $H$ un subconjunto de $\mathbb{K}$ con al menos dos elementos
+distintos. $H$ es un subcuerpo de $\mathbb{K}$ si y solo si se cumplen:
+
+\begin{itemize}
+  \item $a - b \in H$ para todo $a, b \in H$.
+  \item $ab^{-1} \in H$ para todo $a, b \in H^*$.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

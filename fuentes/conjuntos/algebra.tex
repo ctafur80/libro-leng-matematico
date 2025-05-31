@@ -1,0 +1,117 @@
+
+
+
+
+Todos los conjuntos que se consideran en este apartado son subconjuntos de
+un conjunto $U$, es decir, tan solo se utilizan elementos del conjunto
+$\powset(U)$. En la tabla~\ref{tbl:algebra_conjuntos}, eseribiremos las
+propiedades de la unión, la intersección y la complementación en
+$\powset(U)$, muchas de las cuales ya han sido enunciadas. Paralelamente,
+escribiremos las leyes lógicas correspondientes a las propiedades
+características o predicados que definen los conjuntos por comprensión. Se
+puede pues razonar sobre los subconjuntos de $U$ directamente o sobre las
+propiedades que los definen por comprensión. En todo lo que sigue $A$, $B$ y
+$C$ son tres subconjuntos cualesquiera de $U$ tales que
+
+\begin{align*}
+  A &= \{x \in U \st P_x\} \\
+  B &= \{x \in U \st Q_x\} \\
+  C &= \{x \in U \st R_x\} \\
+\end{align*}
+
+% TODO Quizás, pasar la tabla a array.
+
+\begin{table}
+  \centering
+  \caption{Propiedades del álgebra de conjuntos.}
+  \label{tbl:algebra_conjuntos}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Propiedades} & \textbf{Expresión lógica} \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Leyes de idempotencia}} \\
+    \hline
+    $A \cup A = A$ & $P_x \lor P_x \iff P_x$ \\
+    $A \cap A = A$ & $P_x \land P_x \iff P_x$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes conmutativas}} \\
+    \hline
+    $A \cup B = B \cup A$ & $P_x \lor Q_x \iff Q_x \lor P_x$ \\
+    $A \cap B = B \cap A$ & $P_x \land Q_x \iff Q_x \land P_x$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes asociativas}} \\
+    \hline
+    $(A \cup B) \cup C = A \cup (B \cup C)$ & $(P_x \lor Q_x) \lor R_x \iff
+      P_x \lor (Q_x \lor R_x)$ \\
+    $(A \cap B) \cap C = A \cap (B \cap C)$ & $(P_x \land Q_x) \land R_x
+      \iff P_x \land (Q_x \land R_x)$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes distributivas}} \\
+    \hline
+    $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ & $P_x \lor (Q_x \land
+      R_x) \iff (P_x \lor Q_x) \land (P_x \lor R_x)$ \\
+    $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ & $P_x \land (Q_x \lor
+      R_x) \iff (P_x \land Q_x) \lor (P_x \land R_x)$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes identidad}} \\
+    \hline
+    $A \cup \emptyset = A$ & $P_x \lor 0 \iff P_x$ \\
+    $A \cup U = U$ & $P_x \lor \tautol \iff \tautol$ \\
+    $A \cap \emptyset = \emptyset$ & $P_x \land \contrad \iff \contrad$ \\
+    $A \cap U = A$ & $P_x \land 1 \iff P_x$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes del complementario}} \\
+    \hline
+    $A \cup \overline{A} = U$ & $P_x \lor \neg P_x \iff \tautol$ \\
+    $A \cap \overline{A} = \emptyset$ & $P_x \land \neg P_x \iff \contrad$ \\
+    $\overline{\overline{A}} = A$ & $\neg (\neg P_x) \iff P_x$ \\
+    $\overline{U} = \emptyset$ & $\neg \tautol \iff \contrad$ \\
+    $\overline{\emptyset} = U$ & $\neg \contrad \iff \tautol$ \\
+
+    \hline
+
+    \multicolumn{2}{|c|}{\textbf{Leyes de De Morgan}} \\
+    \hline
+    $\overline{A \cup B} = \overline{A} \cap \overline{B}$ & $\neg (P_x \lor
+      Q_x) \iff \neg P_x \land \neg Q_x$ \\
+    $\overline{A \cap B} = \overline{A} \cup \overline{B}$ & $\neg (P_x
+      \land Q_x) \iff \neg P_x \lor \neg Q_x$ \\
+
+    \hline
+  \end{tabular}
+\end{table}
+
+Advierta que no es lo mismo 0 y 1 que $\contrad$ y $\tautol$. Los primeros
+son valores lógicos (falso y verdadero) mientras que los otros son tablas
+(contradicción y tautología).
+
+\begin{exercise}
+  Demuestre, utilizando las propiedades de la tabla anterior, que para todo
+  $A, B \in \powset(U)$, se cumple que $(A \cap B) \cup (A \cap
+  \overline{B}) = A$.
+
+  \begin{align*}
+    (A \cap B) \cup (A \cap \overline{B})
+      &= A \cap (B \cup \overline{B}) \\
+      &= A \cup U \\
+      &= A
+  \end{align*}
+\end{exercise}
+
+
+
+
+
+
+

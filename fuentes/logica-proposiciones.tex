@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+\section{Forma clausulada de proposiciones}
+
+Dada una proposición compuesta por un conjunto de proposiciones simples \(p,
+q, r, \dots\), se busca encontrar una proposición equivalente escrita
+únicamente como una conjunción (\(\land\)) de disyunciones (\(\lor\)). En
+estas disyunciones solo pueden aparecer las proposiciones simples o sus
+negaciones. Por ejemplo:
+
+\[ (p \lor \neg q) \land (\neg p \lor r). \]
+
+Esta forma se denomina \textbf{forma clausulada de la proposición} o
+\emph{forma normal conjuntiva}, y cada una de las disyunciones se llama
+\textbf{cláusula lógica}.
+
+Tener la forma clausulada de una proposición facilita verificar su validez,
+ya que solo es necesario comprobar que todas las cláusulas son verdaderas.
+
+\subsection{Ejemplo 1.17: Forma clausulada de un condicional}
+
+La primera ley del condicional:
+
+\[ p \to q \iff \neg p \lor q \]
+
+\noindent establece que la forma clausulada de un condicional \(p \to q\)
+está formada por una única cláusula:
+
+\[ \neg p \lor q. \]
+
+\subsection{Pasos para obtener la forma clausulada}
+
+Para transformar una proposición a su forma clausulada, se siguen estos
+pasos:
+
+\begin{enumerate}
+    \item \textbf{Eliminar conectores bicondicionales
+      (\(\leftrightarrow\)):} Se sustituye cada bicondicional \(p
+      \leftrightarrow q\) por:
+
+    \[ (p \to q) \land (q \to p). \]
+
+    \item \textbf{Eliminar conectores condicionales (\(\to\)):} Se utiliza
+    la equivalencia:
+
+    \[ p \to q \iff \neg p \lor q. \]
+
+    \item \textbf{Aplicar las leyes de De Morgan:} Transformar negaciones
+    que actúan sobre conjunciones o disyunciones:
+
+    \begin{align*}
+        \neg (p \land q) &\iff (\neg p \lor \neg q), \\
+        \neg (p \lor q) &\iff (\neg p \land \neg q).
+    \end{align*}
+
+    \item \textbf{Distribuir conjunciones sobre disyunciones:} Usar las
+    leyes distributivas:
+
+    \begin{align*}
+        p \lor (q \land r) &\iff (p \lor q) \land (p \lor r), \\
+        p \land (q \lor r) &\iff (p \land q) \lor (p \land r).
+    \end{align*}
+\end{enumerate}
+
+\subsection{Ejemplo 1.18: Forma clausulada de un bicondicional}
+
+La ley del bicondicional establece que:
+
+\[ p \leftrightarrow q \iff (p \to q) \land (q \to p). \]
+
+Aplicando la equivalencia del condicional (\(p \to q \iff \neg p \lor q\)),
+la forma clausulada del bicondicional \(p \leftrightarrow q\) es:
+
+\[ (\neg p \lor q) \land (\neg q \lor p). \]
+
+
+
+\subsection{Ejemplo 1.19: Forma clausulada de una proposición compleja}
+
+Dada la proposición:
+
+\[ p \to (p \land q), \]
+
+transformemos paso a paso para obtener su forma clausulada:
+
+\begin{enumerate}
+    \item \textbf{Eliminar el condicional:} Usamos la equivalencia \(p \to
+      (p \land q) \iff \neg p \lor (p \land q)\):
+
+    \[ \neg p \lor (p \land q). \]
+
+    \item \textbf{Distribuir la disyunción:} Aplicamos la ley distributiva:
+
+    \[ (\neg p \lor p) \land (\neg p \lor q). \]
+
+    \item \textbf{Simplificar:} Usamos la ley del tercero excluido (\(\neg p
+    \lor p \iff 1\)):
+
+    \[ 1 \land (\neg p \lor q). \]
+
+    \item \textbf{Eliminar redundancias:} Finalmente, obtenemos:
+
+    \[ \neg p \lor q. \]
+\end{enumerate}
+
+La forma clausulada de \(p \to (p \land q)\) es:
+
+\[ \neg p \lor q. \]
+
+
+\subsection{Ejemplo 1.20: Comprobación de una tautología mediante forma clausulada}
+
+Consideremos la proposición:
+
+\[ [(p \to q) \land (q \to r)] \to (p \to r). \]
+
+Transformémosla a su forma clausulada paso a paso:
+\begin{enumerate}
+    \item \textbf{Eliminar conectores condicionales:}
+
+    \[ [(p \to q) \land (q \to r)] \to (p \to r) \iff \neg [(p \to q) \land
+    (q \to r)] \lor (p \to r). \]
+
+    \item Sustituyendo \(p \to q \iff \neg p \lor q\), obtenemos:
+
+    \[ \neg [(\neg p \lor q) \land (\neg q \lor r)] \lor (\neg p \lor r). \]
+
+    \item Aplicar la ley de De Morgan a \(\neg [(\neg p \lor q) \land (\neg
+      q \lor r)]\):
+
+    \[ [(\neg \neg p \land \neg q) \lor (\neg \neg q \land \neg r)] \lor
+    (\neg p \lor r). \]
+
+    \item Simplificar las dobles negaciones:
+
+    \[ [(p \land \neg q) \lor (q \land \neg r)] \lor (\neg p \lor r). \]
+
+    \item Distribuir la disyunción:
+
+    \[ (p \lor \neg p \lor r) \land (\neg q \lor \neg p \lor r) \land (q
+    \lor \neg p \lor r). \]
+
+    \item Simplificar usando las leyes de identidad y el tercero excluido
+      (\(p \lor \neg p \iff 1\)):
+
+    \[ 1 \land (\neg q \lor \neg p \lor r) \land (q \lor \neg p \lor r). \]
+
+    \item Finalmente, eliminando redundancias:
+
+    \[ (\neg q \lor \neg p \lor r) \land (q \lor \neg p \lor r). \]
+\end{enumerate}
+
+Dado que la forma clausulada es válida en todas las combinaciones posibles
+de \(p, q, r\), la proposición original es una tautología.
+
+
+
+
+
+
+
+

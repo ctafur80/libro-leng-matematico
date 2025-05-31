@@ -1,0 +1,387 @@
+
+
+
+Si en un conjunto tenemos definidas una relación de orden y una operación
+interna, el hecho de que se cumplan ciertas propiedades de compatibilidad
+entre ambas permite trabajar con ``desigualdades'', en el sentido amplio del
+término, de manera similar a como se trabaja con las desigualdades a las que
+estamos acostumbrados. Por simplificar, en este apartado supondremos que
+todas las operaciones son conmutativas.
+
+
+
+
+
+\subsection{Grupo ordenado}
+
+Definición. Grupo Ordenado. Supongamos que tenemos un grupo conmutativo $(G,
++)$ siendo $0$ el elemento neutro y ${-a}$ el elemento simétrico de $a$,
+para todo $a \in G$. Sea una relación de orden $\preceq$ definida sobre $G$.
+Se dice que $(G, +, \preceq)$ es un \emph{grupo ordenado} (\emph{ordered
+group}) si la relación de orden es compatible con la suma, esto es:
+
+$$ \text{para todo} \ a, b, c \in G. \ a \preceq b \implies a + c \preceq b
++ c $$
+
+\noindent Advierta que, como se ha requerido que se trate de un grupo
+conmutativo, se podría haber puesto la condición $a \preceq b \implies c + a
+\preceq c + b$.
+
+Por analogía con los números, se dice que el elemento $a \in G$ es
+\emph{positivo} si se cumple $0 \preceq a$ y el conjunto de los elementos
+positivos de $G$ se denota por $G_+$. Se dice que el elemento $a \in G$ es
+\emph{negativo} si $a \preceq 0$, denotándose al conjunto de los números
+negativos como $G_{-}$.
+
+Indistintamente se escribe $b \succeq a$ para indicar $a \preceq b$. y se
+lee como $b$ ``sucede'', ``es posterior'' o ``es mayor o igual'' a $a$. La
+notación $a \prec b$ o $b \succ a$ indica $a \preceq b$ y $a \neq b$. Tal y
+como hemos dicho al comienzo de esta sección, interpretaremos estas
+expresiones en el sentido amplio. TKTK.
+
+Podemos deducir fácilmente una propiedad de los grupos ordenados.
+
+Propiedad. En un grupo ordenado $(G, +, \preceq)$, dados dos elementos
+cualesquiera $a, b \in G$ positivos, es decir, tales que $0 \preceq a$ y $0
+\preceq b$, se cumple
+
+$$ 0 \preceq a + b $$
+
+Demostración.
+
+\begin{align*}
+  a &\succeq 0 \\
+  a + b &\succeq 0 + b = b \\
+\end{align*}
+
+\noindent El primer paso se justifica por la condición de grupo ordenado. De
+aquí, como tenemos las condiciones
+
+\begin{align*}
+  0 &\preceq b \\
+  b &\preceq a + b \\
+\end{align*}
+
+\noindent y, como toda relación de orden cumple la propiedad transitiva, al
+``encadenarlas'' obetenemos que
+
+$$ 0 \preceq a + b $$
+
+Veamos algunas propiedades más de los grupos ordenados.
+
+Proposición. En un grupo ordenado $(G, +, \preceq)$ se satisfacen las
+propiedades siguientes, para todo $a, a', b, b' \in G$:
+
+\begin{enumerate}
+  \item $a \preceq b$ si y solo si $b + ({-a}) \in G_+$.
+  \item Si $a \preceq b$ y $c \preceq d$, entonces $a + c \preceq b + d$.
+  \item Si $a \preceq b$, entonces ${-b} \preceq {-a}$.
+\end{enumerate}
+
+Demostración.
+
+1.
+
+\begin{align*}
+  a &\preceq b \\
+  a + ({-a}) &\preceq b + ({-a}) \\
+  0 &\preceq b + ({-a}) \\
+\end{align*}
+
+\noindent Esto es lo mismo que decir $b + ({-a}) \in G_+$.
+
+Recíprocamente, partiendo de $b + ({-a}) \in G_+$, transformamos esta
+expresión en una equivalente: $0 \preceq b + ({-a})$, y, operando con esta,
+
+\begin{align*}
+  0 &\preceq b + ({-a}) \\
+  0 + a &\preceq [b + ({-a})] + a = b + [({-a}) + a] = b + 0 = b \\
+  a &\preceq b \\
+\end{align*}
+
+\noindent Se ha hecho uso de la propiedad asociativa, que debe cumplirse al
+tratarse de un grupo.
+
+2. Al tratarse de un grupo ordenado, al sumar $c \in G$ en las dos partes de
+la expresión $a \preceq b$, se tiene, $a + c \preceq b + c$. De forma
+similar, al sumar $b \in G$ en los dos lados de la expresión $c \preceq d$,
+se obtiene $b + c \preceq b + d$. Haciendo uso de la propiedad transitiva de
+la relación de orden, se tiene que $a + c \preceq b + d$.
+
+3. Tal y como vimos antes, de $a \preceq b$ se obtiene que $0 \preceq b +
+({-a})$. Entonces, operando,
+
+\begin{align*}
+  0 &\preceq b + ({-a}) \\
+  ({-b}) + 0 &\preceq ({-b}) + [b + ({-a})] \\
+  {-b} &\preceq [({-b}) + b] + ({-a}) = 0 + ({-a}) = {-a} \\
+\end{align*}
+
+Observación. La notación numérica de $b - a$ por $b + ({-a})$ se extiende a
+todos los grupos con notación aditiva. De esta manera, el primer punto de la
+proposición anterior se puede expresar como
+
+$$ a \preceq b \ \text{si y solo si} \ b - a \in G_+ $$
+
+Si la relación de orden es total, se dice que el grupo es un \emph{grupo
+totalmente ordenado}, y, en caso contrario, \emph{grupo parcialmente
+ordenado}.
+
+Ejemplo.
+
+En los capítulos siguientes veremos que $(\zset, +, \leq)$, $(\qset, +,
+\leq)$ y $(\rset, +, \leq)$ son grupos totalmente ordenados. Por otra parte,
+$(\qset^*, \cdot, \leq)$ no es un grupo ordenado pues el orden no es
+compatible con el producto, ya que $1 \leq 2$ y sin embargo para $c = {-1}$
+no se cumple que $1({-1}) \leq 2({-1})$. En cambio, sí es un grupo
+totalmente ordenado el conjunto de los números racionales estrictamente
+positivos, $(\qset_+^*, \cdot, \leq)$.
+
+Consideramos en $\rset^2$ la suma definida componente a componente, es
+decir, $(a,b) + (c,d) = (a + c, b + d)$ y el orden producto definido en el
+ejemplo 3.23,
+
+$$ (a, b) \leq_P (c, d) \ \text{si y solo si} \ a \leq c \ \text{y} \ b \leq
+d $$
+
+% TODO No me queda claro que esto esté explicado aquí.
+
+\noindent entonces $(\rset^2, +, \leq_P)$ es un grupo parcialmente ordenado,
+pues, si $(a, b) \leq_P (c, d)$ y $(e, f) \in \rset^2$, entonces $(a, b) +
+(e, f) \leq_P (c, d) + (e, f)$, puesto que de $a \leq c$ y $b \leq d$ se
+deduce que $a + e \leq c + e$ y $b + f \leq d + f$.
+
+Sea $\mathcal{F}([0,1], \rset)$ el conjunto de funciones reales de variable
+en $[0,1] \subseteq \rset$ donde, como es habitual, se define la suma de
+funciones y el orden para todo $f, g \in \mathcal{F}([0,1], \rset)$,
+mediante:
+
+\begin{itemize}
+  \item $(f + g)(x) = f(x) + g(x)$ para todo $x \in [0,1]$.
+  \item $f \leq g$ si y solo si $f(x) \leq g(x)$ para todo $x \in [0,1]$.
+\end{itemize}
+
+\noindent Se comprueba fácilmente que $(\mathcal{F}([0,1], \rset), +, \leq)$
+es un grupo parcialmente ordenado. Veámoslo.
+
+Lo primero que deseamos comprobar es que la operación suma así definida es
+una operación interna. Supongamos dos funciones arbitrarias $f, g \in
+\mathcal{F}([0, 1], \rset)$. Tal y como se ve en la definición de esa suma
+de funciones, se están usando dos sumas en realidad, aunque se representen
+ambas por el mismo signo. Vamos a crear un símbolo nuevo para evitar una
+posible confusión de estas operaciones. Vamos a designar por $\oplus$ a la
+suma de funciones, dejando con $+$ a la de números reales. Se tendría
+entonces lo siguiente:
+
+$$ (f \oplus g)(x) = f(x) + g(x) \ \text{para todo} \ x \in [0,1] $$
+
+\noindent en lugar de lo que se escribió antes.
+
+En lo que respecta a la demostración de que $\oplus$ es una operación
+interna, es muy fácil ver que $f(x) + g(x)$ lo es.
+
+Ahora, veamos si se cumple la propiedad asociativa.
+
+\begin{align*}
+  [(f \oplus g) \oplus h](x)
+    &= [(f \oplus g)(x)] + h(x) \\
+    &= [f(x) + g(x)] + h(x) \\
+    &= f(x) + [g(x) + h(x)] \\
+    &= f(x) + [(g \oplus h)(x)] \\
+    &= [f \oplus (g \oplus h)](x)
+\end{align*}
+
+En cuanto al elemento neutro, creemos que se trata de la función constante
+de valor 0, es decir,
+
+$$
+  \begin{array}{rccc}
+    I:  & [0, 1]  & \longrightarrow & \rset \\
+        & x       & \longmapsto     & 0
+  \end{array}
+$$
+
+\noindent Se comprueba fácilmente que con esta se tiene
+
+$$ (f \oplus I)(x) = (I \oplus f)(x) = f(x) $$
+
+\noindent pues, por ejemplo,
+
+$$ (f \oplus I)(x) = f(x) + I(x) = f(x) + 0 = f(x) $$
+
+Para el elemento simétrico, veamos cuál sería esa función $f' \in
+\mathcal{F}([0, 1], \rset)$. Debería cumplirse lo siguiente
+
+$$ (f \oplus f')(x) = (f' \oplus f)(x) = I(x) $$
+
+Intuimos que puede tratarse de $f'(x) = {-f(x)}$. Comprobemos si es esta en
+realidad. Por un lado, tenemos
+
+$$ (f \oplus f')(x) = f(x) + ({-f(x)}) = f(x) - f(x) = I $$
+
+\noindent con lo que se cumple. En el otro sentido de operación sería lo
+mismo.
+
+Ahora, habría que ver si se trata de un grupo ordenado mediante la relación
+de orden dada.
+
+Por claridad, al igual que hemos hecho con la suma, con estas dos relaciones
+de orden usaremos dos notaciones distintas. La relación de las funciones la
+designaremos por $\preceq$, mientras que la de los números reales será
+$\leq$.
+
+La relación de orden dada sería, con esta notación, la siguiente:
+
+$$ f \preceq g \ \text{si y solo si} \ f(x) \leq g(x) \ \text{para todo} \ x
+\in [0,1] $$
+
+La condición para que se trate de un grupo ordenado sería:
+
+$$ \text{para todo} \ f, g, h \in \mathcal{F}([0, 1], \rset). \ f \preceq g
+\implies f \oplus h \preceq g \oplus h $$
+
+La hipótesis de partida, $f \preceq g$, es lo mismo que decir que $f(x) \leq
+g(x)$ para todo $x \in [0, 1]$, tal y como dice la definición de esa
+relación de orden $\preceq$. Entonces, partiendo de esta y operando,
+
+\begin{align*}
+  f &\preceq g \\
+  f(x) &\leq g(x) \\
+  f(x) + h(x) &\leq g(x) + h(x) \\
+  (f \oplus h)(x) &\preceq (g \oplus h)(x) \\
+\end{align*}
+
+\noindent siendo $h \in \mathcal{F}([0, 1], \rset)$. Queda confirmado
+entonces que se trata de un grupo ordenado.
+
+Quedaría por comprobar si se trata de un grupo totalmente ordenado o no. Es
+fácil ver que el orden no es total, pues pueden existir dos funciones en
+$\mathcal{F}([0, 1], \rset)$ que no estén relacionada en ninguno de los dos
+sentidos posibles. TKTK.
+
+
+
+
+
+\subsection{Anillo ordenado}
+
+Supongamos ahora que la relación de orden está definida sobre un conjunto
+$A$ donde tenemos definida una estructura de anillo conmutativo $(A, +,
+\cdot)$. Ya vimos cómo en $\qset$ el orden $\leq$ no es en general
+compatible con el producto de números racionales, aunque sí es compatible
+cuando nos restringimos a números positivos. Con el propósito de incluir a
+casos como este en el conjunto de anillos ordenados, la definición de estos
+será algo más laxa para el producto que para la suma.
+
+Definición. Anillo Ordenado. Se dice que $(A, +, \cdot, \leq)$ es un
+\emph{anillo ordenado} si se cumplen:
+
+\begin{itemize}
+  \item Para todo $a,b,c \in A$, si $a \preceq b$, entonces $a + c \preceq b
+    + c$.
+  \item Para todo $a,b \in A$, si $0 \preceq a$ y $0 \preceq b$, entonces $0
+    \preceq ab$.
+\end{itemize}
+
+Debido a esto, para todo anillo ordenado $(A, +, \cdot, \preceq)$ se tiene
+que $(A, +, \preceq)$ es un grupo ordenado. En consecuencia, en un anillo
+ordenado se satisfacen todas las propiedades de la proposición 4.35. De
+nuevo se designa por $A_+$ al conjunto de elementos positivos de $A$, $A_+ =
+\{a \in A \st 0 \preceq a\}$.
+
+Si la relación de orden es total, se dice que el anillo es un \emph{anillo
+totalmente ordenado}. Si además el anillo es un cuerpo, hablaremos de un
+\emph{cuerpo ordenado}. En un anillo totalmente ordenado, se define el
+\emph{valor absoluto} de $a \in A$ mediante
+
+$$
+  |a| =
+  \begin{cases}
+    a & \text{si} \ 0 \preceq a \\
+    {-a} & \text{si} \ a \prec 0
+  \end{cases}
+$$
+
+Proposición. En un anillo totalmente ordenado $(A, +, \cdot, \preceq)$ se
+satisfacen las propiedades siguientes:
+
+\begin{enumerate}
+  \item $a \preceq b$ si y solo si $b - a \in A_+$.
+  \item Si $a \preceq b$ y $a' \preceq b'$, entonces $a + a' \preceq b + b'$.
+  \item Si $a \preceq b$, entonces ${-b} \preceq {-a}$.
+  \item Si $a \preceq b$ y $0 \preceq c$, entonces $ac \preceq bc$.
+  \item Si $a \preceq b$ y $c \preceq 0$, entonces $bc \preceq ac$.
+  \item Para todo $a \in A$, $a^2 \succeq 0$.
+  \item Si $A$ es un anillo unitario, entonces $0 \prec 1$.
+  \item $|a| \succeq 0$ para todo $a \in A$ y $|a| = 0$ si y solo si $a =
+    0$.
+  \item $|ab| = |a||b|$ para todo $a, b \in A$.
+  \item $|a + b| \preceq |a| + |b|$ para todo $a, b \in A$. A esta propiedad
+    se la conoce como la \emph{desigualdad triangular}.
+\end{enumerate}
+
+Si además $(A, +, \cdot)$ es un \emph{cuerpo}, también se cumplen:
+
+\begin{enumerate}
+  \setcounter{enumi}{10}
+  \item Si $a \succ 0$, entonces $a^{-1} \succ 0$.
+  \item Si $0 \prec a \preceq b$, entonces $b^{-1} \preceq a^{-1}$.
+  \item Si $a \preceq b \prec 0$, entonces $b^{-1} \preceq a^{-1}$.
+\end{enumerate}
+
+% TODO Ir mejorando esto, cuando tenga tiempo.
+
+Demostración. Las propiedades 1, 2 y 3 se deducen de la proposición 4.35. La
+propiedad 8 se deduce sin ninguna dificultad.
+
+4. Si $a \preceq b$ y $0 \preceq c$ entonces $0 \preceq b - a$ y $0 \preceq
+c$. En consecuencia $0 \preceq (b-a)c = bc - ac$ y por tanto $ac \preceq
+bc$.
+
+5. Si $a \preceq b$ y $c \preceq 0$ entonces $0 \preceq b - a$ y $0 \preceq
+{-c}$. En consecuencia $0 \preceq (b-a)({-c}) = {-bc} + ac$ y por tanto $bc
+\preceq ac$.
+
+6. Si $0 \preceq a$ de la propiedad ii) de la definición de anillo ordenado
+se deduce que $0 \preceq a \cdot a = a^2$. Si $a \preceq 0$, multiplicando
+ambos miembros por $a$ y aplicando la propiedad 5 se deduce que $0 \preceq a
+\cdot a$.
+
+7. Basta tener en cuenta que $1 = 1 \cdot 1 = 1^2$ y por tanto $1 \geq 0$.
+Teniendo en cuenta que $1 \neq 0$ se obtiene que $0 < 1$.
+
+8. Se comprueba sin dificultad en los cuatro casos posibles: i) $0 \preceq
+a$ y $0 \preceq b$. ii) $a < 0$ y $0 \preceq b$. iii) $0 \preceq a$ y $b <
+0$. iv) $a < 0$ y $b < 0$.
+
+10. Observemos, en primer lugar, que para todo $a \in A$ se cumple
+trivialmente que $a \preceq |a|$ y $-a \preceq |a|$.
+
+\begin{itemize}
+  \item Si $0 \preceq a + b$, entonces $|a + b| = a + b \preceq |a| + |b|$.
+  \item En caso contrario, $a + b < 0$ y en consecuencia, $|a + b| = {-a} -
+    b \preceq |a| + |b|$.
+\end{itemize}
+
+11. Supongamos $a > 0$. Si fuera $a^{-1} \preceq 0$, multiplicando por $a$
+ambos términos se deduce que $1 = aa^{-1} \preceq a \cdot 0 = 0$, que
+contradice la propiedad 7.
+
+12 y 13. En ambos casos se obtiene que $ab > 0$. Por la propiedad anterior
+se deduce que $(ab)^{-1} = b^{-1}a^{-1} = a^{-1}b^{-1} > 0$. Entonces, si $a
+\preceq b$, multiplicando ambos miembros por $a^{-1}b^{-1}$, se obtiene
+$aa^{-1}b^{-1} \preceq ba^{-1}b^{-1}$, esto es, $b^{-1} \preceq a^{-1}$.
+
+En los capítulos 5 y 6, veremos que el anillo $(\zset, +, \cdot, \preceq)$ y
+los cuerpos $(\qset, +, \cdot, \preceq)$ y $(\rset, +, \cdot, \preceq)$ son
+ordenados. También veremos en el capítulo 7, como la propiedad 6 de la
+proposición anterior, nos permite afirmar que no existe en el conjunto de
+los números complejos ninguna relación de orden total compatible con la
+estructura de cuerpo.
+
+
+
+
+
+
+

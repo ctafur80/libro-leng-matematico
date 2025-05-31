@@ -1,0 +1,430 @@
+
+
+
+
+
+Consideramos ahora conjuntos donde están definidas dos operaciones internas.
+Por analogía con las operaciones internas de números, así como por
+comodidad, denotaremos a la primera operación como suma, $+$, mientras que a
+la segunda la llamaremos producto, $\cdot$. El utilizar otros signos, por
+ejemplo, $\oplus$ y $\odot$, para representar las operaciones sería quizás
+más correcto pero muy engorroso y no lo haremos en general. Solo
+utilizaremos otros símbolos en algún ejemplo donde las operaciones, ya
+conocidas, tienen su propio símbolo.
+
+Definición. Anillo. Sea $A$ un conjunto y sean $+$ y $\cdot$ dos operaciones
+internas definidas en $A$. Diremos que la terna ordenada $(A, +, \cdot)$ es
+un \emph{anillo} (\emph{ring}) si se satisfacen:
+
+\begin{enumerate}
+  \item $(A, +)$ es un grupo conmutativo.
+  \item La operación $\cdot$ es asociativa.
+  \item Se cumple la propiedad distributiva de $\cdot$ respecto de $+$, esto
+    es,
+
+    $$ a(b + c) = ab + ac \quad \text{y} \quad (b + c)a = ba + ca $$
+\end{enumerate}
+
+Si además la operación $\cdot$ es conmutativa, se dice que $(A, +, \cdot)$
+es un \emph{anillo conmutativo}. Advierta que con la suma sí debe cumplirse
+para ser anillo.
+
+Si $(A, +, \cdot)$ es un anillo con elemento neutro para el producto siendo
+este distinto del elemento neutro de la suma, se dice que $(A, +, \cdot)$ es
+un \emph{anillo unitario}.
+
+Muchos autores engloban bajo el término \emph{anillo} a lo que nosotros
+hemos llamado \emph{anillo unitario}.
+
+Seguiremos las mismas notaciones aditiva y multiplicativa que utilizamos en
+los grupos. En concreto:
+
+\begin{itemize}
+  \item El elemento neutro de la suma se llama \emph{elemento nulo} y se
+    designa por $0$.
+  \item El simétrico de $a$ para $+$ se denomina \emph{elemento opuesto} y
+    se designa por ${-a}$.
+  \item El elemento neutro del producto, si existe, se denomina
+    \emph{elemento unidad} y se designa por $1$. Además, se cumple que $1
+    \neq 0$.
+  \item El simétrico de $a$ para $\cdot$, si existe, se denomina
+    \emph{elemento inverso} de $a$ y se designa por $a^{-1}$. Creo que en
+    inglés lo llaman \emph{reciprocal element}. En este caso se dice que $a$
+    es un elemento \emph{invertible} o \emph{inversible}.
+\end{itemize}
+
+Se sigue un convenio muy extendido que hay sobre la notación cuando se
+tienen operaciones suma y producto que consiste en otorgar prioridad a la
+operación producto respecto de la otra. Así, podemos escribir las
+expresiones anteriores: $ab + ac$ y $ba + ca$, con el significado al que
+estamos todos acostumbrados, es decir, como si se tratase de $(ab) + (ac)$ y
+$(ba) + (ca)$. Evidentemente, aunque se explique ahora, este es el sentido
+de la propiedad mencionada antes. El propósito de esta regla en la notación
+es evitar tener expresiones muy sobrecargadas de símbolos.
+
+Si $n \in \nset^*$, las notaciones $na$ y $a^n$ se escriben para indicar
+
+$$ na = \underbrace{a + a + \cdots + a}_{\text{$n$ veces}} \quad \text{y}
+\quad a^n = \underbrace{a \cdot a \cdot \cdots \cdot a}_{\text{$n$ veces}}
+$$
+
+Ejemplo. Casos de anillos conocidos. Veremos en capítulos posteriores que
+los conjuntos $(\zset, +, \cdot)$, $(\qset, +, \cdot)$, $(\rset, +, \cdot)$
+y $(\cset, +, \cdot)$ son anillos conmutativos unitarios respecto de la suma
+y el producto habituales.
+
+El conjunto de matrices cuadradas de orden $n$ respecto de la suma y del
+producto de matrices es un anillo unitario no conmutativo.
+
+Ejercicio. Demuestre que el conjunto $\powset(\Omega)$ es un anillo
+conmutativo y unitario respecto de la diferencia simétrica $\triangle$ como
+``suma'' y la intersección $\cap$ como ``producto''.
+
+Solución. Vimos en el ejercicio 4.10 que $(\powset(\Omega), \triangle)$ era
+un grupo conmutativo. Vimos en el capítulo 2 que la intersección es
+asociativa, conmutativa y con elemento unidad, que era $\Omega$. Solo nos
+quedaría por comprobar si se cumple la propiedad distributiva de $\cap$
+respecto de $\triangle$. En efecto, para todo $A,B,C \in \powset(\Omega)$ se
+tiene:
+
+\begin{align*}
+  A \cap (B \triangle C)
+    &= A \cap [(B \cap \overline{C}) \cup (\overline{B} \cap C)] \\
+    &= (A \cap B \cap \overline{C}) \cup (A \cap \overline{B} \cap C) \\
+    &= (A \cap B \cap \overline{A}) \cup (A \cap B \cap \overline{C}) \cup
+      (\overline{A} \cap A \cap C) \\
+    &= ((A \cap B) \cap (\overline{A} \cap \overline{C})) \cup
+      ((\overline{A} \cap \overline{B}) \cap (A \cap C)) \\
+    &= ((A \cap B) \cap (\overline{A \cap C})) \cup ((\overline{A \cap B})
+      \cap (A \cap C)) \\
+    &= (A \cap B) \triangle (A \cap C) \\
+\end{align*}
+
+\noindent con lo que queda confirmado.
+
+Proposición. Propiedades en un anillo. Sea $(A, +, \cdot)$ un anillo. Se
+tiene:
+
+\begin{enumerate}
+  \item Para todo $a \in A$, $a \cdot 0 = 0 \cdot a = 0$. Esta propiedad se
+    expresa también diciendo que $0$ es \emph{absorbente} para el producto.
+
+  \item Para todo $a, b \in A$, $({-a})b = a({-b}) = {-(ab)}$ y
+    $({-a})({-b}) = ab$.
+
+  \item Si además el anillo $A$ es \emph{conmutativo}, se satisfacen las
+    igualdades:
+
+    \begin{align*}
+      (a + b)^2 &= a^2 + b^2 + 2ab \\
+      (a + b)(a - b) &= a^2 - b^2 \\
+      (a + b)^n &= \binom{n}{0} a^n + \binom{n}{1} a^{n-1}b + \dots +
+        \binom{n}{n-1} ab^{n-1} + \binom{n}{n} b^n \\
+          &= \sum_{p=0}^{n} \binom{n}{p} a^{n-p} b^p \quad \text{para todo }
+          n \in \nset^*
+    \end{align*}
+\end{enumerate}
+
+Demostración.
+
+1. Usando la propiedad distributiva del producto respecto de la suma, $a
+\cdot 0 = a(0 + 0) = a \cdot 0 + a \cdot 0$ y por la propiedad cancelativa
+de todo grupo, aplicándola a la suma, se deduce que $a \cdot 0 = 0$. La otra
+igualdad se hace de manera análoga.
+
+2. De $(ab) + [(-a)b] = (a + (-a))b = 0 \cdot b = 0$, se deduce que $ab$ y
+$(-a)b$ son opuestos, es decir, $(-a)b = -(ab)$. Las otras igualdades son
+análogas.
+
+3. Las dos primeras igualdades se obtienen teniendo en cuenta que $ab = ba$.
+Si no se tratase de un anillo conmutativo, no se cumplirían. La tercera de
+esas igualdades suele recibir el nombre de binomio de Newton. Haremos una
+demostración haciendo uso del Principio de Inducción.
+
+Para $n = 1$ el resultado es trivial.
+
+Supongamos que la fórmula es cierta para $n$, esto es,
+
+$$ (a + b)^n = \binom{n}{0} a^n + \binom{n}{1} a^{n-1}b + \cdots +
+\binom{n}{n-1} ab^{n-1} + \binom{n}{n} b^n $$
+
+\noindent y demostremos que
+
+$$ (a + b)^{n+1} = \binom{n+1}{0} a^{n+1} + \binom{n+1}{1} a^n b + \cdots +
+\binom{n+1}{n} ab^n + \binom{n+1}{n+1} b^{n+1} $$
+
+\indent En efecto,
+
+\begin{align*}
+  (a + b)^{n+1}
+    &= (a + b)^n (a + b) \\
+    &= \left[ \binom{n}{0} a^n + \binom{n}{1} a^{n-1}b + \cdots +
+      \binom{n}{n-1} ab^{n-1} + \binom{n}{n} b^n \right](a + b) \\
+    &= \binom{n}{0} a^{n+1} + \binom{n}{1} a^n b + \cdots +
+      \binom{n}{n-1} ab^n + \binom{n}{n} b^{n+1} \\
+    &= \binom{n}{0} a^{n+1} + \left[\binom{n}{1} + \binom{n}{0}\right]
+      a^n b + \left[\binom{n}{2} + \binom{n}{1}\right] a^{n-1}b^2 +
+      \cdots \\
+    &+ \left[\binom{n}{n} + \binom{n}{n-1}\right] ab^n + \binom{n}{n}
+    b^{n+1} \\
+\end{align*}
+
+Teniendo en cuenta que
+
+$$ 1 = \binom{n}{0} = \binom{n+1}{0} $$
+
+\noindent y
+
+$$ \binom{n}{n} = \binom{n+1}{n+1} $$
+
+\noindent y
+
+$$ \binom{n+1}{p} = \binom{n}{p} + \binom{n}{p-1} $$
+
+\noindent conocida esta última como la Fórmula de Pascal, se obtiene
+
+$$ (a + b)^{n+1} = \binom{n+1}{0} a^{n+1} + \binom{n+1}{1} a^n b +
+\binom{n+1}{2} a^{n-1}b^2 + \dots + \binom{n+1}{n} ab^n + \binom{n+1}{n+1}
+b^{n+1} $$
+
+Aunque se haga uso aquí de la Fórmula de Pascal, no se demostrará. Puede
+consultar cualquier texto sobre combinatoria para encontrar una demostración
+de esta.
+
+
+
+
+\subsection{Divisores de cero}
+
+En un anillo $(A, +, \cdot)$, se dice que el elemento $a \in A$ siendo $a
+\neq 0$ es un \emph{divisor de cero} si existe $b \in A$ siendo $b \neq 0$
+tal que $ab = 0$.
+
+Ejemplo. En los anillos $\zset$, $\qset$ y $\rset$ no existen divisores de
+cero.
+
+Sí existen divisores de cero en el anillo $(\powset(\Omega), \triangle,
+\cap)$, pues todo subconjunto $A$ de $\Omega$ tal que $A \neq \emptyset$ y
+$A \neq \Omega$ es un divisor de cero ya que $A \cap \overline{A} =
+\emptyset$.
+
+También hay divisores de cero en el anillo de las matrices cuadradas de
+orden 2. Por ejemplo, se tiene que
+
+$$
+  A =
+  \begin{pmatrix}
+    1 & 1 \\
+    {-1} & -1
+  \end{pmatrix}
+$$
+
+\noindent es un divisor de cero, pues tomando
+
+$$
+  B =
+  \begin{pmatrix}
+    {-1} & 1 \\
+    1 & -1
+  \end{pmatrix}
+$$
+
+\noindent se tiene que
+
+$$
+  AB =
+  \begin{pmatrix}
+    1 & 1 \\
+    {-1} & {-1}
+  \end{pmatrix}
+  \begin{pmatrix}
+    {-1} & 1 \\
+    1 & {-1}
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    0 & 0 \\
+    0 & 0
+  \end{pmatrix}
+$$
+
+Ejercicio. Sea $(A, +, \cdot)$ un anillo unitario. Demuestre que si $a \in
+A$ es un divisor de cero entonces $a$ no es invertible. En consecuencia, un
+elemento invertible no puede ser un divisor de cero.
+
+Solución. Vamos a tratar de demostrarlo por contradicción. Supongamos que $a
+\in A$ es un divisor de cero invertible. En consecuencia, existe el inverso
+de $a$, $a^{-1} \in A$, y existe $b \in A$ siendo $b \neq 0$ tal que $ab =
+0$. Multiplicando ambos miembros a la izquierda por $a^{-1}$ se obtiene,
+según el punto de vista,
+
+$$ a^{-1}(ab) = a^{-1}0 = 0 $$
+
+\noindent por un lado, y
+
+$$ a^{-1}(ab) = (a^{-1}a)b = 1 \cdot b = b $$
+
+\noindent por el otro. Con lo que se tiene que $b = 0$, cosa que contradice
+la hipótesis de partida según la cual $a$ era invertible.
+
+Un anillo sin divisores de cero se denomina \emph{anillo íntegro}. Hemos
+considerado únicamente divisores de cero a la izquierda. De manera análoga
+se definen los divisores de cero a la derecha.
+
+Obsérvese si $a$ es un divisor de cero (a la izquierda), entonces cualquier
+elemento $b \neq 0$ tal que $ab = 0$ es un divisor de cero a la derecha y
+viceversa. Por tanto, un anillo íntegro tampoco tiene divisores de cero a la
+derecha.
+
+
+
+
+\subsection{Subanillos e ideales}
+
+Definición. Subanillo. Sea $(A, +, \cdot)$ un anillo y sea $H$ un
+subconjunto no vacío de $A$, $H \subseteq A$. Se dice que $H$ es un
+\emph{subanillo} (\emph{subring}) de $A$ si $(H, +, \cdot)$ es a su vez un
+anillo.
+
+En particular, el subconjunto unitario $H = \{0\}$ con las operaciones
+restringidas de $A$ y el propio anillo $A$ son subanillos de $A$.
+
+Igual que ocurría en los grupos, algunas propiedades de un anillo se
+satisfacen automáticamente en un subconjunto de este con las mismas
+operaciones, como la propiedad asociativa del producto o la propiedad
+distributiva del producto respecto de la suma. Es muy fácil demostrar la
+proposición siguiente, que caracteriza a los subanillos de un anillo dado.
+
+Proposición. Caracterización de Subanillo. Sean $(A, +, \cdot)$ un anillo y
+$H$ un subconjunto no vacío de $A$. $H$ es un subanillo de $A$ si y solo si
+para todo $a, b \in H$ se cumplen:
+
+\begin{itemize}
+  \item $a - b \in H$
+  \item $ab \in H$
+\end{itemize}
+
+Como puede ver, la primera de estas condiciones asegura que $(H, +)$ es un
+subgrupo de $(A, +)$, ya que no es más que la condición de la
+caracterización de subgrupo. Por otro lado, la segunda de las condiciones de
+la caracterización de subanillo significa que el producto es una operación
+interna en $H$.
+
+% TODO Hacer realmente la demostración.
+
+Como en los grupos, a veces es más rápido demostrar que $(H, +, \cdot)$ es
+un anillo por medio de la demostración de que es un subanillo de un anillo
+conocido. Así nos evitamos las propiedades asociativa y conmutativa de la
+suma, la propiedad asociativa del producto y la propiedad distributiva del
+producto respecto a la suma. Todas estas propiedades se ``heredan'' de que
+$(A, +, \cdot)$ es un anillo.
+
+Ejercicio. Demuestre que $\zset[\sqrt{2}] = \{a + b\sqrt{2} \st a, b \in
+\zset\}$ con la suma y producto usuales de $\rset$ es un subanillo de
+$(\rset, +, \cdot)$.
+
+Solución. La forma de demostrarlo se hará mediante la caracterización de
+subanillo. Como ya vimos en el ejercicio 4.15, $(\zset[\sqrt{2}], +)$ era un
+subgrupo de $(\rset, +)$. En cuanto a la propiedad conmutativa de este, esta
+se ``hereda'' de la del grupo $(\rset, +)$.
+
+Respecto a la otra operación, el producto, solo tenemos que demostrar que
+esta operación es interna en $\zset[\sqrt{2}]$. Dados $a, a', b, b' \in
+\zset$, operando tenemos
+
+$$ (a + b\sqrt{2})(a' + b'\sqrt{2}) = (aa' + 2bb') + (ab' + a'b)\sqrt{2} $$
+
+\noindent con lo que se cumple la segunda de las condiciones de
+caracterización de subanillo. Por todo esto, $(\zset[\sqrt{2}], +, \cdot)$
+será un subanillo de $(\rset, +, \cdot)$. Además, $\zset[\sqrt{2}]$ es un
+subanillo unitario pues tiene elemento nulo y elemento unidad, siendo estos
+distintos. El elemento unidad, es decir, el elemento neutro del producto, es
+$1 = 1 + 0\sqrt{2} \in \zset[\sqrt{2}]$.
+
+Ejercicio. ¿Es $n\zset = \{kn \st k \in \zset\}$ un subanillo unitario de
+$\zset$ para $n \in \nset$ siendo $n \geq 2$?
+
+Solución. Ya demostramos en el ejercicio 4.16 que $n\zset$ era un subgrupo
+de $(\zset, +)$. Además, claramente, si $a, b \in n\zset$, entonces $ab \in
+n\zset$. Sin embargo, $1 \notin n\zset$. En este caso, $(n\zset, +, \cdot)$
+es un subanillo no unitario del anillo $(\zset, +, \cdot)$.
+
+De entre los subconjuntos de un anillo, los ideales juegan un papel muy
+relevante, véase por ejemplo, el ejercicio 9. Tal y como se ve en las
+asignaturas del álgebra abstracta, los ideales son la subestructura del
+anillo con cualidades más interesantes; más que los propios subanillos.
+
+Para simplificar la introducción de los ideales, ya que esta no es una
+asignatura de álgebra abstracta, nos limitaremos al caso de anillos
+conmutativos.
+
+Definición. Ideal. Sean $(A, +, \cdot)$ un anillo conmutativo e $I$ un
+subconjunto no vacío de $A$. Se dice que $(I, +, \cdot)$ es un \emph{ideal}
+del anillo $(A, +, \cdot)$, si se cumplen:
+
+\begin{itemize}
+  \item $a - b \in I$ para todo $a, b \in I$.
+  \item $ac \in I$ para todo $a \in I$ y para todo $c \in A$.
+\end{itemize}
+
+Con la primera de las condiciones, se tiene que $(I, +)$ es un subgrupo de
+$(A, +)$. La otra condición es un caso más TKTK.
+
+La diferencia con los subanillos está en la segunda condición de la
+caracterización. El ideal es un concepto más amplio, tal y como se ve, por
+lo que todo subanillo es un ideal.
+
+Ejemplo. El conjunto
+
+$$ n\zset = \{kn \st k \in \zset\} \ \text{para} \ n \in \nset $$
+
+\noindent es un ideal de $\zset$ con sus operaciones usuales. En lo que
+respecta a la suma, es fácil demostrarlo por la primera de las condiciones.
+Para la condición del prodcuto, si $a \in n\zset$ y $c \in \zset$, existe $k
+\in \zset$ tal que $a = kn$ y, en consecuencia, $ac = (kn)c = (kc)n \in
+n\zset$. Para $n = 0$, se obtiene $I = \{0\}$, mientras que para $n = 1$ se
+obtiene $I = \zset$.
+
+$\{0\}$ y $A$ son siempre ideales del anillo $A$.
+
+$\zset[\sqrt{2}]$ no es un ideal de $\rset$ pues tomando $a = 1 \in
+\zset[\sqrt{2}]$ y $c \in \rset \setminus \zset[\sqrt{2}]$, resulta que $ac
+= c \notin \zset[\sqrt{2}]$.
+
+Definición. Si $(A, +, \cdot)$ es un anillo conmutativo y $a \in A$ es un
+elemento fijo, el conjunto
+
+$$ aA = \{ak \st k \in A\} $$
+
+\noindent con esas mismas operaciones, es un ideal de $A$ que se denomina
+\emph{ideal principal} generado por $a$. También se le denota por $(a)$.
+
+Veremos en el capítulo~\ref{ch:enteros} que todos los ideales de $\zset$ son
+principales.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

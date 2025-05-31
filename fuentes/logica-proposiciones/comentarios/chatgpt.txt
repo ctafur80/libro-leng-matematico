@@ -1,0 +1,103 @@
+
+
+
+
+¿Es un sistema axiomático un caso particular de sistema formal? ChatGPT
+
+Sí, puede verse así. Un sistema axiomático es aquel en el que ciertas fórmulas (llamadas
+axiomas) se declaran verdaderas desde el inicio, y junto con reglas de inferencia (o
+reglas de derivación) se generan nuevos teoremas.
+
+Por otro lado, un sistema formal (en un sentido amplio) es cualquier estructura que
+especifica:
+
+Un alfabeto (símbolos y reglas para formar expresiones o fórmulas).
+
+Un conjunto de fórmulas iniciales (que pueden ser axiomas, pero no necesariamente están
+caracterizadas así).
+
+Un conjunto de reglas de formación y reglas de transformación (que indican cómo se
+producen nuevas fórmulas o secuencias de fórmulas a partir de las existentes).
+
+Cuando un sistema formal designa explícitamente algunas fórmulas como axiomas y emplea
+reglas de inferencia para derivar teoremas a partir de ellas, entonces se le denomina
+sistema axiomático. Así, un sistema axiomático es, de hecho, un caso particular de sistema
+formal, cuya diferencia principal es la existencia explícita de axiomas y la intención de
+“deducir” todas las verdades (o teoremas) a partir de estos.
+
+
+------------------------------------------
+
+
+¿Qué es un sistema formal?
+
+Un sistema formal es una estructura lógica que se define de manera completamente sintáctica
+(es decir, a partir de la forma y no del significado). Consta, esencialmente, de los
+siguientes elementos:
+
+ - Un alfabeto o conjunto de símbolos básicos (por ejemplo, letras, conectores lógicos,
+   etc.).
+
+ - Reglas de formación, que describen cómo combinar esos símbolos para formar fórmulas o
+   expresiones bien formadas (p. ej., “si p es fórmula, entonces no p también lo es”).
+
+ - (Opcionalmente) un conjunto de axiomas, que son fórmulas o secuencias de fórmulas que se
+   declaran “verdaderas” o se toman como punto de partida.
+
+ - Reglas de inferencia o de deducción, que establecen cómo obtener nuevas fórmulas
+   (llamadas teoremas o derivaciones) a partir de otras que ya se hayan aceptado (por
+   pertenecer al conjunto de axiomas o haberse deducido con anterioridad).
+
+La clave de un sistema formal es que todas las derivaciones se basan en manipular símbolos
+de acuerdo con estas reglas, sin apelar al significado o la interpretación de los símbolos.
+Esto permite un estudio puramente lógico o sintáctico de la derivación de “verdades” dentro
+del sistema.
+
+
+-----------------------
+
+
+¿Las ciencias de la computación son también un sistema formal?
+
+
+No exactamente. Las ciencias de la computación constituyen un área de conocimiento muy
+amplia que, si bien hace uso de múltiples sistemas formales, no es en sí misma un único
+sistema formal.
+
+Por un lado, en informática teórica (o teoría de la computación) se estudian y definen
+sistemas formales de muy diversa índole (lenguajes formales, autómatas, gramáticas,
+máquinas de Turing, lambda-cálculo, etc.).
+
+Por otro lado, la computación abarca también aspectos empíricos y prácticos (por ejemplo,
+construcción de dispositivos, programación, análisis de eficiencia, ingeniería de software,
+etc.) que no se restringen a la mera manipulación formal de símbolos.
+
+De modo que dentro de las ciencias de la computación, sí se emplean sistemáticamente
+sistemas formales para analizar y modelar problemas, pero las ciencias de la computación,
+en su totalidad, no se reducen a ser un solo sistema formal.
+
+
+
+
+----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

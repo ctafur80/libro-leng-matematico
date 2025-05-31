@@ -1,0 +1,27 @@
+
+
+### Notación '$\Longleftrightarrow$' contra '$\longleftrightarrow$' { #notacion-flecha }
+
+Veamos una particularidad sobre la notación. En contexto matemático,
+usualmente solo se escriben proposiciones que sean verdaderas. Es decir,
+cuando aparece en un texto de matemáticas una proposición como, por ejemplo,
+$p \rightarrow q$ o $p \longrightarrow q$, se entiende que se está afirmando
+que esa proposición es verdadera en ese caso. Por nuestra parte, vamos a ser
+más rigurosos y emplearemos notaciones distintas para cuando se desea
+expresar esto último o si simplemente deseamos expresar alguna idea sobre
+esa proposición condicional. Concretamente, con algo como
+
+$$ p \to q $$
+
+o, si lo prefiere, $p \longrightarrow q$, se expresará simplemente esa
+proposición, sin afirmar si es verdadera o si no lo es. Por el contrario, si
+escribimos
+
+$$ p \implies q $$
+
+o, si lo prefiere, $p \Rightarrow q$, estaremos afirmando que dicha
+proposición condicional es verdadera. Haremos lo mismo con la simbología del
+bicondicional: '$\leftrightarrow$' y '$\longleftrightarrow$' contra
+'$\Rightarrow$' y '$\Longleftrightarrow$'.
+
+

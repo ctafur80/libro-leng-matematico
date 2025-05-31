@@ -1,0 +1,210 @@
+
+
+La existencia de una biyección entre dos conjuntos $A$ y $B$ permite
+emparejar cada elemento de $A$ con un único elemento de $B$, y podemos decir
+de manera coloquial que, si $A$ y $B$ tienen un número finito de elementos,
+entonces el conjunto $A$ tiene tantos elementos como el conjunto $B$.
+
+Definición. Equipotencia de conjuntos. Dos conjuntos $A$ y $B$ se dicen
+\emph{equipotentes} si y solo si existe una biyección entre ellos, y se
+denota $A \equiv B$.
+
+La equipotencia de conjuntos satisface las propiedades siguientes:
+
+\begin{enumerate}
+  \item Reflexiva. $A \equiv A$ puesto que la aplicación identidad es una
+    biyección.
+
+  \item Simétrica. Si $A \equiv B$, entonces existe $f \in \mathcal{F}(A,
+    B)$ biyectiva. Como la aplicación inversa $f^{-1} \in \mathcal{F}(B, A)$
+    es biyectiva, se deduce que $B \equiv A$.
+
+  \item Transitiva. Si $A \equiv B$ y $B \equiv C$, entonces existen dos
+    biyecciones $f \in \mathcal{F}(A, B)$ y $g \in \mathcal{F}(B, C)$.
+    Entonces la aplicación $g \circ f \in \mathcal{F}(A, C)$ es una
+    biyección, por tanto $A \equiv C$.
+\end{enumerate}
+
+Diremos que es una ``relación de equivalencia'' entre conjuntos. Ponemos
+comillas porque en las relaciones de equivalencia definidas en la sección
+TKTK, el marco de la relación es un conjunto. En este caso el marco es la
+colección de todos los conjuntos que no es un conjunto.
+
+Esta ``relación'' de equivalencia nos permite hacer una clasificación del
+conjunto de todos los conjuntos en algo así como sus ``tamaños'', propiedad
+que llamamos \emph{cardinalidad} del conjunto. Se tendrían entonces:
+
+\begin{description}
+  \item[Cardinal 0] es la colección de todos los conjuntos equipotentes con
+    $\emptyset$, y se representa con el símbolo del número $0$.
+
+  \item [Cardinal $n$] es la colección de todos los conjuntos que son
+    equipotentes con $\{1, \ldots, n\} \subseteq \nset^*$, y se representa
+    con el símbolo del número $n$.
+
+  \item [Cardinal de $\nset$ o $\aleph_0$] es la colección de todos los
+    conjuntos equipotentes con $\nset$, y se representa por el símbolo
+    $\aleph_0$, leído ``aleph cero''.\footnotemark
+
+  \item [Cardinal de $\rset$ o $\mathfrak{c}$] es la colección de todos los
+    conjuntos equipotentes con $\rset$, y se representa con
+    $\mathfrak{c}$.\footnotemark
+\end{description}
+
+\footnotetext{Esa letra $\aleph$, llamada \emph{aleph}, es del alfabeto
+hebreo.}
+
+\footnotetext{Advierta que esta letra no es una \emph{c}, aunque se le
+parezca.}
+
+En general, dado un conjunto $A$, llamaremos \emph{número cardinal} de $A$,
+$\text{card}(A)$ o $\text{card} \, A$, a la colección de todos los conjuntos
+equipotentes con el conjunto $A$. La mayoría de las veces lo llamaremos
+simplemente \emph{cardinal}.
+
+Proposición. Decimos que el conjunto $A$ tiene $n$ elementos siendo $n \in
+\nset^*$ si y solo si
+
+$$ \text{card}(A) = n $$
+
+En conjuntos finitos, el concepto de número cardinal está intuitivamente
+asociado con el recuento del número de elementos del conjunto, es decir, con
+lo que comúnmente llamamos \emph{su tamaño}.
+
+Sean un conjunto $A$ que contiene $n$ elementos y un conjunto $B$ que tiene
+$m$ elementos, es decir, $\card(A) = n$ y $\card(B) = m$. Las siguientes
+observaciones son intuitivas y posiblemente el lector ya las conoce. Se
+estudiarán con más rigor y precisión en el capítulo~\ref{ch:naturales}.
+Estas suelen explicarse por conceptos que se estudian en la combinatoria y
+que no se han explicado en esta asignatura. En cualquier caso, si no tiene
+una buena base de combinatoria, es posible que pueda entenderlas
+intuitivamente.
+
+\begin{itemize}
+  \item Si $n < m$, entonces no existen aplicaciones sobreyectivas de $A$ a
+    $B$ puesto que siempre existirá un elemento de $B$ que no estará
+    relacionado con ningún elemento de $A$.
+
+  \item Si $n \leq m$, entonces se pueden definir tantas aplicaciones
+    inyectivas como variaciones \footnotemark (sin repetición) hay de $m$
+    elementos tomados de $n$ en $n$, $V(m, n)$. Es decir, el número de
+    aplicaciones inyectivas distintas es
+
+    $$ \frac{m!}{(m-n)!} $$
+
+    \noindent o, si lo prefiere, de $m(m-1) \cdots (m-n+1)$.
+
+  \item Si $n > m$, entonces no existen aplicaciones inyectivas de $A$ a
+    $B$, puesto que para definir la imagen de todos los elementos de $A$ se
+    tiene que repetir alguna imagen. Esto se podría explicar por otra
+    propiedad de la combinatoria, conocida como el Principio de la
+    Distribución, o Del Palomar.
+
+  \item Si $n = m$, entonces se pueden definir tantas aplicaciones
+    biyectivas como permutaciones de $n$ elementos distintos hay, es decir,
+    hay $n!$ biyecciones distintas de $A$ a $B$.
+
+  \item Si $n \neq m$, entonces no existen aplicaciones biyectivas entre $A$
+    y $B$, puesto que $n < m$ o $n > m$, y esto impide, respectivamente, ser
+    sobreyectiva o ser inyectiva.
+\end{itemize}
+
+\footnotetext{También reciben el nombre de \emph{permutaciones parciales},
+entre otros.}
+
+Una aplicación entre los conjuntos $A$ y $B$ queda determinada al precisar
+la imagen de cada elemento de $A$. Si el conjunto $A$ tiene $n$ elementos y
+el conjunto $B$ tiene $m$ elementos, entonces cada aplicación es una
+variación con repetición de los $m$ elementos de $B$ tomados de $n$ en $n$.
+Por lo tanto, el conjunto de todas las aplicaciones de $A$ a $B$,
+$\mathcal{F}(A, B)$, tiene $m^n$ aplicaciones distintas. Dicho de forma
+simbólica,
+
+$$ \card(\mathcal{F}(A, B)) = \card(B)^{\card(A)} $$
+
+Definición.
+
+\begin{itemize}
+  \item Un conjunto $A$ es \emph{finito} si existe $n \in \nset$ tal que
+    $\text{card}(A) = n$.
+
+  \item Un conjunto $A$ es \emph{infinito} si no es un conjunto finito.
+
+  \item Un conjunto $A$ es un \emph{conjunto numerable} si existe una
+    biyección de los números naturales al conjunto, y se indica escribiendo
+    $\text{card}(A) = \aleph_0$. A veces, lo califican de \emph{infinito
+    numerable}.
+\end{itemize}
+
+Un error que se comete a veces es decir que un conjunto es \emph{contable},
+en lugar de \emph{numerable}.
+
+Ejemplo. Identificación de conjuntos. Sean dos conjuntos $A$ y $B$ tales que
+existe una biyección $f$ entre ambos, es decir $A \equiv B$. Entonces a cada
+subconjunto $A_1$ de $A$ le corresponde un subconjunto $f(A_1)$ y solo uno
+de $B$, puesto que $f^{-1} \circ f(A_1) = A_1$.
+
+En este caso, a cualquier operación de conjuntos que se realice en $A$ le
+corresponde la operación análoga en $B$ con las imágenes de los elementos de
+$A$. En algunos casos, operar en $B$ resulta más cómodo que en $A$ debido a
+la naturaleza de los elementos del conjunto $B$. En estos casos tan solo ha
+de operarse en $B$ y posteriormente aplicar la biyección $f^{-1}$.
+
+Un ejemplo de biyección es la identificación que se produce entre los
+conjuntos $\rset^2 \times \rset$ con $\rset^3$ con la biyección $f((x, y),
+z) = (x, y, z)$, o en general, entre los conjuntos $\rset^n \times \rset^m$
+y $\rset^{n+m}$ mediante la aplicación:
+
+$$ f((x_1, \ldots, x_n), (x_{n+1}, \ldots, x_{n+m})) = (x_1, \ldots,
+x_{n+m}). $$
+
+Otro ejemplo es la identificación del conjunto de vectores libres del plano
+o del espacio con el conjunto $\rset^2$ o $\rset^3$ mediante las coordenadas
+de un vector respecto a una base.
+
+En general, este tipo de identificaciones es muy útil si la biyección
+conserva las estructuras algebraicas de los conjuntos, cuestión que excede
+los contenidos de este capítulo y que se tratará en capítulos posteriores.
+
+Ejemplo. \emph{Inmersión} de conjuntos. Dados dos conjuntos $A$ y $B$ tales
+que existe una inyección $f$ entre ambos, entonces resulta que $f$ es una
+biyección entre $A$ y $f(A)$, es decir $A \equiv f(A)$. Algunas veces se
+identifica el conjunto $A$ con $f(A)$ y en lugar de considerar los elementos
+de $A$, se consideran los de $f(A)$.
+
+Por ejemplo, la identificación entre el conjunto $\nset^*$ y el conjunto
+$\zset^+ = \{z \in \zset \st z \geq 1\}$ mediante la aplicación que al
+número natural $n$ positivo le corresponde el número entero (clase de
+equivalencia, véase el ejemplo 3.8) que contiene al par $(n, 0)$.
+
+Otro ejemplo es la identificación de $\zset$ con el subconjunto de números
+racionales:
+
+$$ \left\{\frac{z}{1} \st z \in \zset\right\} \subseteq \qset $$
+
+En general, este tipo de inmersiones es muy útil si la inyección conserva
+las estructuras algebraicas de los conjuntos, cuestión que excede los
+contenidos de este capítulo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

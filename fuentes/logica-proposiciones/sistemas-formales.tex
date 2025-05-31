@@ -1,0 +1,93 @@
+
+
+
+
+Un \semph{sistema formal} (\emph{formal system}) es una estructura abstracta
+compuesta por símbolos, reglas y procedimientos definidos con precisión,
+utilizada para estudiar la inferencia deductiva, la demostración de teoremas
+y la consistencia de argumentos. Estos sistemas buscan eliminar ambigüedades
+al operar con elementos puramente sintácticos (formales), independientemente
+de su significado semántico. Sus componentes básicos suelen incluir:
+
+\begin{description}
+  \item[Un alfabeto] Es decir, un conjunto de símbolos primitivos como
+    pueden ser letras, operadores lógicos o signos matemáticos, entre otros.
+  \item[Reglas de formación] Normas para construir \emph{fórmulas bien
+    formadas}, es decir, expresiones válidas. Se podría decir que las reglas
+    de formación constituyen la sintaxis, ya que un sistema formal es
+    básicamente una lengua.
+  \item[Axiomas] Proposiciones iniciales que se aceptan sin demostración.
+  \item[Reglas de inferencia] Procedimientos para derivar proposiciones
+    nuevas a partir de axiomas o de proposiciones previas. En los sistemas
+    formales de las matemáticas a esas proposiciones se las suele llamar
+    \emph{teoremas}.
+\end{description}
+
+Ejemplos de sistemas formales
+
+\begin{description}
+  \item[Lógica proposicional] -
+
+    \begin{itemize}
+      \item Alfabeto. Letras proposicionales ($p$, $q$, $r$; también las
+        llaman \emph{variables lógicas}), operadores lógicos ($\neg$,
+        $\land$, $\lor$, $\rightarrow$), paréntesis.
+
+      \item Reglas. Fórmulas como $p \rightarrow q$ son válidas.
+
+      \item Axiomas. Por ejemplo, $p \rightarrow (q \rightarrow p)$.
+
+      \item Regla de inferencia. Por ejemplo, la regla \emph{modus ponens}:
+        si $p \rightarrow q$ y $p$, entonces $q$.
+    \end{itemize}
+
+  \item[Aritmética de Peano] -
+
+    \begin{itemize}
+      \item Alfabeto. Símbolos numéricos (0, $S$, $+$, $\times$), variables.
+      \item Axiomas. Postulados como ``0 es un número natural'' y ``Si $n$
+        es natural, $S(n)$ también lo es''.
+      \item Objetivo. Formalizar las propiedades de los números naturales.
+    \end{itemize}
+
+  \item[Geometría euclidiana] -
+
+    \begin{itemize}
+      \item Axiomas. Los cinco postulados de Euclides (ej: ``Por dos puntos
+        pasa una única recta'').
+      \item Reglas. Deducción de teoremas geométricos mediante razonamiento
+        deductivo.
+    \end{itemize}
+
+  \item[Teoría de conjuntos ZFC] -
+
+    \begin{itemize}
+      \item Alfabeto. Símbolos de pertenencia ($\in$), igualdad,
+        cuantificadores.
+      \item Axiomas. Como el axioma de extensionalidad o el axioma de
+        elección.
+      \item Propósito. Fundamentar las matemáticas desde la teoría de
+        conjuntos.
+    \end{itemize}
+
+  \item[Cálculo lambda] -
+
+    \begin{itemize}
+      \item Alfabeto. Variables, símbolos de abstracción ($\lambda$),
+        aplicación.
+      \item Reglas. Reducción de expresiones para estudiar funciones y
+        computación.
+    \end{itemize}
+\end{description}
+
+Teoremas como los de \semph{Gödel} (incompletitud) muestran que ciertos
+sistemas formales no pueden demostrar todas sus verdades ni garantizar su
+propia consistencia, lo que ha generado debates filosóficos sobre los
+límites del conocimiento formalizado.
+
+
+
+
+
+
+

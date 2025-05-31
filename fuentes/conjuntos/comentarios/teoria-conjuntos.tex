@@ -1,0 +1,173 @@
+
+
+
+
+La teoría de conjuntos actual, que fue desarrollada en su inicio por Georg
+Cantor en el siglo XIX, constituye el fundamento de las matemáticas. El
+propósito de Cantor era tratar cuestiones relacionadas con el infinito, y su
+método allanaba dificultades. Para Cantor, un conjunto es una reunión de
+objetos determinados y bien diferenciados de nuestra intuición o nuestro
+pensamiento, formando una totalidad. Cantor trataba una colección o conjunto
+de objetos como un todo, aceptando implícitamente lo siguiente:
+
+\begin{enumerate}
+  \item Un conjunto es una colección de elementos que cumplen cierta
+    propiedad. Por tanto, queda definido por dicha propiedad. Es decir, tal
+    y como lo hemos definido aquí por comprensión, mediante un predicado.
+  \item Un conjunto es una sola entidad matemática, de modo que puede a su
+    vez ser contenido por otro conjunto.
+  \item Dos conjuntos que tengan los mismos elementos son iguales. Un
+    conjunto está determinado por sus elementos.
+\end{enumerate}
+
+Esta teoría tuvo éxito, pero necesitó ser precisada por otros matemáticos
+como Gottlob Frege, Bertrand Russell, E.~Zermelo, A.~Skolem y A.~Fraenkel.
+Después de varios intentos de axiomatización, teoría de Frege, teoría de
+Russell-Whitehead (PM) y otras, se destacan dos sistemas axiomáticos de la
+teoría de conjuntos: la teoría de conjuntos de Zermelo-Fraenkel (ZF),
+desarrollada por Zermelo, Skolem y Fraenkel, y la teoría de conjuntos de Von
+Newman-Gödel, desarrollada por John von Newman, Bernays y Kurt Gödel.
+
+Tal y como explicamos al comienzo del capítulo, el concepto de
+\emph{conjunto} se encuentra a un nivel tan elemental que no es posible dar
+una definición precisa del mismo. La utilización de palabras como
+\emph{colección}, \emph{familia}, \emph{reunión}, etc. en un intento de
+definirlo, no hacen nada más que emplear el objeto a definir dentro de la
+definición, puesto que esas palabras son sinónimos de la palabra
+\emph{conjunto}.
+
+Es claro que el lenguaje natural es necesario para describir los objetos
+matemáticos y que este posee cierto nivel de ambigüedad, pero las
+definiciones matemáticas deben quedar exentas de ambigüedad aunque se
+formulen con un lenguaje natural.
+
+En la teoría ``ingenua'' de conjuntos, se admite el uso de esas palabras, y
+se acepta la existencia de un universo de objetos, sin importar la
+naturaleza de los objetos. A partir de ese universo se construyen los
+conjuntos como entidad matemática. Un elemento posterior es introducir la
+relación de pertenencia de elementos a conjuntos, $\in$. Al definir
+\emph{conjunto} a partir de una propiedad determinada que deben cumplir sus
+elementos, se producen ciertas paradojas como la de Bertrand Russell, y
+aparecen ``conjuntos enormes'' que producen cierto desasosiego intuitivo y
+lógico.
+
+Dificultades como estas introducen la necesidad de axiomatizar y formalizar
+la teoría de conjuntos para poder obtener resultados profundos. Se renuncia
+a una definición intuitiva de \emph{conjunto}, y se establecen una serie de
+principios (axiomas) que describen el comportamiento de dicho concepto.
+Cualquier resultado obtenido debe ser consecuencia de tales principios.
+
+A continuación exponernos una de las axiomáticas de conjuntos más utilizadas
+con el espíritu de que el lector se dé cuenta de la dificultad que tiene el
+formalizar una teoría. No se trata de que memorice los axiomas; ni siquiera,
+de que comprenda los enunciados de los mismos. Simplemente queremos que vea
+que establecer un lenguaje sin ambigüedad precisa un esfuerzo enorme, y que
+incluso solo comprenderlo requiere de una sólida formación matemática.
+
+La teoría de conjuntos de ZF establece el concepto de \emph{conjunto} como
+elemento primitivo, al igual que la relación de pertenencia. Dispone de los
+axiomas que mostramos a continuación. No tiene que aprendérselos; se
+muestran simplemente con el propósito de TKTK.
+
+\begin{enumerate}
+  \item Axioma de extensión. Dos conjuntos $A$ y $B$ son iguales si
+    contienen los mismos elementos. Es decir, 
+
+    \[ \forall x.\ (x \in A \leftrightarrow x \in B) \implies A = B \]
+
+  \item Axioma del conjunto vacío. Existe un conjunto sin elementos. Es
+    decir,
+
+    \[ \exists \emptyset \ \forall x. \ x \notin \emptyset \]
+
+  \item Axioma de pares. Dados dos conjuntos cualesquiera $A$ y $B$, existe
+    otro conjunto cuyos elementos son únicamente $A$ y $B$, $\{A, B\}$. Es
+    decir,
+
+    \[ \forall A, B \ \exists C \ \forall x. \ [x \in C \leftrightarrow (x =
+    A \lor x = B)] \]
+
+  \item Axioma de la unión. Dado cualquier conjunto de conjuntos, $C$,
+    existe un conjunto, que denominamos ``unión de $C$'' y denotamos por
+    $\cup C$, que contiene a todos los elementos de cada conjunto de $C$. Es
+    decir,
+
+    \[ \forall C \ \exists {\cup C} \ \forall x. \ [x \in {\cup C}
+    \leftrightarrow \exists A. \ (A \in C \land x \in A)] \]
+
+  \item Axioma del conjunto potencia. Para cualquier conjunto $A$, existe
+    otro conjunto, llamado ``conjunto potencia de $A$'' y que denotamos por
+    $\powset(A)$, que contiene todos los subconjuntos de $A$. Es decir,
+
+    \[ \forall A \ \exists \powset(A) \ \forall B.\ [B \in \powset(A)
+    \leftrightarrow \forall x.\ (x \in B \implies x \in A)] \]
+
+  \item Axioma de especificación. Sea $\phi(t)$ una fórmula de un lenguaje
+    de primer orden que contenga una variable libre $t$. Entonces, para
+    cualquier conjunto $A$ existe un conjunto $B$ cuyos elementos son
+    aquellos elementos $x$ de $A$ que cumplen $\phi(x)$. Es decir,
+
+    \[ \forall A \ \exists B \ \forall x.\ [x \in B \leftrightarrow (x \in A
+    \land \phi(x))] \]
+
+  \item Axioma de sustitución. Si $\phi(x, y)$ es una sentencia tal que para
+    cualquier elemento $x$ de un conjunto $A$ existe el conjunto $B = \{y
+    \st \phi(x, y)\}$, entonces existe una función $f: A \to B$ tal que
+    $f(A) = B$.
+
+  \item Axioma de infinitud. Existe un conjunto $A$ tal que $\emptyset \in
+    A$ y tal que si $x \in A$, entonces $x \cup \{x\} \in A$. Es decir,
+
+    \[ \exists A.\ [\emptyset \in A \land (\forall x \in A \ x \cup \{x\}
+    \in A)] \]
+
+  \item Axioma de regularidad. Para todo conjunto no vacío $A$, existe un
+    conjunto $B$ que es elemento de $A$ tal que $A \cap B = \emptyset$. Es
+    decir,
+
+    \[ \forall A \neq \emptyset \ \exists B.\ (B \in A \land \forall x[x \in
+    B \implies x \notin A]) \]
+\end{enumerate}
+
+
+
+
+\subsubsection{Paradojas}
+
+Finalmente, señalamos algunas de las paradojas que hemos citado y que
+motivaron el establecimiento de estos axiomas como la teoría de conjuntos de
+ZF.
+
+% TODO Este no lo entiendo. No sé si se explica mejor en el capítulo de los
+% números naturales.
+
+\paragraph{Paradoja de Cantor} Sea $C$ la colección de todos los conjuntos
+posibles. Por un lado, si $C$ es un conjunto, se cumple que $C \in
+\powset(C)$. Por el otro, como cualquier subconjunto $A \subseteq C$ también
+es un conjunto, $A$ será un elemento de $C$, es decir, $A \in C$. Al darse
+esto para todos los subconjuntos de $C$, es decir, para $\powset(C)$,
+resulta que $\powset(C) \subseteq C$. Esto es una contradicción, tal y como
+se verá en el capítulo~\ref{ch:naturales}.
+
+Obsérvese que también se deduce que $C \in C$, que está en contradicción con
+una de las reglas básicas de las que hemos partido. Por tanto, el concepto
+de ``conjunto de todos los conjuntos'' conduce a una paradoja.
+
+\paragraph{Paradoja de Russell} Sea $M$ la colección de todos los conjuntos
+que no son elementos de sí mismos. es decir:
+
+\[ M = \{X \st X \notin X\} \]
+
+Si $M$ fuera un conjunto, la pregunta que se plantea es: ¿Es $M$ elemento de
+sí mismo? Si $M$ es elemento de $M$, entonces $M \in M$ por definición de
+$M$. Por otro lado, si $M$ no es elemento ele $M$, entonces $M \in M$, por
+definición de $M$. En ambos casos llegamos a una contradicción.
+
+La paradoja de Russell es análoga a una paradoja más popular que se denomina
+paradoja del barbero que más o menos dice así: En un pueblo, hay un único
+barbero que afeita a todos los que no se afeitan a sí mismos. ¿Quién afeita
+al barbero?
+
+
+
+

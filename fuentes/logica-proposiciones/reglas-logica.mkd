@@ -1,0 +1,717 @@
+
+
+
+
+### Reglas de la lógica
+
+<!-- Ya está explicado antes
+La lógica se basa en averiguar cuándo dos proposiciones son equivalentes. Si
+se trata de proposiciones simples, esto no tiene ninguna complicación. Sin
+embargo, si son compuestas, sí puede que lo tenga. Gracias a las reglas de
+inferencia, podemos llegar a averiguar si ambas proposiciones son la misma
+en realidad, por muy distintas que sean las expresiones en las que se
+presenten.
+
+La equivalencia se presenta mediante un operador llamado _bicondicional_,
+que estudiaremos en este capítulo. Dicho operador se suele representar con
+varios símbolos, aunque el más empleado será '$\Longleftrightarrow$'. Así,
+se tendría la siguiente expresión que muestra la equivalencia de dos
+proposiciones compuestas:
+
+$$ [p \lor (q \land r)] \iff [(p \lor q) \land (p \lor r)] $$
+-->
+
+::: { .observacion #obs-notacion-laxa-equiv data-label="Notación laxa para
+la equivalencia" }
+Antes de seguir, conviene aclarar que en este texto seremos algo laxos en
+nuestro uso de la equivalencia de proposiciones. Con el fin de evitar
+sobrecargar la notación simbólica con paréntesis, adoptaremos la regla de
+ahorrarnos los paréntesis, corchetes o llaves al escribir la equivalencia
+entre dos proposiciones, marcada con el símbolo '$\Longleftrightarrow$'. Las
+expresiones situadas a la derecha e izquierda del mismo constituyen las
+proposiciones equivalentes, aunque vayan sin paréntesis. Por ejemplo, se
+escribe
+
+$$ p \lor (q \land r) \iff (p \lor q) \land (p \lor r) $$
+
+para indicar que las proposiciones $p \lor (q \land r)$ y $(p \lor q) \land
+(p \lor r)$ son equivalentes, en lugar de
+
+$$ [p \lor (q \land r)] \iff [(p \lor q) \land (p \lor r)] $$
+
+No obstante, a veces se usará una expresión de este último estilo.
+:::
+
+
+
+
+#### Reglas lógicas equivalentes con una proposición
+
+Con una proposición simple $p$ y el operador negación, $\neg$, se pueden
+escribir aparentemente muchas proposiciones nuevas. Por ejemplo, $\neg p$,
+$\neg(\neg p)$, $\neg(\neg(\neg p))$, etc., aunque en realidad no son
+necesarios los paréntesis; se puede poner perfectamente $\neg p$, $\neg \neg
+p$, $\neg \neg \neg p$, etc.
+
+En realidad, tal y como vamos a demostrar ahora, en toda esa lista de
+proposiciones se tienen únicamente dos proposiciones: $p$ y $\neg p$. Las
+demás serán equivalentes a una de estas. Puede verlo fácilmente en las
+tablas de $\neg p$ y $\neg\neg p$.
+
+$$
+\begin{array}{c|ccc}
+  p & \neg p & \neg \neg p & \neg \neg \neg p \\
+  \hline
+  0 & 1 & 0 & 1 \\
+  1 & 0 & 1 & 0 \\
+\end{array}
+$$
+
+Se ve claramente en la tabla de verdad que se dan las equivalencias
+siguientes:
+
+$$
+  \begin{align*}
+    p &\iff \neg \neg p \\
+    \neg p &\iff \neg \neg \neg p \\
+  \end{align*}
+$$
+
+Coloquialmente, la primera de estas reglas (o leyes) se expresa diciendo que
+"**una doble negación afirma**". Es decir, podemos sustituir $\neg\neg p$
+por $p$ o viceversa allí donde aparezcan. En la tabla también se ve que se
+pueden sustituir $\neg p$ y $\neg \neg \neg p$.
+
+En general, se emplea la expresión más corta, aunque algunas veces puede
+interesar hacer uso de una más extensa.
+
+Este sería un caso práctico de la equivalencia que mencionamos antes al
+hablar del operador [bicondicional][]. Las reglas (o leyes) de inferencia no
+son más que equivalencias de proposiciones. Gracias a esas equivalencias,
+podemos manipular las expresiones lógicas y obtener algunas más simples.
+
+Tal y como vimos antes, con una única proposición $p$, solo hay cuatro
+tablas de verdad posibles.
+
+$$
+\begin{array}{c|cccc}
+  p & \mathbf{0} & p & \neg p & \mathbf{1} \\
+  \hline
+  0 & 0 & 0 & 1 & 1 \\
+  1 & 0 & 1 & 0 & 1 \\
+\end{array}
+$$
+
+Advierta que el encabezado de las columnas 2 y 5 en realidad no es un valor
+lógico, de ahí que se ponga en negrita. Es decir, $\mathbf{0}$ no es $0$ y
+$\mathbf{1}$ no es $1$. Los primeros representan a tablas (o, lo que es lo
+mismo, proposiciones), y, los segundos, a valores. A la tabla $\mathbf{0}$ se
+la conoce como _contradicción_ y, a $\mathbf{1}$, _tautología_. Más adelante,
+se hablará más sobre estas.
+
+luego solo se pueden expresar cuatro proposiciones esencialmente distintas,
+es decir, que no sean equivalentes entre sí.
+
+Ahora, vamos a ver algunas otras reglas con una única proposición.
+
+
+
+
+##### Reglas de simplificación
+
+Con una única proposición $p$ y un conector distinto de $\neg$, se pueden
+escribir muchas proposiciones nuevas, pero entre ellas se cumplen las
+siguientes leyes de simplificación:
+
+$$
+\begin{align*}
+  p \lor p &\iff p \\
+  p \land p &\iff p \\
+  p \leftrightarrow p &\iff \mathbf{1} \\
+  p \rightarrow p &\iff \mathbf{1} \\
+\end{align*}
+$$
+
+Por tanto, en una expresión de una proposición lógica compuesta en la que
+aparezca $p \lor p$, esta parte se puede sustituir por $p$, con lo que
+podemos simplificar la expresión.
+
+Con una única proposición $p$ y varios conectores distintos, se pueden
+escribir proposiciones nuevas, como, por ejemplo, $p \lor \neg p$, $p \land
+\neg p$, ...
+
+
+
+
+
+##### Ley del tercio excluso
+
+La proposición $p \lor \neg p$ es una tautología. En forma simbólica:
+
+$$ p \lor \neg p \iff \mathbf{1} $$
+
+Es muy fácil demostrar que se cumple esa equivalencia y, por tanto, se trata
+de una regla de inferencia. Bastaría con ver sus tablas de verdad.
+
+Esta ley se expresa coloquialmente diciendo que siempre se cumple una
+proposición o su negación. Por ejemplo,
+
+::: proposiciones
+[El número $\pi$ es racional o irracional.]{.prop-stat}
+:::
+
+He visto que hay quien la llama también de otras formas: _ley del tercero
+excluyente_, _ley del tercero excluido_, _ley del mediano excluido_, etc. En
+inglés la llaman _law of the excluded middle_.
+
+
+
+
+
+##### Ley de contradicción
+
+La proposición $p \land \neg p$ es una contradicción. En forma simbólica:
+
+$$ p \land \neg p \iff \mathbf{0} $$
+
+Esto se expresa coloquialmente diciendo que nunca se cumple una proposición
+y su negación, por ejemplo,
+
+::: proposiciones
+[El número 3 es primo y compuesto.]{.prop-stat}
+:::
+
+es una proposición falsa.
+
+Existe una ley para dos proposiciones que sería un caso genérico de esta y
+que se emplea mucho en demostraciones matemáticas. Se verá más adelante.
+
+El estudio de las proposiciones compuestas de una sola proposición no da más
+de sí. Vamos a ver ahora las de dos proposiciones.
+
+
+
+
+
+#### Reglas lógicas equivalentes con dos proposiciones
+
+Con dos proposiciones $p$ y $q$ y cualquier conjunto de conectores, solo se
+pueden construir 16 proposiciones esencialmente distintas. Esto se debe a
+que solo hay 16 tablas de verdad distintas. Las más interesantes son las
+siguientes:
+
+<!-- TODO ¿Incluir la tautología? -->
+
+$$
+\begin{array}{cc|ccccccc}
+  p & q & \mathbf{0} & p & q & \neg p & \neg q & p \land q & p \lor q \\
+  \hline
+  0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 \\
+  1 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+  1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+\end{array}
+$$
+
+Si bien es cierto que se puede generar una expresión sintácticamente
+correcta tan grande como se desee, pues para ello basta combinar esas dos
+proposiciones empleando los conectores y los paréntesis necesarios, no cabe
+duda de que esta expresión escrita debe tener un comportamiento igual a una
+de esas 16 tablas.
+
+De esta forma, se entiende que se pueden escribir muchas proposiciones, pero
+necesariamente deben ser equivalentes a otras proposiciones que tienen una
+escritura más corta. Con el fin de disponer de expresiones más cortas,
+conviene mostrar las siguientes equivalencias, que son presentadas como
+reglas lógicas.
+
+A continuación, se presentan las principales leyes que se cumplen al
+combinar dos proposiciones.
+
+
+
+
+
+##### Reglas de identidad
+
+$$
+\begin{align*}
+  p \lor 0 &\iff p \\
+  p \land 1 &\iff p \\
+  1 \rightarrow p &\iff p \\
+\end{align*}
+$$
+
+
+
+
+##### Reglas de absorción
+
+A estas en TKTK las incluyen en las de identidad, pero creo que en realidad
+no lo serían.
+
+$$
+\begin{align*}
+  p \land 0 &\iff \mathbf{0} \\
+  p \lor 1 &\iff \mathbf{1} \\
+\end{align*}
+$$
+
+
+
+
+
+##### Reglas conmutativas
+
+Para algunos operadores, el orden en el que aparecen los operandos no es
+relevante.
+
+$$
+\begin{align*}
+  p \lor q &\iff q \lor p \\
+  p \land q &\iff q \land p \\
+  p \leftrightarrow q &\iff q \leftrightarrow p \\
+\end{align*}
+$$
+
+Como particularidad, advierta que no se cumple para el condicional.
+
+$$ p \to q \centernot\iff q \to p $$
+
+
+$$ p \to q \not\iff q \to p $$
+
+$$ \neg(p \to q \iff q \to p) $$
+
+
+
+
+##### Reglas de De Morgan
+
+La negación de una disyunción es la conjunción de negaciones y, por otro
+lado, la negación de una conjunción es la disyunción de conjunciones.
+
+$$
+\begin{align*}
+  \neg(p \lor q) &\iff \neg p \land \neg q \\
+  \neg(p \land q) &\iff \neg p \lor \neg q \\
+\end{align*}
+$$
+
+Suelen tener bastante uso.
+
+Casi todas estas reglas se demuestran fácilmente viendo sus tablas de
+verdad.
+
+
+
+##### Reglas del condicional
+
+$$
+\begin{align*}
+  p \rightarrow q &\iff \neg p \lor q \\
+  p \rightarrow q &\iff \neg(p \land \neg q) \\
+  p \rightarrow q &\iff (p \land q) \leftrightarrow p \\
+\end{align*}
+$$
+
+De estas cuatro reglas del condicional, la más destacada es aquella que
+establece que $p \to q$ es equivalente a $\neg p \lor q$. Esta equivalencia
+es fundamental en el estudio de la lógica proposicional, ya que permite
+transformar implicaciones en una forma disyuntiva, que suele ser más
+manejable. Su utilidad radica en simplificar la interpretación y
+manipulación de proposiciones complejas en razonamientos formales.
+
+La segunda no sería más que la aplicación de una de las leyes de De Morgan a
+la primera, con lo que es fácil de recordar.
+
+A este respecto, existe una particularidad en la [notación sobre la
+flecha](#notacion-flecha) TKTK.
+
+
+
+
+
+
+
+##### Regla del bicondicional
+
+$$ p \leftrightarrow q \iff (p \rightarrow q) \land (q \rightarrow p) $$
+
+Si se cumplen las dos posibles proposiciones condicionales entre dos
+proposiciones $p$ y $q$, entonces $p$ y $q$ son equivalentes.
+
+Esta ley se utiliza a menudo en las demostraciones en matemáticas para
+demostrar que dos supuestos son equivalentes. Se demuestra que, si el
+supuesto primero es crierto, entonces el segundo también lo es. También, que
+si el segundo es cierto, también lo es el primero. Por eso se dice, cuando
+aparece el bicondicional, que una de las proposiciones es condición
+suficiente y necesaria para la otra, y viceversa. Recuerde lo que explicamos
+sobre [condición necesaria y condición suficiente](#cond-nec-y-suf) al
+hablar del operador condicional.
+
+
+
+
+##### Regla de contradicción
+
+Se trata de una regla que tiene mucho uso en demostraciones. Simbólicamente
+se expresaría como
+
+$$ \neg p \rightarrow (q \land \neg q) \iff p $$
+
+Lo más común es que en los textos en español la llamen _ley de reducción al
+absurdo_, o, incluso, si se ponen pedantes, en su forma en latín: _reductio
+ad absurdum_. En inglés es bastante común que la llamen _by contradiction_.
+
+Como acabamos de explicar, se usa con frecuencia en demostraciones en
+matemáticas. Funciona del modo siguiente. Para demostrar que un enunciado es
+ceierto, se niega dicho enunciado y se demuestra que de tal negación se
+deducen una proposición y la negación de esta. Esto sería una contradicción.
+Esta se ha producido por asumir que el enunciado es falso, con lo que no
+queda otra más que que este sea verdadero.
+
+En realidad, existe una forma más elegante de explicarlo, pero para ello
+necesitamos una ley que vemos un poco más adelante. Cuando lleguemos,
+daremos una explicación más fácil de entender sobre las demostraciones por
+contradicción.
+
+Una demostración bastante popular que hace uso del método de contradicción
+es la de que [$\sqrt{2}$ no es racional](#raiz-dos-irracional). Otra, la
+demostración de que [existen infinitos números primos](#infinitos-primos).
+
+
+
+
+
+##### Reglas de transposición
+
+$$
+\begin{align*}
+  p \to q &\iff \neg q \to \neg p \\
+  p \leftrightarrow q &\iff \neg p \leftrightarrow \neg q
+\end{align*}
+$$
+
+Advierta que la primera de estas expresa que un condicional es equivalente a
+su (condicional) contrarrecíproco. Esta regla se emplea en muchas
+demostraciones matemáticas. Por ejemplo, gracias a esta puede entender mejor
+por qué funcionan las demostraciones [por
+contradicción](#regla-de-contradicción), que vimos antes. TKTK.
+
+Si tiene una proposición condicional, eso indica, tal y como hemos visto,
+que, si es cierto el antecedente, entonces también será cierto el
+consecuente. A veces, resulta complicado demostrar algo con ese
+razonamiento. La primera ley de transposición nos permite usar otro
+razonamiento alternativo para el mismo fin. Simplemente, tenemos que
+demostrar que es falso el consecuente y, entonces, gracias a esta regla, se
+dará que automáticamente el antecedente también será falso.
+
+La demostración de por qué funciona esta regla, al igual que sucede con
+todas, está en su tabla de verdad.
+
+::: example
+Demuestre que el límite de una sucesión, si existe, es único.
+
+Lo primero que haremos será recordar la definición de límite de una sucesión
+de números reales.
+
+Una sucesión de números reales $\{x_n\}$ converge a un $l \in \mathbb{R}$ cuando
+para todo $\varepsilon \in \mathbb{R}$ siendo $\varepsilon > 0$ existe un
+$n_\varepsilon \in \mathbb{N}$ (que depende de $\varepsilon$) tal que para todo
+número $n \in \mathbb{N}$ que sea $n > n_\varepsilon$ se cumple $|l - x_n| <
+\varepsilon$.
+
+Vamos a demostrarlo por contradicción (también llamada por reducción al
+absurdo). Suponemos que la sucesión $\{x_n\}$ tiene dos límites: $r$ y $s$.
+
+De entre todos los valores que puede tomar el $\varepsilon$ en la definición
+de límite, vamos a tomar el que cumpla $2 \varepsilon = |r - s|$. Advierta
+que $r$ y $s$ son parámetros, más que variables, con lo que ese
+$\varepsilon$ tendrá un valor determinado para un problema con datos
+concretos.
+
+Por un lado, si usamos un hecho que conocemos de los números reales llamado
+desigualdad triangular, podemos ver que
+
+$$
+  \begin{align*}
+    2 \varepsilon
+      &= |r - s| \\
+      &= |r - x_n + x_n - s| \\
+      &\leq |r - x_n| + |x_n - s| \\
+      &= |r - x_n| + |s - x_n|
+  \end{align*}
+$$
+
+Por otro lado, por la definición de límite de una sucesión de números
+reales, se tiene que para todo $n \in \mathbb{N}$ tal que $n > n_\varepsilon$, se
+tienen
+
+$$
+\begin{align*}
+  |r - x_n| &< \varepsilon \\
+  |s - x_n| &< \varepsilon
+\end{align*}
+$$
+
+y, si sumamos ambas desigualdades, tenemos
+
+$$ |r - x_n| + |s - x_n| < 2\varepsilon $$
+
+Cosa que se contradice con lo anterior, es decir, llegamos a la desigualdad
+$2\varepsilon < 2\varepsilon$, que evidentemente es falsa. Aplicando
+entonces la regla de contradicción, se tiene que el límite de una sucesión
+de números reales, en caso de existir, será siempre único.
+
+Por cierto, aunque la desigualdad triangular es un hecho que conocemos de
+los números reales, en realidad lo conocemos intuitivamente, sin haberlo
+demostrado. Más adelante, cuando entremos de lleno en el estudio de los
+conjuntos numéricos como $\mathbb{N}$, $\mathbb{R}$, etc., veremos de dónde sale.
+:::
+
+
+
+
+
+
+#### Leyes lógicas equivalentes con tres proposiciones
+
+Con tres proposiciones $p$, $q$ y $r$, y cualquier conjunto de operadores,
+solo se pueden construir 256 proposiciones que no sean equivalentes entre
+sí. Esto se debe a que solo hay 256 tablas de verdad distintas. Las
+mostramos parcialmente en la tabla siguiente. Los valores de verdad se
+corresponden  con las expresiones de los números del 0 al 255 en notación
+binaria: $00000000$, $00000001$, $00000010$, $\ldots$, $11111111$.
+
+$$
+\begin{array}{ccc|cccccc}
+  p & q & r & f_0 & f_1 & f_2 & f_3 & \dots & f_{255} \\
+  \hline
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  0 & 1 & 1 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  1 & 0 & 1 & 0 & 0 & 0 & 0 & \dots & 1 \\
+  1 & 1 & 0 & 0 & 0 & 1 & 1 & \dots & 1 \\
+  1 & 1 & 1 & 0 & 1 & 0 & 1 & \dots & 1 \\
+\end{array}
+$$
+
+Como ya se ha indicado anteriormente, se puede generar una expresión
+sintácticamente correcta tan grande como se desee, al combinar esas 3
+proposiciones empleando operadores y los paréntesis necesarios. Cada
+expresión escrita se corresponde con alguna de las 256 tablas de verdad
+contenidas en la tabla anterior.
+
+Las reglas lógicas siguientes nos permiten expresar operaciones con más de
+dos proposiciones y una única conectiva sin paréntesis.
+
+
+
+
+
+##### Reglas asociativas
+
+$$
+\begin{align*}
+  (p \lor q) \lor r &\iff p \lor (q \lor r) \\
+  (p \land q) \land r &\iff p \land (q \land r) \\
+  (p \leftrightarrow q) \leftrightarrow r &\iff p \leftrightarrow (q
+    \leftrightarrow r) \\
+\end{align*}
+$$
+
+Cada regla asociativa establece la forma de operar con más de dos
+proposiciones y una misma conectiva. Estas reglas permiten dotar de
+significado a las expresiones
+
+$$ p \lor q \lor r, \quad p \land q \land r, \quad p \leftrightarrow q
+\leftrightarrow r $$
+
+Estas reglas permiten simplificar expresiones compuestas por tres
+proposiciones y un único conector lógico, eliminando la necesidad de
+paréntesis adicionales.
+
+
+
+
+
+##### Reglas distributivas
+
+$$
+\begin{aligned}
+  p \lor (q \land r) &\iff (p \lor q) \land (p \lor r) \\
+  p \land (q \lor r) &\iff (p \land q) \lor (p \land r) \\
+  p \to (q \lor r) &\iff (p \to q) \lor (p \to r) \\
+  p \to (q \land r) &\iff (p \to q) \land (p \to r) \\
+\end{aligned}
+$$
+
+
+
+
+
+#### Reglas lógicas condicionales
+
+Las reglas lógicas expuestas en los apartados anteriores son reglas donde se
+muestra la equivalencia de dos proposiciones, y, por lo tanto, una puede ser
+sustituida por la otra allí donde sea necesario.
+
+En este apartado, se presentan nuevas tautologías compuestas por un
+condicional entre dos proposiciones. Usualmente, a estas tautologías también
+se las llama _reglas_ o _leyes_. Recordemos que para indicar que un
+condicional es una tautología escribimos el símbolo '$\Longrightarrow$' y,
+al igual que con las proposiciones equivalentes, cuando se escribe una
+implicación entre proposiciones con un único símbolo '$\Longrightarrow$',
+las expresiones situadas a la izquierda y derecha del símbolo constituyen
+las proposiciones de la implicación aunque vayan sin paréntesis.
+
+Con dos proposiciones $p$ y $q$, se tienen las reglas lógicas siguientes.
+
+
+
+
+
+##### Regla de simplificación condicional
+
+$$ p \land q \implies p $$
+
+
+
+
+
+##### Regla de ampliación disyuntiva
+
+$$ p \implies p \lor q $$
+
+
+
+
+
+##### Regla de inferencia
+
+$$
+\begin{align*}
+  \neg p \land (p \lor q) &\iff q \\
+  p \land (\neg p \lor \neg q) &\iff \neg q \\
+\end{align*}
+$$
+
+Estas leyes de inferencia se denominan habitualmente _silogismos
+disyuntivos_. Aunque se puede llegar a estas fácilmente manipulando las
+expresiones en base a otras reglas, como la distributiva, son evidentes a
+simple vista. Por ejemplo, la primera se puede interpretar del modo
+siguiente:
+
+::: proposiciones
+[Si $p \lor q$ es cierto y, además, se sabe que $p$ es falso, entonces $q$
+será cierto.]{.prop-stat}
+:::
+
+
+
+
+##### Regla _modus ponens_
+
+O, en su denominación más extensa, _modus ponendo ponens_. Supuesto cierto
+el condicional $p \to q$, si se afirma el antecedente, es decir, $p$,
+entonces, será cierto también el consecuente, $q$.
+
+$$ (p \to q) \land p \implies q $$
+
+::: example
+La proposición
+
+::: proposiciones
+[Si llueve, entonces el suelo se moja.]{.prop-stat}
+:::
+
+Se puede descomponer en proposiciones simples unidas por un operador
+condicional:
+
+::: proposiciones
+[$p$]{.prop-var} [Llueve.]{.prop-stat}
+[$q$]{.prop-var} [El suelo se moja.]{.prop-stat}
+:::
+
+Entonces, se tendría la siguiente deducción:
+
+::: proposiciones
+[$p \to q$]{.prop-var} [Si llueve, el suelo se moja.]{.prop-stat}
+[$p$]{.prop-var} [Llueve.]{.prop-stat}
+[$\therefore$]{.prop-var} [El suelo está mojado.]{.prop-stat}
+:::
+
+
+
+
+<!--
+<table class="plain-tbl-2cols">
+  <tr>
+    <td>
+      $p$
+    </td>
+    <td>
+      Llueve.
+    </td>
+  </tr>
+  <tr>
+    <td>
+    $q$
+    </td>
+    <td>
+      El suelo se moja.
+    </td>
+  </tr>
+</table>
+-->
+
+La proposición compuesta sería
+
+$$ p \to q $$
+
+Si, además, se da $p$, es decir, que llueve, se tiene, según la ley _modus
+ponens_,
+
+$$ (p \to q) \land p \implies q $$
+
+es decir, será cierto $q$. Esto se intepretaría como: Si llueve, el suelo se
+moja. Adeás, está lloviendo. Por tanto, el suelo estará mojado.
+:::
+
+
+
+
+##### Regla _modus tollens_
+
+O, en su denominación más extensa, regla _modus tollendo tollens_. Supuesto
+cierto el condicional $p \to q$, si no se cumple el consecuente, $q$,
+necesariamente no se cumple el antecedente, $p$. Simbólicamente:
+
+$$ (p \to q) \land \neg q \implies \neg p $$
+
+Se podría ver mejor sabiendo que $p \to q$ es equivalente a $\neg q \to \neg
+p$, tal y como vimos antes. Entonces, la expresión _modus tollens_ sería
+equivalente a
+
+$$ (\neg q \to \neg p) \land \neg q \implies \neg p $$
+
+que sería cierta por la [regla _modus ponens_][], de la sección anterior.
+
+Siguiendo con el ejemplo anterior, imagine que ve que el suelo no está
+mojado, $\neg q$. De esto puede deducir que no ha llovido, $\neg p$.
+
+::: example
+Si la función $f(x) = {-x}^2$ tiene un máximo local en el punto $x_0$,
+entonces $f'(x_0) = 0$. Resulta que comprobamos que $f'(x_0) > 0$. Por
+tanto, la función $f(x)$ no tiene un máximo local en $x_0$.
+
+Con tres o más proposiciones, $p$, $q$, y $r$, se tienen varias leyes que el
+lector puede encontrar entre los enunciados de los ejercicios propuestos.
+:::
+
+
+
+

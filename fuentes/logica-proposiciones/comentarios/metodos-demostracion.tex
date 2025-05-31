@@ -1,0 +1,64 @@
+
+
+
+% TODO No sé por qué usa letras mayúsculas ahora.
+
+El conocimiento matemático se justifica empleando alguno de los dos métodos
+de demostración: un sistema lógico deductivo y un sistema lógico inductivo.
+
+El método deductivo consiste \emph{grosso modo} en la formación de un
+enunciado verdadero $C$ partiendo de otro $H$ que, dentro del marco de una
+teoría, es también verdadero. En lenguaje coloquial, $H$ es la hipótesis o
+antecedente y $C$ la conclusión o consecuente.
+
+Se tienen varios métodos.
+
+\begin{description}
+  \item[Deducción directa] Este método utiliza las leyes transitivas, o
+    silogismo hipotético. Para demostrar que el antecedente es condición
+    suficiente para asegurar la verdad del consecuente, se busca una
+    condición intermedia tal que el antecedente sea condición suficiente de
+    esta, y que a su vez esta sea condición suficiente del consecuente. Se
+    basa pues en la implicación:
+
+    $$ (P \to R) \land (R \to Q) \Longrightarrow P \to Q $$
+
+    En muchos casos, la búsqueda de esta condición intermedia requiere
+    utilizar algunas leyes como las leyes \emph{modus ponens} o la de
+    \emph{modus tollens}. Como ya hemos visto, mediante  la primera de
+    estas, si sabemos que el condicional $R \to H$ es verdadero, basta
+    demostrar que $R$ es verdadero para deducir que $H$ es verdadero. La
+    otra, \emph{modus tollens}, nos asegura que si sabemos que el
+    condicional $R \to H$ es verdadero, basta demostrar que $H$ es falso
+    para deducir que $R$ es falso.
+
+  \item[Negación del consecuente] Este método utiliza la primera ley de
+    transposición:
+
+    $$ P \to Q \iff \neg Q \to \neg P $$
+
+    Para demostrar que el antecedente es condición suficiente para que se
+    verifique el consecuente, se niega el consecuente y de esta negación se
+    deduce la negación del antecedente. Véase una demostración por negación
+    del consecuente en el ejemplo TKTK.
+
+  \item[Reducción al absurdo] Este método utiliza la ley de reducción al
+    absurdo. Se supone verdadera la negación de lo que se quiere demostrar,
+    y de esta negación se llega a una contradicción. Puede encontrar una
+    demostración de este tipo en el ejercicio TKTK.
+
+    Aunque en español se le conoce normalmente como \emph{reducción al
+    absurdo}, e incluso hay quien se pone intelectual y lo dice en latín,
+    \emph{reductio ad absurdum}, yo prefiero llamarlo \emph{por
+    contradicción}. En inglés se suele ver más el equivalente a esta última,
+    es decir, \emph{by contradiction}.
+\end{description}
+
+El método inductivo es diferente, y lo comentaremos en el capítulo siguiente
+y, en el capítulo~\ref{ch:naturales}, se verá en mayor profundidad.
+
+
+
+
+
+

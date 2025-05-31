@@ -1,0 +1,100 @@
+
+
+En el ejemplo TKTK vimos el Principio de Inducción. Este proporciona un
+método para establecer que un predicado $P_n$ en el que interviene una
+variable $n \in \nset$ es verdadero para todo $n$. Es decir, si se quiere
+demostrar que la proposición $\forall n \in \nset.\ P_n$ es verdadera,
+basta comprobar los dos puntos siguientes:
+
+\begin{itemize}
+  \item Para $n = 0$, la proposición $P_0$ es verdadera.
+
+  \item Para todo $n$, si la proposición $P_n$ es verdadera, entonces la
+    proposición $P_{n+1}$ es verdadera.
+\end{itemize}
+
+La utilización de este principio permite también construir una sucesión de
+elementos de un conjunto $A$ cuando se dispone de una manera para formar el
+término $a_n$ en función de términos anteriores. Este tipo de sucesiones se
+denominan \emph{sucesiones recurrentes}.
+
+\begin{example}[Algunas Sucesiones]
+  Una sucesión recurrente famosa es la \emph{sucesión de Fibonacci}:
+
+  \[ 0, 1, 1, 2, 3, 5, 8, 13, 21, \dots \]
+
+  \noindent En esta, cada término es la suma de los dos anteriores. Es
+  evidente que para que esta definición conduzca a una única sucesión, deben
+  conocerse los dos primeros términos, que en este caso son $0$ y $1$.
+
+  Otro caso particular de sucesión recurrente es la \emph{progresión
+  aritmética} de diferencia $d$. Su definición recurrente es
+
+  \[ x_n = x_{n-1} + d \]
+
+  De la definición se deduce directamente que
+
+  \[ x_n = x_1 + d(n-1) \]
+
+  % TODO ¿Cómo se deduce eso directamente? Creo que yo lo he demostrado
+  % alguna vez por el principio de inducción. De hecho, tiene sentido que
+  % sea ese el método. Hacer la demostración aquí.
+
+  Para determinar la sucesión hay que conocer el primer término, $x_1$.
+
+  Otro, la \emph{progresión geométrica} de razón $r$. Su definición
+  recurrente es
+
+  \[ x_n = r x_{n-1} \]
+
+  De la definición se deduce directamente que
+
+  \[ x_n = x_1 r^{n-1} \]
+
+  Al igual que con la aritmética, para determinar la sucesión hay que
+  conocer el primer término, $x_1$.
+\end{example}
+
+Sea $a \in \nset$. En ocasiones hay que demostrar que una determinada
+propiedad $P_n$, que no es verdadera para todo $n \in \nset$, sí lo es si $n
+\geq a$. En este caso, se cambia el primer punto en la demostración por
+inducción, teniendo que comprobar que la proposición $P_a$ es verdadera y,
+además,
+
+\[ \forall n \in \nset \text{ tal que } n \geq a.\ (P_n \implies P_{n+1}) \]
+
+\noindent para concluir que la proposición $P_n$ es verdadera para $n \geq
+a$.
+
+Lo anterior se aplica a menudo cuando se demuestran predicados donde la
+variable se restringe a $\nset^*$, porque por ejemplo la
+proposición $P_0$ no tenga sentido. Se empieza pues probando que $P$
+es verdadera para $n = 1$.
+
+Ocurre a veces que, para establecer un predicado con variable en $\nset$, el
+suponer que $P_n$ es cierto no basta para demostrar la validez de $P_{n+1}$.
+En cambio, sí se demuestra la validez de $P_{n+1}$ si se supone cierta $P_k$
+para todo $k \leq n$. La conclusión es la misma. En este caso la inducción
+se denomina \textbf{inducción completa}:
+
+\begin{itemize}
+  \item La proposición $P_0$ es verdadera.
+  \item $\forall n \in \nset, \text{ si } P_k \text{ es verdadera para todo
+    } k \text{ tal que } 0 \leq k \leq n, \text{ entonces } P_{n+1} \text{
+      es verdadera}$.
+\end{itemize}
+
+Entonces la proposición $P_n$ es verdadera para $n \in \nset$.
+
+
+
+
+
+
+
+
+
+
+
+
+

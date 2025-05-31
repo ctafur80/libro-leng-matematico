@@ -1,0 +1,426 @@
+
+
+Vimos en el ejemplo 3.65 cómo la existencia de una biyección entre dos
+conjuntos puede dar lugar a un cierto tipo de identificación entre ambos.
+Cuando estemos trabajando con conjuntos donde se tenga alguna estructura
+algebraica o de orden, hablaremos de identificación cuando la biyección
+además conserve la estructura.
+
+Definición. Homomorfismo. Sean $G$ y $G'$ dos conjuntos donde se tienen
+definidas las operaciones operación internas $+$ y $\oplus$, respectivamente
+para cada uno de los conjuntos. Se dice que una aplicación $f: G
+\longrightarrow G'$ es un \emph{homomorfismo} si se cumple
+
+$$ f(a + b) = f(a) \oplus f(b) \ \text{para todo} \ a, b \in G $$
+
+\noindent A veces, por comodidad, se usa el mismo símbolo para las dos
+operaciones; por ejemplo, $+$. En cualquier caso, debe ser consciente de que
+se trata en realidad de dos operaciones; no de una.
+
+Existen ciertas circunstancias que hacen que le demos un nombre distinto a
+los homomorfismos. Por un lado, si el homomorfismo es una biyección,
+recibirá el nombre de \emph{isomorfismo}. Si $G = G'$ y la operación interna
+es la misma para ambos, se le llama \emph{endomorfismo}. Además, a un
+endomorfismo biyectivo se le llama \emph{automorfismo}.
+
+Ejemplo.
+
+La aplicación $f$ definida por $f(x) = e^x$ es un homomorfismo de $(\rset,
++)$ en $(\rset, \cdot)$ puesto que, para todo $a, b \in \rset$, se tiene
+
+$$ f(a+b) = e^{a+b} = e^a e^b = f(a)f(b) $$
+
+\noindent A este respecto, se puede generalizar un poco más. Si $a > 0$, la
+aplicación $g(x) = a^x$ es un homomorfismo de $(\rset, +)$ en $(\rset,
+\cdot)$ que se denomina \emph{exponencial de base} $a$.
+
+Si $a \in \rset$, $a \neq 0$, la aplicación $f$ definida por $f(x) = ax$ es
+un automorfismo en $(\rset, +)$.
+
+Sea $(G, +)$ un grupo conmutativo. Las aplicaciones $f, g: G \longrightarrow
+G$ definidas por $f(a) = 3a$ y $g(a) = {-a}$ donde $3a = a + a + a$, siendo
+${-a}$ es el elemento simétrico de $a$, son endomorfismos.
+
+En efecto, $f$ es un endomorfismo, pues para todo $a, b \in G$ se cumple que
+$f(a + b) = 3(a + b) = (a + b) + (a + b) + (a + b) = (a + a + a) + (b + b +
+b) = 3a + 3b = f(a) + f(b)$ donde hemos aplicado las propiedades asociativas
+y conmutativas de $+$.
+
+En general, la aplicación $h: G \longrightarrow G$ definida por $h(a) = na$
+siendo $n \in \nset^*$ es un endomorfismo.
+
+También $g$ es un endomorfismo pues $g(a + b) = {-(a + b)} = -a + ({-b}) =
+g(a) + g(b)$ en virtud del apartado 3 de la proposición 4.12.
+
+Proposición. Propiedades de un homomorfismo.
+
+\begin{enumerate}
+  \item Si $f: G \longrightarrow G'$ es un homomorfismo, entonces la
+    operación de $G'$ es una operación interna cuando se restringe al
+    conjunto imagen $f(G)$.
+
+    % TODO No lo llego a entender. Puede que signifique una de las dos cosas
+    % siguientes:
+
+    % Cualquier operación interna en $G'$ si $f: G \longrightarrow G'$ es un
+    % homomorfismo y$ G' \subseteq f(G)$.
+
+    % Si $f: G \longrightarrow G'$ es un homomorfismo, entonces cualquier
+    % operación será interna a $G'$ si 
+
+  \item Si $f: G \longrightarrow G'$ y $g: G' \longrightarrow G''$ son
+    homomorfismos, entonces la composición $g \circ f: G \longrightarrow
+    G''$ es un homomorfismo.
+
+  \item Si $f: G \longrightarrow G'$ es un isomorfismo, entonces la
+    aplicación inversa $f^{-1}: G' \longrightarrow G$ es un isomorfismo.
+\end{enumerate}
+
+
+Demostración.
+
+1. Dados $f(a), f(b) \in G'$ siendo las imágenes por $f$ de $a$ y $b$,
+respectivamente. Como al ser $f$ un homomorfismo se cumple
+
+$$ f(a) \oplus f(b) = f(a + b) $$
+
+\noindent y, evidentemente, $f(a + b) \in G'$, se tiene que $\oplus$ será
+una operación interna en $G'$.
+
+2. Se tiene una demostración muy elegante simplemente manipulando las
+expresiones.
+
+$$ (g \circ f)(a + b) = g(f(a + b)) = g(f(a) + f(b)) = g(f(a)) + g(f(b)) = g
+\circ f(a) + g \circ f(b) $$
+
+3. Sabemos que si $f$ es biyectiva la relación inversa $f^{-1}$ será una
+aplicación y además también será biyectiva.
+
+% Veamos que $f^{-1}$ es un homomorfismo.
+
+Al ser $f^{-1}$ una aplicación, se tendrá que existen $a', b' \in G'$ tales
+que $f(a) = a'$ y $f(b) = b'$ para $a, b \in G$, o, si lo prefiere, tales
+que $f^{-1}(a') = a$ y $f^{-1}(b') = b$. Por tratarse de un homomorfismo, se
+tiene
+
+$$ a' \oplus b' = f(a) \oplus f(b) = f(a + b) $$
+
+\noindent Además, al ser $+$ una operación interna en $G$, se tendrá que $a
++ b \in G$.
+
+
+$$ f^{-1}(a') + f^{-1}(b') = a + b $$
+
+$$ f^{-1}(a' \oplus b') $$
+
+TKTK
+
+Dados $a', b' \in G'$ siendo $a' = f(a)$ y $b' = f(b)$ para $a, b \in G$.
+Por ser $f$ un isomorfismo, se cumple
+
+$$ f(a) \oplus f(b) = f(a + b) $$
+
+TKTK
+
+Sean $a'$ y $b' \in G'$ y sean $a = f^{-1}(a')$ y $b =
+f^{-1}(b')$. En consecuencia, $f(a) = a'$ y $f(b) = b'$ y, por tanto, $a' +
+b' = f(a) + f(b) = f(a + b)$, de donde se deduce que $f^{-1}(a' + b') = a +
+b = f^{-1}(a') + f^{-1}(b')$.
+
+Como consecuencia de esta proposición, se deduce que la existencia de un
+isomorfismo entre dos conjuntos dotados de sendas operaciones internas
+define una ``relación'' de equivalencia, ya que satisface las propiedades
+siguientes:
+
+\begin{enumerate}
+  \item Reflexiva, pues la aplicación identidad $I_G$ es un isomorfismo.
+
+  \item Simétrica, pues si existe un isomorfismo $f: G \longrightarrow G'$,
+    entonces la aplicación inversa $f^{-1}: G' \longrightarrow G$ es un
+    isomorfismo.
+
+  \item Transitiva, pues si existen dos isomorfismos $f: G \longrightarrow
+    G'$ y $g: G' \longrightarrow G''$ entonces la composición $g \circ f: G
+    \longrightarrow G''$ es un isomorfismo.
+\end{enumerate}
+
+
+
+
+
+\subsection{Homomorfismos de grupos}
+
+En este apartado, suponemos además que $(G, +)$ y $(G', +)$ son dos grupos
+tales que sus elementos neutros son respectivamente $0_G$ y $0_{G'}$, y que
+${-a}$ y ${-a'}$ denotan los elementos simétricos de $a \in G$ y $a' \in
+G'$. Sea $f: G \longrightarrow G'$ un homomorfismo. Se tiene:
+
+\begin{enumerate}
+  \item $f(0_G) = 0_{G'}$.
+  \item $f({-a}) = {-f(a)}$ para todo $a \in G$.
+  \item Si $H$ es un subgrupo de $G$, entonces
+
+    $$ f(H) = \{a' \in G' \st \exists a \in H.\ f(a) = a'\} $$
+
+    \noindent es un subgrupo de $G'$.
+
+  \item Si $H'$ es un subgrupo de $G'$, entonces
+
+    $$ f^{-1}(H') = \{a \in G \st f(a) \in H'\} $$
+
+    \noindent es un subgrupo de $G$.
+\end{enumerate}
+
+Demostración.
+
+1. Basta observar que, si $a \in G$, entonces $f(a) = f(0_G + a) = f(0_G) +
+f(a)$ y, sumando ${-f(a)}$ a la expresión anterior, se obtiene,
+
+$$ 0_{G'} = f(a) + ({-f(a)}) = f(0_G + a) + ({-f(a)}) = f(0_G) + f(a) +
+({-f(a)}) = f(0_G) $$
+
+2. En efecto, haciendo uso de la propiedad anterior, tenemos
+
+\begin{align*}
+  f({-a}) + f(a) &= f({-a} + a) = f(0_G) = 0_{G'} \\
+  f(a) + f({-a}) &= f(a + ({-a})) = f(0_G) = 0_{G'} \\
+\end{align*}
+
+\noindent y, por tanto, $f({-a}) = {-f(a)}$.
+
+3. Supongamos que $a'$ y $b' \in f(H)$; veamos que $a' - b' \in f(H)$. En
+efecto, sean $a$ y $b \in H$ tales que $f(a) = a'$ y $f(b) = b'$. Aplicando
+la propiedad anterior, se obtiene que
+
+$$ f(a + ({-b})) = f(a) + f({-b}) = f(a) - f(b) = a' - b', $$
+
+\noindent y puesto que $a - b \in H$, resulta que $a' - b' \in f(H)$.
+
+4. En primer lugar hacemos constar que el uso de la notación $f^{-1}$ no
+presupone que $f$ sea una aplicación biyectiva:
+
+Se utiliza $f^{-1}$ en el sentido de relación inversa.
+
+Supongamos que $a$ y $b \in f^{-1}(H')$; veamos que $a - b \in f^{-1}(H')$.
+
+Como $f(a - b) = f(a) - f(b)$, $f(a)$ y $f(b) \in H'$ y $H'$ es un subgrupo
+de $G'$ se obtiene que $f(a) - f(b) \in H'$ y en consecuencia, $a - b \in
+f^{-1}(H')$.
+
+Definición. Conjunto Imagen y Núcleo de un Homomorfismo. De entre los
+subgrupos que determina un homomorfismo $f$ mediante las propiedades 3 y 4
+anteriores, son importantes el conjunto imagen $\text{Im}\ f = f(G)$ y el
+\emph{núcleo} (\emph{kernel}) del homomorfismo $f$, que es
+$f^{-1}(\{0_{G'}\})$ y se denota por $\text{Ker}\ f$ o $\text{Ker}(f)$. Es
+decir,
+
+$$ \text{Ker}\ f = \{ a \in G \st f(a) = 0_{G'} \} $$
+
+Respecto de $f(G)$ y $\text{Ker}\ f$ se tiene:
+
+Teorema. Sean $(G, +)$ y $(G', +)$ dos grupos y $f: G \longrightarrow G'$ un
+homomorfismo. Se tiene:
+
+\begin{enumerate}
+  \item $\text{Im}\ f$ es un subgrupo de $G'$.
+  \item $\text{Ker}\ f$ es un subgrupo de $G$.
+  \item $f$ es inyectivo si y solo si $\text{Ker}\ f = \{0_G\}$.
+  \item $f$ es sobreyectivo si y solo si $\text{Im}\ f = G'$.
+\end{enumerate}
+
+Demostración. Solo tenemos que demostrar el apartado 3 ya que los apartados
+1 y 2 son consecuencia de las propiedades 3 y 4 anteriores y el cuarto
+apartado no es específico de los homomorfismos y sabemos que es válido para
+cualquier aplicación.
+
+Para todo $a, b \in G$, se tiene:
+
+$$ f(a) = f(b) \ \text{si y solo si}\ f(a - b) = f(a) - f(b) = 0_{G'}, \
+\text{es decir,} \ a - b \in \text{Ker}\ f $$
+
+En consecuencia, si $\text{Ker}\ f = \{0_G\}$ y $f(a) = f(b)$, entonces $a -
+b = 0_G$. Es decir, $a = b$ y por tanto $f$ es inyectiva. Recíprocamente, si
+$f$ es inyectiva y $c \in \text{Ker}\ f$, entonces $f(c) = 0_{G'} = f(0_G)$
+y, por tanto, $c = 0_G$.
+
+El punto 3 del teorema anterior es muy interesante pues reduce
+considerablemente el trabajo de comprobar si un determinado homomorfismo es
+inyectivo.
+
+Ejemplos.
+
+Consideremos el grupo $(M, \times)$, siendo $M$ el conjunto de las matrices
+cuadradas invertibles de orden $2$ y $\times$ el producto de matrices, y el
+grupo multiplicativo $(\rset^*, \cdot)$.
+
+La aplicación que a toda matriz $A$ le asocia su determinante es un
+homomorfismo de grupos pues se cumple la regla que dice ``el determinante
+del producto de dos matrices de $M$ es igual al producto de los
+determinantes de ambas matrices''.
+
+No es un isomorfismo. En efecto, observemos que en este caso,
+
+$$
+  0_G = 0_M =
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}
+$$
+
+\noindent y $0_{G'} = 0_{\rset^*} = 1$.
+
+El homomorfismo no es inyectivo, pues
+
+$$
+  \text{Ker}\ f \neq \left\{
+  \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+  \end{pmatrix}
+  \right\}
+$$
+
+Para
+
+$$
+  A =
+  \begin{pmatrix}
+    2 & 1 \\
+    1 & 1
+  \end{pmatrix}
+$$
+
+\noindent se cumple que $A \in \text{Ker}\ f$, ya que $f(A) = \det(A) = 1$.
+
+Retomemos el ejemplo 4.38.1 con $f(x) = e^x$ pero restringiendo el conjunto
+donde $f$ toma valores; $f: (\rset, +) \longrightarrow (\rset_+, \cdot)$.
+
+Además de cumplir las propiedades de la función exponencial, este
+homomorfismo entre grupos es biyectivo; el isomorfismo inverso es la función
+de $(\rset_+, \cdot)$ en $(\rset, +)$ que se denomina función logaritmo
+neperiano y se denota $f^{-1}(x) = \log x$.
+
+Sea $(G, +)$ un grupo y $a \in G$ fijo. Consideramos la aplicación
+
+$$
+  f:
+  \begin{cases}
+    (\zset, +) & \longrightarrow (G, +) \\
+    n & \longmapsto f(n) = na
+  \end{cases}
+$$
+
+\noindent donde $na = \overbrace{a + a + \cdots + a}^{n \ \text{veces}}$ si
+$n \in \nset^*$, $0a = 0_G$ y $na = {-[({-n})a]}$ si ${-n} \in \nset^*$. La
+aplicación $f$ es un homomorfismo de grupos. El conjunto imagen
+
+$$ \text{Im} f = f(\zset) = \{ \dots, -3a, -2a, -a, 0, a, 2a, 3a, \dots \}
+$$
+
+\noindent es un subgrupo de $G$ que se denomina \emph{subgrupo de $G$
+generado por $a$}. El núcleo
+
+$$ \text{Ker}\ f = \{ n \in \zset \st na = 0 \} $$
+
+\noindent es un subgrupo de $\zset$.
+
+¿Es $f: \rset^2 \longrightarrow \rset^2$ definida por $f(x,y) = (x + y, 3x +
+5y)$ inyectiva? Una vez que observamos que $f : (\rset^2, +) \longrightarrow
+(\rset^2, +)$ es un homomorfismo, basta con hallar el núcleo de $f$ para
+poder responder.
+
+Como
+
+$$ \text{Ker}\ f = \{ (x,y) \in \rset^2 \st (x + y, 3x + 5y) = (0,0) \} =
+\{(0,0)\} $$
+
+\noindent $f$ es por tanto inyectiva.
+
+
+
+
+
+\subsection{Homomorfismos de anillos y cuerpos}
+
+Cuando nos encontremos con estructuras definidas con dos operaciones
+internas, los homomorfismos se definen extendiendo la propiedad a las dos
+operaciones. Concretamente, si $(A, +, \cdot)$ y $(A', +, \cdot)$ son dos
+anillos, un \emph{homomorfismo de anillos} de $A$ en $A'$ es una
+aplicación $f: A \longrightarrow A'$ tal que para todo $a, b \in A$ se
+cumple que:
+
+\begin{align*}
+  f(a + b) &= f(a) + f(b) \\
+  f(ab) &= f(a)f(b) \\
+\end{align*}
+
+Como todo homomorfismo de anillos es, en particular, un homomorfismo de
+grupos para la primera operación, se satisfacen todas las propiedades del
+teorema 4.40 para la primera operación y las propiedades de la proposición
+4.39 para la segunda operación.
+
+En particular, se deduce que $\text{Im} f = f(A)$ es a su vez un anillo.
+
+También se tiene que si el anillo $A$ es conmutativo entonces $\text{Ker} f$
+es un ideal de $A$.
+
+Un \emph{homomorfismo de cuerpos} no es más que un homomorfismo de anillos
+donde además $(A, +, \cdot)$ y $(A', +, \cdot)$ son dos cuerpos.
+
+
+
+
+
+
+\subsection{Homomorfismos de conjuntos ordenados}
+
+Cuando queremos hablar de identificaciones de estructuras ordenadas
+buscaremos biyecciones que conserven el orden. Con más precisión, si tenemos
+dos conjuntos ordenados $(U, \leq)$ y $(V, \leq)$, una aplicación $f: U
+\longrightarrow V$ se denomina \emph{homomorfismo de estructuras de orden}
+si es creciente, es decir:
+
+$$ \text{para todo } u, u' \in U, \quad \text{si } u \leq u' \text{ entonces
+} f(u) \leq f(u') $$
+
+Cuando la aplicación $f$ sea además biyectiva hablaremos de un
+\emph{isomorfismo de estructuras ordenadas}.
+
+En los próximos capítulos iremos introduciendo formalmente los conjuntos
+numéricos. Es frecuente ver escrito una cadena del tipo:
+
+$$ \nset \subset \zset \subset \qset \subset \rset \subset \cset $$
+
+En realidad, cuando se escriben estas inclusiones lo que se quiere indicar
+son identificaciones entre un conjunto y un subconjunto del conjunto
+siguiente. El tipo de identificación depende de la estructura con que se
+dota a los conjuntos.
+
+Por ejemplo, la inclusión $\zset \subset \qset$ indica la existencia de un
+isomorfismo de anillos ordenados: de $(\zset, +, \cdot, \leq)$ a un
+subanillo ordenado $A$ de $\qset$, es decir, una aplicación biyectiva $f$ de
+$\zset$ a $A \subset \qset$ que conserva las operaciones y el orden. Estamos
+ante un isomorfismo de anillos ordenados. 
+
+Una vez establecido el isomorfismo $f$, se identifica el elemento $z \in
+\zset$ con el elemento $f(z) \in \qset$ y se escribe generalmente $z$ en
+lugar de $f(z)$ y de ahí la escritura $\zset \subset \qset$.
+
+La inclusión $\rset \subset \cset$ es también una identificación, pero en
+este caso, veremos en el último capítulo del libro, que no se puede dotar a
+$\cset$ de un orden total compatible con las operaciones. Así, $\rset
+\subset \cset$ indica la existencia de una aplicación biyectiva de $\rset$ a
+un subcuerpo $K \subset \cset$ que conserva las operaciones. Estamos ante un
+isomorfismo $h$ de cuerpos. Igualmente, se identifica el elemento $x \in
+\rset$ con el elemento $h(x) \in \cset$ y se escribe generalmente $x$ en
+lugar de $h(x)$.
+
+
+
+
+
+
+
+
+

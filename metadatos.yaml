@@ -1,0 +1,20 @@
+author: "Carlos E. Tafur Egido"
+metad-author: "Carlos E. Tafur Egido"
+lang: es-ES
+otherlangs: en-US
+title: "Lenguaje matemático, conjuntos y números"
+metad-title: "Lenguaje matemático, conjuntos y números"
+date: 02/08/2025
+metad-date: 02/08/2025
+description: "Lenguaje matemático, conjuntos y números"
+keywords:
+  - matemáticas
+  - álgebra abstracta
+  - análisis
+  - lógica
+bibliography: referencias.yaml
+
+# Hay que ponerlo en este archivo, necesariamente.
+link-citations: true
+
+

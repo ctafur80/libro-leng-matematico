@@ -1,0 +1,367 @@
+
+
+
+
+Algunas expresiones sencillas en contexto matemático no pueden ser
+expresadas con la lógica de proposiciones. Por ejemplo,
+
+\begin{quote}
+  El número natural elegido es un número par. \\
+  Un número múltiplo de 10 es un número par. \\
+  Si una función es derivable en un punto, entonces la función es continua
+    en ese punto. \\
+  Un número primo mayor que 2 es impar. \\
+\end{quote}
+
+Analicemos la primera expresión, ``El número natural elegido es un número
+par''. Podemos decir que, si bien vemos que describe la propiedad ``Ser
+número par'', en realidad queda indefinida ya que no se indica el número al
+que se aplica esta. Por eso, esta expresión es cierta o falsa dependiendo
+del número que se elija.
+
+\begin{deffinition}[Predicado Simple de Un Argumento]
+  Dado un conjunto $C$, un \semph{predicado} (\emph{predicate}) simple de un
+  argumento sobre $C$ es una proposición que tendrá un valor de verdad en
+  función del valor que tome ese argumento, que no es más que una variable
+  $x \in C$.
+\end{deffinition}
+
+Al conjunto de valores que puede tomar el argumento se le conoce como
+\emph{universo del predicado}. Sería $C$ en la terminología de la definición
+anterior.
+
+La notación que se suele seguir es usar una letra mayúscula para la
+proposición y poner el argumento sobre el que actúa como subíndice. Por
+ejemplo, $P_x$. Existen otras notaciones; por ejemplo, la notación de
+funciones, como $P(x)$.
+
+Así, el enunciado
+
+\begin{quote}
+  El número natural elegido es un número par.
+\end{quote}
+
+\noindent se podría expresar como un predicado simple de un argumento $P_x$,
+donde $P$ indicaría ``Ser un número par'' y $x$ el número natural elegido.
+Para cada valor de $x$ se tendrá una proposición, y, como es evidente, esta
+tomará un valor de verdad. Sería algo análogo al paso de la aritmética al
+álgebra. Un salto de nivel ganando abstracción.\footnotemark
+
+\footnotetext{Quizás le interese saber que Isaac Newton solía llamar al
+álgebra la \emph{aritmética universal}.}
+
+En este caso, si el universo del predicado es $C = \{1, 2, 3, 5. 6, 7\}$,
+entonces para $x = 1$ se tendrá la proposición $P_1$, que es falsa. Para $x
+= 2$ se tiene $P_2$; verdadera.
+
+Se puede observar también el subconjunto del universo del predicado cuyos
+elementos hacen que se tenga una proposición verdadera. Para el predicado
+$P_x$ sobre un universo $C$, lo designaremos por $C_P$ y se puede expresar
+del modo siguiente:
+
+$$ C_P = \{x \in C \st P_x\} $$
+
+\noindent El símbolo `$:$' se leería como ``tal que''. Evidentemente,
+cualquiera que sea el predicado $P_x$, se tendrá que $C_P$ es un subconjunto
+(no propio, necesariamente) del universo del predicado, $C$.
+
+En el ejemplo anterior, se tiene que $C_P = \{2, 6\}$. En otro caso, podría
+darse como particularidad que $C_P = C$, pues seguiría siendo un subconjunto
+suyo.
+
+En lugar de cosas como $C_P$, se puede expresar un conjunto de este tipo
+simplemente como un conjunto cualquiera; por ejemplo, $A$. Se tendría que
+
+$$ A = \{x \in C \st P_x\} $$
+
+\noindent En este caso, se dice que el conjunto $A$ está definido o
+expresado \semph{por comprensión} (también,
+\emph{caracterización}\footnotemark). Se tendría que la propiedad $P$ es una
+\emph{propiedad característica} del conjunto $A$ en $C$, y al conjunto $A$
+se le llama \emph{extensión del predicado}.
+
+\footnotetext{Existen otras formas de llamar a esto. En inglés, por ejemplo,
+también la llaman \emph{set-builder notation}. TKTK.}
+
+Esta es la otra forma de expresar o definir un conjunto, distinta a la forma
+por extensión. Tal y como veremos, al tratar de ``construir'' conjuntos por
+medio de predicados, pueden aparecer paradojas, como mencionamos antes.
+
+Los conjuntos de los apartados 2, 3, 4 y 5 del
+ejemplo~\ref{ejemplo:conjuntos_01} están definidos por comprensión; así, en
+el punto 2 se tiene que $B = \{x \in \zset \st x^3 - 3x + 2 = 0\}$ o, en el
+5, que $E = \{x \in \zset \st x \ \text{es par}\}$. También, el conjunto $B
+= \{1, 2\}$ coincide con el conjunto $A$ del apartado 1.
+
+A su vez, un conjunto puede estar determinado por distintos predicados. Por
+ejemplo, si $C = \{x \in \zset \st 0 < x < 3\}$, entonces $B = C$. Se dice
+que los predicados ``$x^2 - 3x + 2$'' y ``$0 < x < 3$'' son equivalentes
+sobre el universo $\zset$. Es decir, dos predicados se consideran
+\emph{equivalentes} sobre un universo $C$ cuando determinan un mismo
+subconjunto de dicho universo, $C$.
+
+También, al revés, se tiene que cualquier subconjunto $A$ de $C$, es decir,
+$A \subseteq C$, definido por extensión, puede determinarse mediante el
+predicado $x \in A$.
+
+Sea $C$ un conjunto cualquiera. Consideramos sobre este el predicado $x
+\notin C$. Se tendría un conjunto $A$ que podríamos expresar por comprensión
+del modo siguiente:
+
+$$ A = \{x \in C \st x \notin C\} $$
+
+\noindent Por lo que dijimos, se cumple que $A \subseteq C$, pero se trata
+de un subconjunto algo especial. Es un (sub)conjunto sin elementos. A este
+se le llama \semph{conjunto vacío} (\emph{empty set}) y se denota con el
+símbolo `$\emptyset$'. Alternativamente, se podría haber expresado por
+comprensión haciendo uso de cualquier otra contradicción distinta a $x
+\notin C$. En cualquier caso, lo importante es que esa contradicción conduce
+a que el conjunto no tenga ningún elemento.
+
+Es fácil demostrar que el conjunto vacío es un subconjunto de cualquier
+conjunto. Simplemente hay que aplicar la definición de \emph{subconjunto}.
+Supongamos un conjunto $C$ arbitrario. Dado un elemento arbitrario $x \in
+\emptyset$, se da que $x \in C$. Esta proposición es verdadera;
+concretamente, vacuamente cierta, ya que nunca se da el antecedente, es
+decir, nunca se da $x \in \emptyset$.
+
+No hay que confundir las expresiones conjuntistas ``$\emptyset$'' y
+``$\{\emptyset\}$''. La primera de estas es el conjunto vacío, mientras que
+la segunda denota al conjunto unitario cuyo único elemento es el conjunto
+vacío. Puede ver también que se trata de conjuntos con distinto número de
+elementos: 0 el primero y 1 el segundo.
+
+
+
+
+
+\subsubsection{Lógica de predicados}
+
+Los predicados que hemos visto hasta ahora son simples, ya que se
+concretizan en proposiciones simples. Se tienen también los predicados
+compuestos, que son los que lo hacen sobre proposiciones compuestas.
+
+Sea $C$ un conjunto sobre el que están definidos diversos predicados: $P_x$,
+$Q_x$, $R_x$, etc. Cada vez que damos un valor a $x$, por ejemplo, $x = c$
+siendo $c \in C$, obtenemos las proposiciones $P_c$, $Q_c$, etc. a las que
+se les puede aplicar todo el cálculo de proposiciones del capítulo anterior.
+Por tanto, tienen sentido en $C$ los predicados
+
+\[ \neg P_x, \ P_x \lor Q_x, \ P_x \to Q_x, \ P_x \land Q_x, \ \ldots \]
+
+\noindent Estos predicados determinan diferentes subconjuntos de $C$
+formados por los elementos de $C$ donde son ciertos los nuevos predicados.
+
+La lógica de predicados también recibe el nombre de \emph{lógica de primer
+orden}.
+
+\begin{example}
+  Si $C$ es un conjunto y $P_x$ un predicado sobre $C$, entonces
+
+  \[ \emptyset = \{x \in C \st P_x \land \neg P_x\} \]
+
+  Si recuerda de la lógica de proposiciones, ese predicado compuesto es una
+  contradicción, $\contrad$, y, tal y como dijimos antes, este conduce a
+  definir al conjunto vacío. También es fácil ver que
+
+  \[ \emptyset = \{x \in \zset \st (x^2 = 9) \land (x \ \text{es par})\} \]
+
+  \noindent ya que tenemos también otra contradicción, o que
+
+  \[ \{x \in \zset \st (x \ \text{es par}) \land (x \ \text{es múltiplo de
+  3})\} = \{x \in \zset \st x \ \text{es múltiplo de 6}\} \]
+\end{example}
+
+
+
+\subsection{Los números naturales}
+
+A continuación, asumimos la existencia del conjunto de los números
+naturales, que solemos representar por $\nset$. En el
+capítulo~\ref{ch:naturales} se hará un estudio más completo de la
+fundamentación de estos. Nos interesa, en primer lugar, que la definición
+axiomática de $\nset$ asegura la existencia de conjuntos ``infinitos''.
+Además, que estos presentan un hecho, muy útil en la práctica, conocido como
+el Principio de Inducción.
+
+Los números naturales. Aunque intuitivamente se conocen los números
+naturales,
+
+\[ \nset = \{0, 1, 2, 3, 4, 5, 6, 7, \dots\} \]
+
+\noindent como los números que utilizamos para contar, y este proceso nos es
+familiar desde nuestros comienzos en la educación primaria, resulta que la
+existencia del conjunto de los números naturales se asegura mediante los
+axiomas de Peano, que presentamos aquí de manera informal.
+
+\begin{enumerate}[label=\textbf{A\arabic*.}, leftmargin=1.5cm]
+  \item El elemento 0 es un número natural.
+  \item Todo número natural $n$ tiene un único elemento sucesor que es
+    también un número natural.
+  \item 0 no es el sucesor de ningún número natural.
+  \item Dos números naturales cuyos sucesores son iguales son iguales.
+  \item Si un subconjunto de números naturales contiene al 0 y a los
+    sucesores de cada uno de sus elementos, entonces contiene a todos los
+    números naturales.
+\end{enumerate}
+
+De aquí se pueden extraer algunas conclusiones. Por ejemplo, A1 permite
+asegurar que el conjunto de los números naturales es un conjunto no vacío.
+Hablar de sucesor en A2 refleja precisamente la idea de contar. A3 indica
+que hay un primer elemento en dicho conjunto. A2, A3 y A4, en forma
+conjunta, aseguran que al ir contando nunca volvernos a un mismo elemento.
+A5 es el axioma utilizado en las demostraciones por inducción. Es la
+formulación conjuntista del principio siguiente:
+
+% TODO Meterlo en un entorno.
+
+Principio de Inducción. Si $P$ es una propiedad definida sobre $\nset$ tal
+que:
+
+\begin{enumerate}
+  \item El número 0 satisface la propiedad $P$, es decir, $P_0$ es
+    verdadera.
+  \item Si $n$ satisface la propiedad $P$, entonces el sucesor de $n$
+    también la satisface.
+\end{enumerate}
+
+\noindent Entonces todo número natural satisface la propiedad $P$.
+
+En efecto, si consideramos el subconjunto $M$ de los elementos de $\nset$
+(es decir, $M \subseteq \nset$) que satisfacen la propiedad $P$ y
+comprobamos que $M$ contiene al 0 y a los sucesores de cada demento,
+aplicando entonces el Principio de Inducción (o, si lo prefiere, el A5 de
+Peano) se obtiene que $\nset \subseteq M$. Entonces, como se cumplen $M
+\subseteq \nset$ y $\nset \subseteq M$, se tiene que $M = \nset$, por la
+propiedad de la doble inclusión de conjuntos, que vimos antes.
+
+\begin{example}[Demostración por Inducción]
+  Demuéstrese para todo número natural la igualdad
+
+  \[ \frac{0}{2^0} + \frac{1}{2^1} +  \frac{2}{2^2} +  \frac{3}{2^3} +
+  \cdots + \frac{n}{2^n} = 2 - \frac{n + 2}{2^n} \]
+
+  La igualdad es verdadera para $n = 0$, pues
+
+  \[ \frac{0}{2^0} = 0 = 2 - \frac{0 + 2}{2^0} \]
+
+  Supongamos que la igualdad es cierta para $n$, esto es,
+
+  \[ \frac{0}{2^0} + \frac{1}{2^1} +  \frac{2}{2^2} +  \frac{3}{2^3} +
+  \cdots + \frac{n}{2^n} = 2 - \frac{n + 2}{2^n} \]
+
+  \noindent y comprobemos que es cierta para el sucesor de $n$, es decir,
+  para $n + 1$. En consecuencia hay que comprobar que
+
+  \[ \frac{0}{2^0} + \frac{1}{2^1} +  \frac{2}{2^2} +  \frac{3}{2^3} +
+  \cdots + \frac{n}{2^n} + \frac{n+1}{2^{n+1}} = 2 - \frac{(n+1) +
+  2}{2^{n+1}} \]
+
+  En efecto:
+
+  \begin{align*}
+    \frac{0}{2^0} + \frac{1}{2^1} + \frac{2}{2^2} + \cdots + \frac{n}{2^n} +
+      \frac{n+1}{2^{n+1}}
+    &= \left( \frac{0}{2^0} + \frac{1}{2^1} +  \frac{2}{2^2} +  \frac{3}{2^3}
+      + \cdots + \frac{n}{2^n} \right) + \frac{n+1}{2^{n+1}} \\
+    &= \left( 2 - \frac{n+2}{2^n} \right) + \frac{n+1}{2^{n+1}} \\
+    &= 2 - \frac{2n + 4 - n - 1}{2^{n-1}} = 2 - \frac{n + 3}{ 2^{n+1}} \\
+    &=  2 - \frac{(n+1) + 2}{2^{n+1}} \\
+  \end{align*}
+\end{example}
+
+Las demostraciones que se hacen echando mano del Principio de Inducción son
+muy comunes en matemáticas. El principal problema con el que cuentan es que
+no nos van indicando, sino que debemos saber qué es lo que deseamos
+demostrar. TKTK.
+
+El A5 de Peano también se utiliza para definir términos donde intervienen
+los números naturales donde se define el objeto que depende de un número
+natural en función de objetos que dependen de términos anteriores. Se trata
+de definiciones que hacen uso de la autorreferencia, cosa que está prohibida
+en otros ámbitos\footnotemark{} pero, en matemáticas, bajo ciertas
+circunstancias, sí se permite.
+
+\footnotetext{Recuerde que se dijo en la definición ``ingenua'' de
+\emph{conjunto}.}
+
+A las definiciones que emplean la autorreferencia se las conoce como
+definiciones \emph{recurrentes} o \emph{por recurrencia}. Aunque se ve
+menos, también se las podría llamar, perfectamente, definiciones
+\emph{autorreferentes}\dots{} o \emph{inductivas}, ya que se basan en el
+Principio de Inducción.
+
+Un ejemplo de definición recurrente es la del factorial de un número natural
+$n$. Para cualquier número natural $n \in \nset$, se define $(n + 1)!$ en
+función de $n!$ mediante
+
+$$ (n + 1)! = n! \, (n + 1) $$
+
+\noindent y se lee ``factorial de $n + 1$''. Es evidente que hay que conocer
+el valor de $0!$ para poder determinar todos los demás, pues, de lo
+contrario, estaría sin definir ya que habría toda una gama de factoriales.
+Se define $0! = 1$, cosa que hace que se trate de una función concreta. En
+resumen, la definición recurrente de factorial de $n$ es
+
+\begin{equation*}
+  (n+1)! =
+  \begin{cases}
+    1             & \text{si}\ n + 1 = 0 \\
+    (n)!\,(n+1)   & \text{si}\ n + 1 > 0
+  \end{cases}
+\end{equation*}
+
+\noindent o, si lo prefiere,
+
+\begin{equation*}
+  n! =
+  \begin{cases}
+    1           & \text{si}\ n = 0 \\
+    (n-1)!\,n   & \text{si}\ n > 0
+  \end{cases}
+\end{equation*}
+
+\noindent que me parece más elegante. Como puede ver, se está usando un
+factorial dentro de la definición del factorial.
+
+De esta definición se obtiene fácilmente su forma no recursiva:
+
+% TODO ¿A la forma no recursiva se la conoce también como forma explícita?
+
+\[ n! = n \cdot (n-1) \cdot (n-2) \cdot (n-3) \cdot \dots \cdot 3 \cdot 2
+\cdot 1 \]
+
+Si $n'$ designa el sucesor de $n$, los cinco axiomas de Peano permiten
+pensar en $\nset$ como en el conjunto
+
+\[ \{0, 0', (0')', ((0')')', \dots\} \]
+
+Existe cierta controversia sobre la inclusión del número 0 en el conjunto de
+los números naturales, $\nset$, pues a veces se excluye de este conjunto. No
+existe un consenso generalizado y, de hecho, para las distintas áreas de las
+matemáticas, hay razones tanto para incluirlo como para excluirlo. Así, en
+la lógica y la teoría de conjuntos parece evidente que ha de darse que $0
+\in \nset$, pero esto no sucede en otras áreas. En cualquier caso, esto es
+simplemente una cuestión de terminología y no afecta a la validez de los
+resultados que se obtengan. En caso de excluirlo, el Principio de Inducción
+se enunciaría de tal forma que comience con el 1, en lugar de con 0.
+
+En la terminología que seguiremos en este texto, sí consideramos que $0 \in
+\nset$. Si deseamos designar a $\nset$ excluyendo el 0, usaremos la notación
+$\nset^*$, es decir,
+
+\[ \nset^* = \{1, 2, 3, 4, 5, 6, 7, \dots\} \]
+
+Definición. Conjuntos finitos y conjuntos infinitos. Los conjuntos pueden
+ser finitos o infinitos. Intuitivamente, un conjunto es finito si contando
+los diferentes elementos del conjunto, el proceso de contar se termina. En
+caso contrario, el conjunto es infinito. En capítulos posteriores se verá
+una definición más precisa de estos dos conceptos. En cualquier caso, los
+conjuntos $A = \{1, 2\}$, $B = \{a, e, i, o, u\}$ y $C = \{2, i, \text{museo
+del Prado}\}$ son conjuntos finitos. Los axiomas A2, A3 y A4 de Peano
+permiten asegurar que el proceso de contar los elementos del conjunto
+$\nset$ no se acaba nunca. Es decir, $\nset$ es un conjunto infinito. Esto
+se tratará de forma más rigurosa en el capítulo~\ref{ch:naturales}.
+
+
+

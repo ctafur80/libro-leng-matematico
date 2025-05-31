@@ -1,0 +1,57 @@
+
+
+
+
+<div class="exercise" id="infinitos-primos">
+
+<div class="exerc_enunciado" >
+  Demuestre que existen infinitos números primos.
+</div>
+
+<div class="exerc_sol">
+
+Se va a abordar por el método de contradicción.
+
+Suponemos que existe una cantidad finita $n \in \mathbb{N}$ con $n \geq 1$ de
+números primos. Ese límite inferior es fácil demostrarlo puesto que sabemos
+que, por ejemplo, el 2 es un número primo. Nos centraremos en los números
+naturales mayores que 1, que son los únicos que pueden ser primos. Los
+números primos son, en orden ascendente, $p_1 = 2$, $p_2 = 3$, $p_3 = 5$,
+$p_4 = 7$, .... Al último lo designamos por $p_n$.
+
+Considere ahora al número que es la multiplicación de todos los primos.
+
+$$ N = p_1 \, p_2 \, p_3 \, \cdots \, p_n $$
+
+$N$ tiene que ser un entero positivo, ya que todos los primos son enteros
+mayores que 1. Así que $N+1$ será un entero mayor que 1. Por el Teorema
+Fundamental de la Aritmética, se tiene que $N+1$, puesto que ha de ser
+necesariamente compuesto al no estar en esa lista de números primos, ha de
+tener un factor primo $p$. Ese $p$ tiene que estar en la lista de factores
+de $N$, ya que estos son todos los números primos. Por tanto, se da que $p
+\mid N$.
+
+Por otro lado, antes hemos dicho que $p$ es un factor de $N+1$, o lo que es
+lo mismo, $p \mid (N+1)$. Entonces, por una proposición de la teoría de
+números que yo suelo llamar Principio del Factor de Dos de Tres, tenemos que
+$p$ será un divisor de la resta de estos, es decir,
+
+$$ p \mid ((N+1) - N) $$
+
+o, lo que es lo mismo, $p \mid 1$. Pero ningún número primo es un factor de
+1. Por tanto, la hipótesis, es decir, que $p$ se encontraba en la lista de
+los números primos, será falsa. Así, pues, $p$ será un "nuevo" número primo
+que no habíamos tenido en cuenta.
+
+Esto mismo se puede hacer continuamente y así ir obteniendo sistemáticamente
+nuevos números primos. Por tanto, la cantidad de números primos es
+ilimitada.
+
+
+</div>
+</div>
+
+
+
+
+

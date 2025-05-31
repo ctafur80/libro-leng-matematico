@@ -1,0 +1,52 @@
+references:
+
+- type: book
+  id: open-logic-text
+  title: The Open Logic Text
+  author:
+  - family: Zach
+    given: Richard
+  - family: 
+    given: 
+  # issued:
+  #   date-parts:
+  #   - - 2011
+  #     - 03
+  #     - 03
+  language: en-US
+  url: https://github.com/OpenLogicProject/OpenLogic
+  publisher: publicación independiente
+  # edition: 3
+  isbn: 
+
+- type: book
+  id: infinite-descent
+  title: An Infinite Descent into Pure Mathematics
+  author:
+  - family: Clive
+    given: Newstead
+  issued:
+    date-parts:
+    - - 2024
+  language: en-US
+  url: https://github.com/OpenLogicProject/OpenLogic
+  publisher: publicación independiente
+  isbn: 978-1-950215-01-0
+
+- type: book
+  id: enderton
+  title: Elements of Set Theory
+  author: Herbert B. Enderton
+  issued: 1977
+  language: en-US
+  publisher: Academic Press
+  isbn: 978-0122384400
+
+
+
+
+
+
+
+
+

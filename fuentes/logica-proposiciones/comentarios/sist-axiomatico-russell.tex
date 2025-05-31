@@ -1,0 +1,70 @@
+
+
+
+
+Otra forma de introducir la lógica proposicional es mediante un
+\semph{sistema axiomático}. Se establece un alfabeto de símbolos, una lista
+de reglas sintácticas de formación (partículas conectivas y paréntesis), una
+lista de sentencias verdaderas (axiomas) y una lista de reglas de
+transformación (reglas de deducción).
+
+% ¿Cómo hemos introducido antes la lógica proposicional, entonces?
+
+Mostramos un sistema axiomático en particular simplemente como ejemplo, pero
+no es algo que deba aprender en profundidad.
+
+En el sistema axiomático \emph{Principia Mathematica} (PM), se dota a los
+elementos del alfabeto (proposiciones) de un \emph{valor semántico} (0, 1) y
+se combinan estos elementos, haciendo un uso correcto de las reglas
+sintácticas de formación (únicamente $\neg$, $\lor$ y paréntesis) para
+construir fórmulas bien formadas (proposiciones sintácticamente correctas),
+que son valoradas sin ambigüedad. El resto de los conectores usuales se
+definen mediante las leyes siguientes:
+
+\begin{align*}
+  p \land q           &\iff \neg(\neg p \lor \neg q) \\
+  p \to q             &\iff \neg p \lor q \\
+  p \leftrightarrow q &\iff (p \to q) \land (q \to p) \\
+\end{align*}
+
+Un \semph{axioma} es una fórmula bien formada que se considera verdadera, es
+decir, se trata de una tautología, sin tener que deducirlo. También se dice
+que es una tautología primaria no deducible.
+
+Un \semph{teorema} es una fórmula bien formada que es cierta. Por tanto, se
+trata también de una tautología, solo que, al contrario que con los axiomas,
+en los teoremas se ha de demostrar que son ciertos. Son tautologías
+deducibles a partir de otros teoremas y axiomas.
+
+Se podría definir la \semph{demostración} (\emph{proof}) de un teorema como
+la secuencia de sentencias verdaderas necesarias para deducirlo.
+
+Los axiomas de PM son:
+
+\begin{enumerate}[label=\textbf{A\arabic*}., leftmargin=1.5cm]
+  \item $p \lor p \to p$.
+  \item $p \to (p \lor q)$.
+  \item $(p \lor q) \to (q \lor p)$.
+  \item $(p \to q) \to \left[(r \lor p) \to (r \lor q)\right]$.
+\end{enumerate}
+
+Las reglas de transformación de PM son:
+
+\begin{description}
+  \item[Regla de sustitución] El resultado de reemplazar un elemento
+    alfabético en un teorema por una fórmula bien formada es un teorema.
+
+  \item[Regla de separación] Si $S$ y $R$ son fórmulas bien formadas, y $S$
+    y $S \to R$ son teoremas, entonces $R$ es un teorema.
+\end{description}
+
+
+
+
+
+
+
+
+
+
+

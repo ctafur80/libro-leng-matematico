@@ -1,0 +1,62 @@
+
+
+
+
+<div class="exercise" id="raiz-dos-irracional">
+
+<div class="exerc_enunciado" >
+  $\sqrt{2}$ no es racional.
+</div>
+
+<div class="exerc_sol">
+
+Vamos a abordarlo por contradicción. Suponemos que $\sqrt{2}$ es racional.
+Por tanto, existen $m, n \in \mathbb{Z}$ para los que $m/n = \sqrt{2}$. Podemos
+suponer, además, sin pérdida de generalidad, que es una fracción
+irreducible, es decir, $m$ y $n$, en sus respectivas descomposiciones en
+factores primos, no tienen ningún factor en común, cosa que equivale a decir
+que $m$ y $n$ son primos relativos, que es lo mismo que decir que su máximo
+común divisor es $1$.
+
+Ahora, si elevamos al cuadrado en ambas partes de la ecuación, tenemos
+
+```{=latex}
+\begin{align*}
+  \frac{m}{n} &= \sqrt{2} \\
+  m           &= n \sqrt{2} \\
+  m^2
+    &= \left(n \sqrt{2}\right)^2 = n^2 \left(\sqrt{2}\right)^2 = 2n^2 \\
+\end{align*}
+```
+
+Por tanto, $2 \mid m^2$. Como sabemos por TKTK, si $2 \mid m^2$, entonces $2
+\mid m$. Por tanto, existe un $k \in \mathbb{Z}$ tal que $m = 2k$. Así, pues,
+
+```{=latex}
+\begin{align*}
+  m     &= 2k \\
+  m^2   &= (2k)^2 \\
+  2n^2  &= 4k^2 \\
+  n^2   &= 2k^2
+\end{align*}
+```
+
+Advierta que hemos sustituido en una de estas transformaciones el valor
+obtenido antes, es decir, $m^2 = 2n^2$.
+
+De este resultado, $n^2 = 2k^2$, se deduce que también se da $2 \mid n^2$.
+Entonces, al igual que antes, se tiene que $2 \mid n$. Hemos llegado
+entonces a la conclusión de que el 2 es un divisor común de $m$ y $n$, es
+decir, $2 \mid \{m, n\}$, lo cual se contradice con que ambos números sean
+primos relativos.
+
+Por tanto, la premisa de la que partimos será falsa. Esta era que $\sqrt{2}$
+era un número racional, con lo que hemos demostrado que no lo es.
+
+</div>
+</div>
+
+
+
+
+

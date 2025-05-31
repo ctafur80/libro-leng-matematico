@@ -1,0 +1,237 @@
+
+
+
+### Álgebra de conjuntos
+
+Todos los conjuntos que se consideran en este apartado son subconjuntos de
+un conjunto $U$, es decir, tan solo se utilizan elementos del conjunto
+$\powset(U)$. En la tabla siguiente se comparan las propiedades de la unión,
+la intersección y la complementación en $\powset(U)$, muchas de las cuales
+ya han sido enunciadas. Paralelamente, escribiremos las leyes lógicas
+correspondientes a las propiedades características o predicados que definen
+los conjuntos por comprensión. Se puede pues razonar sobre los subconjuntos
+de $U$ directamente o sobre las propiedades que los definen por comprensión.
+En todo lo que sigue $A$, $B$ y $C$ son tres subconjuntos cualesquiera de
+$U$ tales que
+
+$$\begin{aligned}
+  A &= \{x \in U \: : \: P_x\} \\
+  B &= \{x \in U \: : \: Q_x\} \\
+  C &= \{x \in U \: : \: R_x\} \\
+\end{aligned}$$
+
+La tabla comparativa es la siguiente:
+
+<table id="tbl-algebra-conjuntos" style="border: 1px solid white;">
+  <caption>Tabla: Propiedades del álgebra de conjuntos.</caption>
+  <tr>
+    <th>Conjuntista</th>
+    <th>Lógica</th>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes de idempotencia</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        A \cup A &= A \\
+        A \cap A &= A
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        P_x \lor P_x &\iff P_x \\
+        P_x \land P_x &\iff P_x
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes conmutativas</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        A \cup B &= B \cup A \\
+        A \cap B &= B \cap A
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        P_x \lor Q_x &\iff Q_x \lor P_x \\
+        P_x \land Q_x &\iff Q_x \land P_x
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes asociativas</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        (A \cup B) \cup C &= A \cup (B \cup C) \\
+        (A \cap B) \cap C &= A \cap (B \cap C)
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        (P_x \lor Q_x) \lor R_x &\iff P_x \lor (Q_x \lor R_x) \\
+        (P_x \land Q_x) \land R_x &\iff P_x \land (Q_x \land R_x)
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes distributivas</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) \\
+        A \cap (B \cup C) &= (A \cap B) \cup (A \cap C)
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        P_x \lor (Q_x \land R_x) &\iff (P_x \lor Q_x) \land (P_x \lor R_x) \\
+        P_x \land (Q_x \lor R_x) &\iff (P_x \land Q_x) \lor (P_x \land R_x)
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes de identidad</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        A \cup \emptyset &= A \\
+        A \cup U &= U \\
+        A \cap \emptyset &= \emptyset \\
+        A \cap U &= A
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        P_x \lor 0 &\iff P_x \\
+        P_x \lor \mathbf{1} &\iff \mathbf{1} \\
+        P_x \land \mathbf{0} &\iff \mathbf{0} \\
+        P_x \land 1 &\iff P_x
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes del complementario</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        A \cup \overline{A} &= U \\
+        A \cap \overline{A} &= \emptyset \\
+        \overline{\overline{A}} &= A \\
+        \overline{U} &= \emptyset \\
+        \overline{\emptyset} &= U
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        P_x \lor \neg P_x &\iff \mathbf{1} \\
+        P_x \land \neg P_x &\iff \mathbf{0} \\
+        \neg (\neg P_x) &\iff P_x \\
+        \neg \mathbf{1} &\iff \mathbf{0} \\
+        \neg \mathbf{0} &\iff \mathbf{1}
+      \end{align*}
+      $$
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="sector-tbl">Leyes de De Morgan</td>
+  </tr>
+  <tr>
+    <td>
+      $$
+      \begin{align*}
+        \overline{A \cup B} &= \overline{A} \cap \overline{B} \\
+        \overline{A \cap B} &= \overline{A} \cup \overline{B}
+      \end{align*}
+      $$
+    </td>
+    <td>
+      $$
+      \begin{align*}
+        \neg (P_x \lor Q_x) &\iff \neg P_x \land \neg Q_x \\
+        \neg (P_x \land Q_x) &\iff \neg P_x \lor \neg Q_x
+      \end{align*}
+      $$
+    </td>
+  </tr>
+</table>
+
+Esto mismo se podría ver comparándolos dos a dos:
+
+<div class="comparat">
+  <div>
+  $$\begin{align*}
+    A \cup A &= A \\
+    A \cap A &= A
+  \end{align*}$$
+  </div>
+
+  <div>
+  $$\begin{align*}
+    P_x \lor P_x &\iff P_x \\
+    P_x \land P_x &\iff P_x
+  \end{align*}$$
+  </div>
+</div>
+
+
+
+
+::: {.exercise}
+Demuestre, utilizando las propiedades de la tabla anterior, que para todo
+$A, B \in \powset(U)$, se cumple que $(A \cap B) \cup (A \cap \overline{B})
+= A$.
+
+$$
+\begin{align*}
+  (A \cap B) \cup (A \cap \overline{B})
+    &= A \cap (B \cup \overline{B}) \\
+    &= A \cup U \\
+    &= A
+\end{align*}
+$$
+:::
+
+
+
+
+
+

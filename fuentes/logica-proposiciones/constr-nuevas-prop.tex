@@ -1,0 +1,124 @@
+
+
+
+
+Exponemos ahora la forma de crear proposiciones nuevas haciendo uso de
+varias proposiciones y operadores lógicos. Hasta ahora, solo se han empleado
+proposiciones simples en la definición de los operadores lógicos para poder
+construir proposiciones compuestas. Los operadores descritos solo actúan
+sobre una o dos proposiciones. Cuando se dispone de más de dos
+proposiciones, hay que emplear paréntesis, corchetes o llaves para indicar
+las proposiciones que son afectadas por cada conector.
+
+Hay que tener cuidado con la notación del operador negación, $\neg$. La
+sintaxis a este respecto, en la lógica simbólica, consiste en que este
+afecta únicamente a la proposición que le sucede. Así pues, en la expresión
+$\neg p$ la negación afecta únicamente a $p$. Pero, si se tiene, por
+ejemplo, la proposición compuesta $\neg p \land q$, la proposición afectada
+por la negación es $p$, que quizás no es lo que deseaba. Para negar la
+proposición $p \land q$, en forma global, se hace uso de paréntesis. Así, se
+tendría que escribir $\neg (p \land q)$. Ambas proposiciones no son
+equivalentes, tal y como se muestra en la tabla \ref{tbl:prioridad-neg}.
+
+\begin{table}[h]%
+  \caption{Prioridad en notación de negación}
+  \label{tbl:prioridad-neg}%
+  \centering
+  $$
+    \begin{array}{|c|c||c|c|c|c|}
+      \hline
+      p & q & \neg p & p \land q & \neg p \land q & \neg (p \land q) \\
+      \hline
+      \hline
+      0 & 0 & 1 & 0 & 0 & 1 \\
+      0 & 1 & 1 & 0 & 1 & 1 \\
+      1 & 0 & 0 & 0 & 0 & 1 \\
+      1 & 1 & 0 & 1 & 0 & 0 \\
+      \hline
+    \end{array}
+  $$
+\end{table}
+
+En notaciones alternativas del operador negación, como, por ejemplo,
+$\overline{p}$, se evita este problema y se tiene, por tanto, una notación
+que hace menor uso de paréntesis y, por lo tanto, resulta más cómoda. Así,
+se tendría que $\neg (p \land q)$ se representaría por $\overline{p \land
+q}$.
+
+En lo que respecta a la sintaxis de los operadores conjunción y disyunción,
+no hay regla de prioridad sobre estos, con lo que expresiones como
+
+$p \land q \lor r$ no son gramaticales, ya que se podría interpretar de dos
+formas distintas: como $(p \land q) \lor r$ o como $p \land (q \lor r)$. Se
+rompe la ambigüedad haciendo uso de paréntesis, como en estas dos últimas
+expresiones. Al contrario de lo que sucede en la aritmética con la suma y el
+producto, no existen a este respecto reglas de prioridad entre estos dos
+operadores.
+
+A este respecto, la notación que se suele seguir en ciencias de la
+computación o en el diseño lógico digital parece también, al igual que vimos
+para el operador negación, más eficiente. En esta, se suele representar al
+operador conjunción con el producto: signo `$\cdot$' o uso de la notación en
+aposición. La disyunción se representa como una suma: `$+$'. Se sigue la
+regla de otorgar prioridad al producto respecto a la suma, con lo que se
+evitaría el uso de paréntesis en muchos casos.
+
+Por otro lado, en general, el orden de escritura de las proposiciones es
+relevante. Así, $p \rightarrow q$ y $q \rightarrow p$ son dos proposiciones
+no equivalentes, tal y como se puede ver en la
+tabla~\ref{tbl:condicional-no-conmut}, en la que se ``enfrentan'' sus tablas
+de verdad.
+
+\begin{table}[h]%
+  \caption{El condicional no es conmutativo}
+  \label{tbl:condicional-no-conmut}%
+  \centering
+  $$
+    \begin{array}{|c|c||c|c|}
+      \hline
+      p & q & p \rightarrow q & q \rightarrow p \\
+      \hline
+      \hline
+      0 & 0 & 1 & 1 \\
+      0 & 1 & 1 & 0 \\
+      1 & 0 & 0 & 1 \\
+      1 & 1 & 1 & 1 \\
+      \hline
+    \end{array}
+  $$
+\end{table}
+
+El valor de cualquier proposición simple, sea verdadera o falsa, se obtiene
+directamente de su enunciado. A veces, no resulta evidente la determinación
+del valor de una proposición compuesta, puesto que este valor depende de los
+valores que tomen las proposiciones simples que la componen.
+
+Hay dos operadores que se deben destacar. Por un lado, al $C_0$, que toma el
+valor 0 para cualquier combinación de datos de entrada, se le conoce como
+\emph{contradicción}. Lo representaremos simbólicamente como un cero en
+negrita: `$\contrad$'. Por el otro, se tiene el operador $C_{15}$, que toma
+siempre el valor 1. A este se le conoce como una \emph{tautología}. Lo
+designaremos por un uno en negrita: `$\tautol$'.
+
+Advierta que no es lo mismo $\tautol$ que 1. El primero será una proposición
+lógica, mientras que, el segundo, un valor de verdad. TKTK
+
+% TODO Cuando presento las variables lógicas, $p$, mencionar las constantes
+% lógicas: 0 y 1.
+
+La forma de determinar si dos proposiciones son equivalentes es hacer la
+operación bicondicional sobre estas. Si el resultado da una tautilogía, se
+afirmará que ambas proposiciones son equivalentes. En caso contrario, no lo
+son.
+
+La forma habitual de manipular expresiones lógicas para sistematizar el
+razonamiento es la siguiente. Si dos proposiciones $p$ y $q$ son
+equivalentes y $p$ forma parte de una tercera proposición $r$, entonces
+puede sustituirse $p$ por $q$ en la expresión de $r$, pues la nueva
+proposición obtenida es equivalente a $r$. Desde el punto de vista lógico,
+$p$ y $q$ pueden sustituirse el uno al otro; por eso coloquialmente se
+expresa diciendo que $p$ y $q$ son proposiciones iguales.
+
+
+
+

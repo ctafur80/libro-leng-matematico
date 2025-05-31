@@ -1,0 +1,262 @@
+
+
+
+Volvamos al predicado $P_x$: ``El número elegido es par'', donde el universo
+del predicado es $\nset$. El valor de verdad de $P_x$ varía en relación al
+valor que tome $x$. Sin embargo, las expresiones
+
+\begin{quote}
+  Todos los números naturales son pares. \\
+  Existe algún número natural par.
+\end{quote}
+
+\noindent tienen un valor falso en el primer caso y verdadero en el segundo.
+Hemos efectuado el proceso de cuantificar de alguna manera los elementos que
+satisfacen la propiedad del predicado.
+
+En una expresión, pueden aparecer implícita o explícitamente algún grupo de
+palabras orientativas de la cantidad de elementos que satisfacen la
+propiedad del predicado, tales como: ``para cualquier'', ``para cada'',
+``todo'', ``para todo'', ``cada'', ``cualesquiera que sean'', etc., o cosas
+como ``para algún'', ``existe'', ``existe al menos un'', etc.
+
+En realidad, no existe una fórmula mágica para saber si una expresión en
+lengua natural se debe interpretar refiriéndose a todos y cada uno de los
+elementos de un conjunto. Puede que se refieran a ``un elemento arbitrario''
+del conjunto, o incluso que esto mismo ni se mencione de forma explícita y
+deba interpretarlo. TKTK. Un poco más adelante retomaremos esta cuestión.
+
+En la lógica de primer orden, existen símbolos que representan estas ideas.
+Estos reciben el nombre de \emph{cuantificadores} (\emph{quantifiers}).
+
+Por muy extensa que sea la forma de expresar los cuantificadores en una
+lengua natural, solo tenemos dos cuantificadores, como vemos a continuación.
+
+
+
+
+
+\subsubsection{Cuantificador universal}
+
+Sea $C$ un conjunto y $P_x$ un predicado sobre $C$. Consideremos el
+subconjunto donde se cumple $P_x$:
+
+$$ C_P = \{x \in C \st P_x\} $$
+
+\noindent o, tal y como dijimos, la extensión del predicado $P$ sobre $C$.
+Si para cada $x \in C$ se satisface $P_x$, escribiremos
+
+$$ \forall x \in C.\ P_x $$
+
+\noindent que se lee ``Para todo $x$ de $C$, $P_x$'', o, si lo prefiere,
+``Cualquiera que sea el elemento $x$ de $C$, $x$ satisface $P_x$''. El
+símbolo `$\forall$' se denomina \emph{cuantificador universal}
+(\emph{universal quantifier}) y transforma un predicado en una proposición
+con un valor verdadero o falso.
+
+En algunos textos, en expresiones de este tipo ponen a la parte del
+cuantificador entre paréntesis, al ser algo de menor relevancia que el
+predicado. Por ejemplo, se tendría
+
+$$ (\forall x \in C) \ P_x $$
+
+\noindent pero personalmente no me gusta, ya que me parece una notación algo
+sobrecargada.
+
+Cuando se sobrentienda el conjunto del que se toman los valores de $x$, $C$
+en el caso anterior, se puede poner simplemente
+
+$$ \forall x. \ P_x $$
+
+Observe que la proposición $\forall x \in C.\ P_x$ es equivalente a la
+proposición $C_P = C$, es decir, la extensión del predicado es igual al
+universo del predicado.
+
+El cuantificador universal es una generalización de la conjunción ($\land$)
+en el sentido siguiente. Supongamos que $C$ sea un conjunto finito; por
+ejemplo, $C = \{1, 2, 3\}$. Entonces, la proposición $\forall x \in C.\ P_x$
+es equivalente a la proposición $P_1 \land P_2 \land P_3$.
+
+
+
+
+
+\subsubsection{Cuantificador existencial}
+
+Sería el cuantificador dual al universal.
+
+Sea $C$ un conjunto y $P_x$ un predicado sobre $C$. Consideremos el
+subconjunto donde se cumple $P_x$:
+
+$$ C_P = \{x \in C \st P_x\} $$
+
+\noindent Si existe un elemento $x \in C$ que satisface $P_x$, escribiremos
+
+$$ \exists x \in C.\ P_x $$
+
+\noindent que se lee, ``Existe al menos un elemento $x$ de $C$ que satisface
+$P_x$''. El símbolo `$\exists$' se denomina \emph{cuantificador existencial}
+(\emph{existential quantifier}), y transforma un predicado en una
+proposición.
+
+También se podría expresar lo anterior como
+
+$$ (\exists x \in C) \ P_x $$
+
+Cuando se sobrentienda el conjunto del que se toman los valores de $x$, $C$
+en el caso anterior, se puede poner simplemente
+
+$$ \exists x. \ P_x $$
+
+Observe que la proposición $\exists x \in C.\ P_x$ es equivalente a la
+proposición $C_P \neq \emptyset$, es decir, la extensión del predicado no es
+el conjunto vacío.
+
+El cuantificador existencial es una generalización de la disyunción ($\lor$)
+en el sentido siguiente. Supongamos que $C$ sea un conjunto finito. por
+ejemplo $C = \{1, 2, 3\}$. Entonces la proposición $\exists x \in C.\ P_x$
+es equivalente a la proposición $P_1 \lor P_2 \lor P_3$.
+
+La variable empleada en la sintaxis de un predicado con cuantificadores no
+tiene ninguna importancia. Tan solo lo tiene el universo de esa variable,
+pues la proposición $\forall x \in C.\ P_x$ es equivalente a la proposición
+$\forall y \in C.\ P_y$. Análogamente, la proposición $\exists x \in C.\
+P_x$ es equivalente a la proposición $\exists z \in C.\ P_z$.
+
+% TODO Hablar de dummy variable.
+
+Los cuantificadores son un complemento muy útil para las expresiones por
+comprensión de conjuntos.
+
+\begin{example}[Cuantificadores]
+  Veamos algunos ejemplos del uso de los cuantificadores.
+
+  El conjunto de los números pares, $\{0, 2, 4, 6, \ldots\}$, denotado por
+  $2\nset$, se escribe con más precisión como
+
+  \[ \{x \in \nset \st \exists k \in \nset. \ x = 2k\} \]
+
+  \noindent A veces, se omite la escritura del cuantificador y se da esta
+  otra:
+
+  \[ \{x \in \nset \st x = 2k, \ k \in \nset\} \]
+
+  \noindent o incluso
+
+  \[ \{2k \st k \in \nset\} \]
+
+  Las proposiciones
+
+  \[ \forall x \in \rset. \ x^2 - 1 = (x + 1)(x - 1) \]
+
+  \noindent y
+
+  \[ \exists x \in \rset. \ x + 5 = 3 \]
+
+  \noindent son ambas verdaderas. La primera es una identidad que se cumple
+  para todos los elementos de $\rset$, mientras que la segunda plantea una
+  ecuación que tiene al menos una solución. Así, por ejemplo,
+
+  \begin{align*}
+    \forall x \in \rset. \ ax + b = 0 &\iff a = b = 0 \\
+    \forall x \in \rset. \ ax + b = 0 &\iff (a \neq 0) \lor (a = b = 0)
+  \end{align*}
+\end{example}
+
+Definición. Equivalencia de Predicados. Dos predicados $P_x$ y $Q_x$ son
+equivalentes sobre un universo $C$ cuando determinan el mismo subconjunto
+del mismo, es decir, $C_P = C_Q$. Se podría expresar como
+
+$$ C_P = C_Q \iff \forall x \in C.\ P_x \leftrightarrow Q_x $$
+
+Observación. La forma de escribir matemáticas ha ido variando a lo largo de
+los años. Si hace unos años lo usual era escribir los enunciados de los
+resultados con el máximo de símbolos posibles, la tendencia actual es la de
+no usar tanta simbología, volviendo a usar en parte la prosa. Así, rara vez
+se utilizan los símbolos de los cuantificadores, salvo en los temas de
+lógica o de conjuntos. Sin embargo hay un uso implícito, o explícito pero
+sin símbolos, de ellos. Expresiones como ``Si una función real de variable
+real es derivable en un punto, entonces la función es continua en ese
+punto'' y ``Un número primo es impar'', que aparentemente son predicados sin
+cuantificar, desde el punto de vista matemático son dos enunciados que van
+cuantificados y significan: ``Toda función real de variable real derivable
+en un punto es continua en ese punto'', que es una proposición verdadera, y
+``Todo número primo es impar'', que es una proposición falsa pues el número
+2 es primo y no es impar.
+
+
+
+
+\subsubsection{Relación entre los cuantificadores universal y existencial}
+
+Aquí supondremos que el universo de la variable $x$ es el conjunto $C$ y nos
+ahorraremos su escritura. Buscamos la negación de las proposiciones
+
+\begin{align*}
+  & \forall x. \ P_x \\
+  & \exists x. \ P_x \\
+\end{align*}
+
+\noindent La primera de estas es equivalente a la proposición
+
+$$ C_P = \{x \in C \st P_x\} = C $$
+
+Por tanto, negando esta proposición nos encontramos, por un lado, con que
+$\neg(\forall x. \ P_x)$ es equivalente a $C_P \neq C$. A su vez, esto
+último es lo mismo que decir que existe al menos un $x \in C$ que no
+satisface $P_x$, que en notación simbólica expresaríamos como $\exists x.\
+\neg P_x$.
+
+Análogamente, la proposición $\exists x. \ P_x$ es equivalente a la
+proposición $C_P = \{x \in C \st P_x\} \neq \emptyset$. Si hacemos la
+negación de este predicado, se tendría $\neg(\exists x. \ P_x)$ o $C_P =
+\emptyset$. Esto se puede interpretar como que ningún elemento de $C$
+satisface $P_x$, o equivalentemente, que todo elemento de $C$ satisface la
+negación de $P_x$, que en notación simbólica se expresaría como $\forall x.\
+\neg P_x$.
+
+En definitiva, se cumplen las equivalencias siguientes:
+
+\begin{align*}
+  \neg(\forall x.\ P_x) &\iff \exists x.\ \neg P_x \\
+  \neg(\exists x.\ P_x) &\iff \forall x.\ \neg P_x \\
+\end{align*}
+
+Estas equivalencias se usan en la práctica para manipular expresiones
+lógicas de predicados y llegar a obtener conclusiones de una forma más
+sistemática que si tuviésemos que razonarlo TKTK.
+
+Concretamente, nos permiten resolver por la ``vía rápida'' muchos de los
+problemas que se nos presenten. Así, si tenemos que demostrar que no es
+cierto que se cumpla una propiedad $P_x$ para todos los elementos de un
+conjunto $C$, es decir, $\neg(\forall x \in C.\ P_x)$, gracias a la primera
+de estas equivalencias podemos comprobar que es cierto simplemente
+demostrando que existe un elemento para el que no se cumple, que no es más
+que demostrar que es cierto su predicado equivalente $\exists x \in C.\ \neg
+P_x$. En este tipo de demostraciones se dice que se ha hecho uso de un
+\emph{contraejemplo} (\emph{counterexample}), y se ven con bastante
+frecuencia en las matemáticas. Evidentemente, se trata de demostraciones muy
+cómodas.
+
+\begin{example}
+  La proposición $\forall x \in \rset. \ x \leq x^2$ es falsa. Es decir,
+  deseamos demostrar
+
+  \[ \neg(\forall x \in \rset. \ x \leq x^2) \]
+
+  \noindent Como sabemos, esto equivale a
+
+  \[ \exists x \in \rset. \ \neg(x \leq x^2) \]
+
+  \noindent o, lo que es lo mismo,
+
+  \[ \exists x \in \rset. \ x \not\leq x^2 \]
+
+  Esto no es más que una demostración mediante un contraejemplo. Llamaremos
+  $x_0$ al parámetro TKTK. Si $x_0 = 1/2$, se obtiene que $x_0^2 = 1/4$ y,
+  por tanto, se tiene que $x_0 \not\leq x_0^2$.
+\end{example}
+
+
+
+

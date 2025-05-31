@@ -1,0 +1,352 @@
+
+
+### Forma clausulada de proposiciones
+
+Dada una proposición compesta por un conjunto de proposiciones simples $p$,
+$q$, $r$, ..., se trata de encontrar una proposición equivalente a la
+primera que esté escrita únicamente como conjunción ($\land$) de
+proposiciones disyuntivas ($\lor$) de literales. También, se admite que se
+tenga una sola proposición TKTK.
+
+Tal y como hemos explicado antes, a lo que nos referimos con *literal* es a
+una proposición simple, por ejemplo, $p$, o su negación, $\neg p$.
+
+Un ejemplo de proposición en forma clausulada sería:
+
+$$ (p \lor \neg q) \land (q \lor r) \land (p \lor \neg r) $$
+
+Para una proposición dada, una proposición que sea equivalente a esta y esté
+formada por conjunciones de disyunciones de literales se dice que es la
+*forma clausulada* de la primera. También se la llama su *forma normal
+conjuntiva*.
+
+Dentro de la expresión en forma clausulada, a las expresiones que hay entre
+cada conjunción se las conoce como *cláusulas lógicas*.
+
+Disponer de la forma clausulada de una proposición facilita saber si esta es
+verdadera, ya que es condición suficiente para que la proposición sea falsa
+que alguna de las cláusulas lógicas sea falsa, en su forma clausulada.
+
+::: {.example}
+La primera ley del condicional,
+
+$$ p \to q \iff \neg p \lor q $$
+
+establece la forma clausulada de un condicional. La forma clausulada de $p
+\to q$ está formada unr una única cláusula: $\neg p \lor q$. No aparece la
+conjunción porque se trataría de una expresión en forma normal conjuntiva
+con una única cláusula.
+
+La segunda ley del condicional,
+
+$$ p \to q \iff \neg(p \land \neg q) $$
+
+no presenta una forma clausulada con dos cláusulas puesto que existe una
+negación que afecta a la conjunción.
+:::
+
+::: {.example}
+La ley del bicondicional establede que $p \leftrightarrow q$ se puede
+expresar como $(p \to q) \land (q \to p)$.
+
+Al aplicar la primera ley del condicional a cada una de las expresiones
+entre paréntesis, se obtiene la forma clausulada de un bicondicional, que en
+este caso sería $(\neg p \lor q) \land (\neg q \lor p)$; compuesta por dos
+cláusulas.
+:::
+
+
+
+
+
+#### Pasos para obtener la forma clausulada
+
+A continuación, establacemos los pasos recomendados para extraer la forma
+clausulada de una proposición.
+
+Paso 1. Sustitución de los conectores bicondicionales. Se transforma cada
+bicondicional en una conjunción de bicondicionales. Concretamente, se
+sustituye $p \leftrightarrow q$ por $(p \to q) \land (q \to p)$.
+
+Paso 2. Sustitución de los conectores condicionales. Se utiliza la primera
+ley del condicional. Concretamente, se sustituye $p \to q$ por $\neg p \lor
+q$.
+
+Paso 3. Sustitución de los conectores que actúan sobre una proposición
+conjunción o disyunción. Se utiliza la ley de De Morgan que corresponda para
+transformar cada negación de una disyunción o conjunción de literales. Es
+decir,
+
+<table>
+  <tr>
+    <td>
+      Se sustituye
+    </td>
+    <td>
+      $\neg(p \land q)$
+    </td>
+    <td>
+      por
+    </td>
+    <td>
+     $\neg p \lor \neg q$.
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Se sustituye
+    </td>
+    <td>
+      $\neg(p \lor q)$
+    </td>
+    <td>
+     por
+     </td>
+     <td>
+      $\neg p \land \neg q$.
+    </td>
+  </tr>
+</table>
+
+
+<!--
+::: center
+  ---------------------------------------------------------- --
+  Se sustituye $\neg(p \land q)$ por $\neg p \lor \neg q$.
+  Se sustituye $\neg(p \lor q)$ por $\neg p \land \neg q$.
+  ---------------------------------------------------------- --
+:::
+-->
+
+Paso 4. Utilización de las leyes distributivas, asociativas y conmutativas
+para generar las cláusulas y, por tanto, la forma clausulada.
+
+::: {.example}
+Determine la forma clausulada de la proposición
+
+$$ p \to (p \land q) $$
+
+Hagamos algunas transformaciones:
+
+<!--
+<table>
+  <tr>
+    <td>
+      $p \to (p \land q)$
+    </td>
+    <td>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      $\neg p \lor (p \land q)$
+    </td>
+    <td>
+      primera ley del condicional
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      $(\neg p \lor p) \land (\neg p \lor q)$
+    </td>
+    <td>
+      propiedad distributiva
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      $\mathbf{1} \land (\neg p \lor q)$
+    </td>
+    <td>
+      ley del tercio excluso
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      $\neg p \lor q$
+    </td>
+    <td>
+      ley de identidad
+    </td>
+  </tr>
+</table>
+-->
+
+\begin{array}{ll}
+  p \to (p \land q)
+    &  \\
+
+  \neg p \lor (p \land q)
+    & \text{primera ley del condicional} \\
+
+  (\neg p \lor p) \land (\neg p \lor q)
+    & \text{propiedad distributiva} \\
+
+  \mathbf{1} \land (\neg p \lor q)
+    & \text{ley del tercio excluso} \\
+
+  \neg p \lor q
+    & \text{ley de identidad} \\
+\end{array}
+
+<!--
+$$\begin{array}{L T}
+  p \to (p \land q)
+    &  \\
+
+  \neg p \lor (p \land q)
+    & primera ley del condicional \\
+
+  (\neg p \lor p) \land (\neg p \lor q)
+    & propiedad distributiva \\
+
+  \mathbf{1} \land (\neg p \lor q)
+    & ley del tercio excluso \\
+
+  \neg p \lor q
+    & ley de identidad \\
+\end{array}$$
+-->
+
+Si se fija, la forma clausulada es la misma que la de $p \to q$. Por lo
+tanto se tendrá que
+
+$$ p \to (p \land q) \iff p \to q $$
+:::
+
+::: {.example}
+Comprobación de una tautología mediante la forma clausulada.
+
+Construyamos paso a paso la forma clausulada de la proposición
+
+$$ [(p \to q) \land (q \to r)] \to (p \to r) $$
+
+Será como sigue:
+
+\begin{align*}
+  & [(p \to q) \land (q \to r)] \to (p \to r) \\
+  & \neg[(p \to q) \land (q \to r)] \lor (p \to r) \\
+  & \neg[(\neg p \lor q) \land (\neg q \lor r)] \lor (\neg p \lor r) \\
+  & [\neg(\neg p \lor q) \land \neg(\neg q \lor r)] \lor (\neg p \lor r) \\
+  & [(\neg\neg p \lor \neg q) \lor (\neg\neg q \lor \neg r)] \lor (\neg p
+    \lor r) \\
+  & [\{(p \lor \neg q) \lor q\} \land \{(p \land \neg q) \lor \neg r\}] \lor
+    (\neg p \lor r) \\
+  & [\{(p \lor q) \land (\neg q \lor q)\} \land \{(p \lor \neg r) \land
+    (\neg q \lor \neg r)\}] \lor (\neg p \lor r) \\
+  & [\{(p \lor q) \land \mathbf{1}\} \land \{(p \lor \neg r) \land (\neg q \lor
+    \neg r)\}] \lor (\neg p \lor r) \\
+  & [(p \lor q) \land (p \land \neg r) \land (\neg q \lor \neg r)] \lor
+    (\neg p \lor r) \\
+  & [(p \lor q) \lor (\neg p \lor r)] \land [(p \lor \neg r) \lor (\neg p
+    \lor r)] \land [(\neg q \lor \neg r) \lor (\neg p \lor r)] \\
+  & [p \lor q \lor \neg p \lor r] \land [p \lor \neg r \lor \neg p \lor r]
+    \land [\neg q \lor \neg r \lor \neg p \lor r] \\
+  & [(p \lor \neg p) \lor q \lor r] \land [(p \lor \neg p) \lor (r \lor \neg
+    r)] \land [(r \lor \neg r) \lor \neg p \lor \neg q] \\
+  & [\mathbf{1} \lor q \lor r] \land [\mathbf{1} \lor \mathbf{1}] \land [\mathbf{1} \lor
+    \neg p \lor \neg q] \\
+  & \mathbf{1} \lor \mathbf{1} \lor \mathbf{1} \\
+  & \mathbf{1} \\
+\end{align*}
+:::
+
+::: {.example}
+Tabla de verdad mediante la forma clausulada. La forma clausulada de la
+proposición
+
+$$ [(p \to q) \land (\neg p \to r)] \to (q \to r) $$
+
+que designaremos de forma abreviada como $f$, es la proposición
+$\neg q \lor \neg p \lor r$. Veamos cómo se deduce.
+
+Paso 1. Quitar condicionales.
+
+$$\begin{aligned}
+  & \neg[(p \to q) \land (\neg p \to r)] \lor (q \to r) \\
+  & \neg[\neg(p \lor q) \land (\neg\neg p \lor r)] \lor (\neg q \lor r) \\
+  & \neg[\neg(p \lor q) \land (p \lor r)] \lor (\neg q \lor r) \\
+\end{aligned}$$
+
+Paso 2. Quitar negaciones de proposiciones compuestas, haciendo uso de las
+Leyes de De Morgan.
+
+$$\begin{aligned}
+  & [\neg(\neg p \lor q) \lor \neg(p \lor r)] \lor (\neg q \lor r) \\
+  & [(\neg\neg p \lor \neg q) \lor (\neg p \land \neg r)] \lor (\neg q \lor
+    r) \\
+  & [(p \land \neg q) \lor (\neg p \land \neg r)] \lor (\neg q \lor r) \\
+\end{aligned}$$
+
+Paso 3. Aplicar las leyes distributiva, asociativa y conmutativa.
+
+$$\begin{aligned}
+  & [(p \land \neg q) \lor (\neg p \land \neg r)] \lor (\neg q \lor r) \\
+  & \{[(p \land \neg q) \lor \neg p] \land [(p \land \neg q) \lor \neg r]\}
+    \lor (\neg q \lor r) \\
+  & \{[(p \lor \neg p) \land (\neg q \lor \neg p)] \land [(p \lor \neg r)
+    \land (\neg q \lor \neg r)]\} \lor (\neg q \lor r) \\
+  & \{[1 \land (\neg q \lor \neg p)] \land [(p \lor \neg r) \land (\neg q
+    \lor \neg r)]\} \lor (\neg q \lor r) \\
+  & [(\neg q \lor \neg p) \land (p \lor \neg r) \land (\neg q \lor \neg r)]
+    \lor (\neg q \lor r) \\
+  & [(\neg q \lor \neg p) \lor (\neg q \lor r)] \land [(p \lor \neg r) \lor
+    (\neg q \lor r)] \land [(\neg q \lor \neg r) \lor (\neg q \lor r)] \\
+  & (\neg q \lor \neg p \lor \neg q \lor r) \land (p \lor \neg r \lor \neg q
+    \lor r) \land (\neg q \lor \neg r \lor \neg q \lor r) \\
+  & (\neg q \lor \neg p \lor r) \land (p \lor \neg q \lor \neg r \lor r)
+    \land (\neg q \lor \neg r \lor r) \\
+  & (\neg q \lor \neg p \lor r) \land (p \lor \neg q \lor 1) \land (\neg q
+    \lor 1) \\
+  & \neg q \lor \neg p \lor r \\
+\end{aligned}$$
+
+Se puede comprobar que las tablas de verdad que se obtienen son iguales, en
+cualquiera de las expresiones: la original,
+tabla [\[tbl:ej-clausulada-1\]](#tbl:ej-clausulada-1){reference-type="ref"
+reference="tbl:ej-clausulada-1"}, y la clausulada,
+tabla [\[tbl:ej-clausulada-2\]](#tbl:ej-clausulada-2){reference-type="ref"
+reference="tbl:ej-clausulada-2"}. Se trata, por tanto, de proposiciones
+equivalentes. Evidentemente, es más fácil construir la tabla de verdad de la
+expresión en forma clausulada.
+
+$$\begin{array}{|c|c|c||c|c|c|c|c|c|}
+      \hline
+      p & q & r & \neg p & p \to q & \neg p \to r & q \to r
+        & (p \to q) \to (\neg p \to r) & f \\
+      \hline
+      \hline
+      0 & 0 & 0   & 1 & 1 & 0 & 1 & 0 & 1 \\
+      0 & 0 & 1   & 1 & 1 & 1 & 1 & 1 & 1 \\
+      0 & 1 & 0   & 1 & 1 & 0 & 0 & 0 & 1 \\
+      0 & 1 & 1   & 1 & 1 & 1 & 1 & 1 & 1 \\
+      1 & 0 & 0   & 0 & 0 & 1 & 1 & 0 & 1 \\
+      1 & 0 & 1   & 0 & 0 & 1 & 1 & 0 & 1 \\
+      1 & 1 & 0   & 0 & 1 & 1 & 0 & 1 & 0 \\
+      1 & 1 & 1   & 0 & 1 & 1 & 1 & 1 & 1 \\
+      \hline
+    \end{array}$$
+
+$$\begin{array}{|c|c|c||c|c|c|}
+      \hline
+      p & q & r & \neg p & \neg q & \neg p \lor \neg q \lor r \\
+      \hline
+      \hline
+      0 & 0 & 0   & 1 & 1 & 1 \\
+      0 & 0 & 1   & 1 & 1 & 1 \\
+      0 & 1 & 0   & 1 & 0 & 1 \\
+      0 & 1 & 1   & 1 & 0 & 1 \\
+      1 & 0 & 0   & 0 & 1 & 1 \\
+      1 & 0 & 1   & 0 & 1 & 1 \\
+      1 & 1 & 0   & 0 & 0 & 0 \\
+      1 & 1 & 1   & 0 & 0 & 1 \\
+      \hline
+    \end{array}$$
+:::
+
+
+

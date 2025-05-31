@@ -1,0 +1,27 @@
+
+
+
+## Conjuntos y lógica de predicados
+
+Aunque en esta asignatura no nos introduzcamos de forma profunda en las
+sutilezas de la teoría de conjuntos, es decir, la tratemos de un modo
+informal, sí que se mencionan estas en algunos puntos. Pero no es algo sobre
+lo que nos vayan a preguntar en el examen. En cualquier caso, puede estar
+bien consultar algún texto para familiarizarse o para tratar de comprender
+algunas de las partes que se mencionan brevemente sobre el formalismo de la
+teoría de conjuntos, o de las paradojas que lo motivan.
+
+A este respecto, un libro que me parece una maravilla, y que tiene ganada la
+fama de ser un clásico de la teoría de conjuntos, es [@enderton]. El
+principal problema que tiene es que es un libro algo antiguo y es difícil de
+encontrar actualmente.
+
+Otra referencia, más moderna pero quizás más enfocada para un punto de vista
+más de la filosofía y menos de las matemáticas es [@open-logic-text]. La
+ventaja de este es que, al contrario de lo que sucede con el anterior, este
+libro es muy fácil de encontrar y una auténtica ganga. De hecho, puede
+descargar su versión en PDF gratuitamente.
+
+
+
+

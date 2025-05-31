@@ -1,0 +1,235 @@
+
+
+
+
+## Aplicación bien definida
+
+El sintagma adjetival _bien definido_ quiere decir que solo existe uno.
+
+Así, por ejemplo, en la definición de _aplicación_ (también llamada
+_función_), se parte del concepto de _relación_. Se dice que una aplicación
+es una relación para la que todo elemento del conjunto inicial está
+relacionado con un elemento del conjunto final y, además, está bien
+definido. Esto de _bien definido_ quiere decir que en esa relación se cumple
+que cada elemento del conjunto inicial está relacionado con un único
+elemento del conjunto final.
+
+
+
+
+O quizás con _bien definida_ se refieran a las dos condiciones que debe
+cumplir una relación para ser una aplicación, es decir, que todo elemento
+del conjunto inicial esté relacionado con algún elemento del conjunto final
+y, además, que lo sea con uno solo.
+
+
+
+Creo que a las aplicaciones inyectivas hay quien las llama también
+_single-rooted_.
+
+
+
+
+
+## La relación inversa de una aplicación biyectiva es una aplicación
+
+Demostración de que la relación inversa de una aplicación biyectiva es una
+aplicación.
+
+Supongamos que tenemos la aplicación
+
+$$
+  \begin{array}{rrcl}
+    f:  & A & \longrightarrow & B \\
+        & x & \longmapsto     & f(x)
+  \end{array}
+$$
+
+Al ser una aplicación biyectiva, será inyectiva y sobreyectiva. Recordemos
+las definiciones de estas.
+
+La aplicación $f$ anterior es sobreyectiva si para todo $b \in B$ existe al
+menos un $a \in A$ tal que $f(a) = b$.
+
+La aplicación $f$ anterior es inyectiva si, para todo $a, b \in A$, siendo
+$a \neq b$, se cumple $f(a) \neq f(b)$.
+
+Se tiene una definición alternativa, que surge de hacer el condicional
+contrarrecíproco del predicado anterior. Sería lo siguiente.
+
+La aplicación $f$ anterior es inyectiva si para todo $a, b \in A$ la
+afirmación $f(a) = f(b)$ implica que $a = b$.
+
+Ahora, podemos pasar a analizar si la relación inversa de $f$, es decir,
+$f^{-1} \subseteq B \times A$, es una aplicación. No hay más que comprobar
+que cumple las condiciones para ser una aplicación.
+
+Al ser $f$ sobreyectiva, se cumple la condición de que todo elemento de $B$
+está relacionado con algún elemento de $A$ por la relación $f^{-1}$.
+
+Sin embargo, aún no hemos demostrado que está bien definida, es decir,
+quizás haya más de un elemento de $A$ relacionado por $f^{-1}$ con algún
+elemento de $B$.
+
+Se demuestra que $f^{-1}$ está bien definida por la definición alternativa
+de la inyectividad, que hemos mostrado antes. Al ser $f$ inyectiva, se tiene
+que cada elemento de $B$ esté relacionado con un único elemento de $A$ por
+la relación $f^{-1}$, con lo que entonces se puede afirmar que $f^{-1}$ está
+bien definida.
+
+Por tanto, $f^{-1}$ cumple las dos condiciones para ser una aplicación.
+
+
+
+
+## Las únicas aplicaciones invertibles son las biyectivas
+
+Es el recíproco de lo anterior. Ambos se explican en el Teorema de
+Caracterización de una Aplicación Biyectiva (pág. 104).
+
+De hecho, quizás sería un nombre más acertado hablar de aplicaciones
+invertibles, en lugar de biyectivas. Así se entendería más fácilmente por
+todo el mundo.
+
+Demostración. TKTK.
+
+
+
+
+
+## La relación inversa de una aplicación biyectiva es una aplicación biyectiva
+
+Es una consecuencia directa del teorema anterior. Si nos fijamos en la
+aplicación inversa, esta cumple también con la original las condiciones del
+Teorema de Caracterización de una Aplicación Biyectiva.
+
+Demostración de que la relación inversa de una aplicación biyectiva es una
+aplicación también biyectiva.
+
+Nos basamos en el teorema anterior, en el que demostramos que la relación
+inversa de una aplicación biyectiva es una aplicación.
+
+Queda por demostrar, por tanto, que $f^{1}$ es biyectiva, es decir, que es
+inyectiva y sobreyectiva.
+
+Antes de nada, vamos a presentar las aplicaciones.
+
+$$
+  \begin{array}{rrcl}
+    f:  & A & \longrightarrow & B \\
+        & x & \longmapsto     & f(x)
+  \end{array}
+$$
+
+y
+
+$$
+  \begin{array}{rrcl}
+    f^{-1}: & B & \longrightarrow & A \\
+            & y & \longmapsto     & f^{-1}(y)
+  \end{array}
+$$
+
+Que $f^{-1}$ es sobreyectiva es una consecuencia directa de que $f$ es una
+aplicación bien definida.
+
+Para ver si $f^{-1}$ es inyectiva, partimos de dos elementos arbitrarios $u,
+v \in B$.
+
+Al ser $f$ biyectiva, para todo $u, v \in B$ se tienen $a, b \in A$ tales
+que $f(a) = u$ y $f(b) = v$.
+
+Ahora, aplicamos la propiedad de que la aplicación $f^{-1}$ está bien
+definida. Es decir, si $a = b$, entonces $f(a) = f(b)$. Esto, teniendo en
+cuenta su relación con $f^{-1}$, se podría expresar como
+
+$$ f{-1}(u) = f^{-1}(v) \implies f(f{-1}(u)) = f(f^{-1}(v)) $$
+
+y esto se puede reducir a
+
+$$ u = v $$
+
+con lo que acabamos de demostrar que $f^{-1}$ es también inyectiva. Por
+tanto, será biyectiva.
+
+
+
+
+
+## El grupo de las aplicaciones con la composición
+
+En realidad, la aplicación inversa no es más que el elemento simétrico
+respecto a la composición de aplicaciones.
+
+Como es fácil de demostrar, el conjunto de todas las aplicaciones
+$\mathcal{F}$ junto con la composición de aplicaciones `$\circ$' forman un
+grupo. Veámoslo.
+
+<!-- TODO Hacerlo para las aplicaciones homogeneas, que son con las que soy
+capaz de demostrarlo de momento. Para las genéricas, no sé cómo hacerlo con
+la identidad. -->
+
+Dadas tres aplicaciones $h \in \mathcal{A, B}$, $g \in \mathcal{C, D}$ y $f
+\in \mathcal{E, F}$, siendo $C \subseteq F$ y $A \subseteq D$, y la
+operación composición de aplicaciones $\circ$, se cumplen las propiedades
+siguientes:
+
+- _Asociativa_ --- Se demuestra por lo siguiente:
+
+  $$
+    \begin{align*}
+      [h \circ(g \circ f)](x) &= h((g \circ f)(x)) = h(g(f(x))) \\
+      [(h \circ g) \circ f)](x) &= (h \circ g)(f(x)) = h(g(f(x)))
+    \end{align*}
+  $$
+
+- _Del elemento neutro_ --- La demuestro solo para una función $f \in
+  \mathcal{A}$ (tratar de ver el caso general TKTK). Se tiene
+
+  $$
+    \begin{array*}{rrcl}
+      I_A &: A & \longrightarrow  & A \\
+          &  x & \longmapsto      & I_A(x) = x
+    \end{array*}
+  $$
+
+  A $I_A(x)$ también hay quien la designa por $\text{id}_A (x)$.
+
+  Esa aplicación es el elemento neutro en esta estructura ya que:
+
+  $$
+    \begin{align*}
+      (f \circ I_A)(x) &= f(I_A(x)) = f(x) \\
+      (I_A \circ f)(x) &= I_A(f(x)) = f(x)
+    \end{align*}
+  $$
+
+- _Del elemento simétrico_ --- El elemento simétrico en esta estructura es
+  la aplicación inversa, como demostramos a continuación.
+
+  $$
+    \begin{align*}
+      (f \circ f^{-1})(x) &= f(f^{-1}(x)) = x = I_A(x) \\
+      (f^{-1} \circ f)(x) &= f^{-1}(f(x)) = x = I_A(x)
+    \end{align*}
+  $$
+
+Al elemento simétrico en este grupo de las aplicaciones homogéneas junto con
+la composición, $(\mathcal{F(E)}, \circ)$, se le suele llamar la _aplicación
+inversa_ (_inverse mapping_), y, para una función cualquiera $f$, se
+designará por $f^{-1}$. Advierta que esto último no tiene por qué
+representar necesariamente a
+
+$$ \frac{1}{f} $$
+
+En los textos en inglés suelen llamar a esto último como _reciprocal_.
+También, en los textos en inglés, llaman _inverse element_ a lo que nosotros
+llamamos _elemento simétrico_.
+
+Advierta que nosotros calificamos de _inverso_ a un elemento simétrico en
+concreto: el del grupo $\mathcal{F}(A), \circ$, que acabamos de estudiar.
+
+
+
+
+

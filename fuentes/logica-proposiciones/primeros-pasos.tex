@@ -1,0 +1,254 @@
+
+
+El concepto del que partimos en el estudio de la lógica es el de uno que
+estudiamos en la lengua: \emph{enunciado}, que, en español, recibe muchos
+otros nombres: \emph{oración}, \emph{frase}, \emph{sentencia}, etc. A veces,
+en ciertos contextos, estas distintas formas de llamarlo pueden tener
+sutilezas y significar cosas ligeramente distintas. En inglés, los suelen
+llamar \emph{sentence} o \emph{phrase}.\footnotemark
+
+\footnotetext{Desde un punto de vista de la abstracción, en inglés, por
+``debajo'' del concepto de \emph{sentence} se encontraría el concepto de
+\emph{utterance}, que englobaría a cualquier enunciado que no tendría por
+qué estar de acuerdo con las reglas de la gramática de una lengua ni de
+tener un significado en esta. No sé bien cómo se traduciría dicho término.
+Quizás, \emph{expresión verbal} o \emph{verbalización}.}
+
+Un enunciado es necesario que sea gramatical, para que la comunicación sea
+efectiva. Esto quiere decir que su sintaxis es válida y su semántica TKTK.
+Por ejemplo, en español, una lengua natural, el enunciado
+
+\begin{quote}
+  Eléctrica ordenador el máquina es una.
+\end{quote}
+
+\noindent no es sintácticamente correcto, mientras que
+
+\begin{quote}
+  El orden es una máquina eléctrica.
+\end{quote}
+
+\noindent sí lo es.
+
+Los enunciados pueden clasificarse, según la intención de quien las
+pronuncia, en varios tipos. Uno de ellos son las oraciones informativas, que
+también hay quien llama declarativas, o, también, \emph{afirmaciones}
+(\emph{statements}). Evidentemente, el propósito de estas es dar una
+información y, de cada caso particular de estas, se podrá decir si son
+\emph{verdaderas} (\emph{true}) o \emph{falsas} (\emph{false}). Entre los
+otros tipos de oraciones, se tienen, por ejemplo, las interrogativas, las
+exclamativas, las imperativas, etc. En estas, no tiene sentido decir si son
+verdaderas o falsas.
+
+A esa evaluación, es decir, determinar si una afirmación es verdadera o
+falsa, es a lo que en lógica se conoce como su valor semántico lógico o
+\emph{valor de verdad} (o, también, \emph{valor de veracidad}, \emph{valor
+lógico} o \emph{valor buleano}). Independientemente de este, una afirmación
+puede tener más valores semánticos, pero a la lógica solo le interesa este.
+
+Así, una afirmación en español como
+
+\begin{quote}
+  La vaca es un animal.
+\end{quote}
+
+\noindent tiene un valor semántico verdadero, mientras que
+
+\begin{quote}
+  La piedra es un animal.
+\end{quote}
+
+\noindent es una afirmación con uno falso.
+
+A las afirmaciones, en el estudio de la lógica también se las llama
+\emph{proposiciones} (\emph{propositions}). Creo que hay quien considera que
+existe una diferencia sutil entre \emph{statement} y \emph{proposition},
+pero, para nosotros, serán lo mismo. Lo más común en lógica es hablar de
+proposiciones, en lugar de hacerlo de afirmaciones.
+
+En lo que respecta a los valores de verdad, verdadero y falso, estos se
+suelen representar como $V$ y $F$, respectivamente, en filosofía (en ingles,
+$T$ y $F$). En matemáticas y ciencias de la computación, sin embargo, se
+representan como 1 y 0, respectivamente.
+
+Las proposiciones pueden ser \emph{simples} (\emph{simple}; también llamadas
+\emph{atómicas}, \emph{atomic}) o \emph{compuestas} (\emph{compound};
+también llamadas \emph{moleculares}; \emph{molecular}). A las proposiciones
+simples algunos libros las prefieren llamar \emph{variables lógicas}
+(\emph{logical variables}) o \emph{variables buleanas} (\emph{Boolean
+variables}). Las compuestas son composiciones de proposiciones usando
+operadores llamados \emph{conectivas lógicas} (o, simplemente,
+\emph{conectivas}; \emph{logical connectives}, \emph{connectives}). También
+se las puede llamar \emph{conectores lógicos} u \emph{operadores lógicos} o,
+simplemente, \emph{conectores} u \emph{operadores}.
+
+En una proposición compuesta, se puede dar el anidamiento (o, lo que es lo
+mismo, la recursión, pero eso lo veremos más adelante), y, de hecho, es lo
+más usual. Es decir, una proposición compuesta puede constar de
+proposiciones simples unidas mediante operadores o bien por proposiciones
+compuestas y proposiciones simples, uniendo mediante operadores al igual que
+antes.
+
+\iffalse
+Personalmente, la forma que prefiero usar es \emph{operador}, pues por
+ejemplo se tiene la negación que no conecta ni une proposiciones, sino que
+se usa sobre una sola.
+\fi
+
+Tal y como dijimos en la sección anterior, nos encontramos dentro de la
+lógica formal simbólica, por lo que usamos una simbología con la que nos
+comunicamos sin ambigüedad y de forma muy directa. Así, usamos letras como
+si se tratara de variables para designar a una proposición. Normalmente, se
+usa la regla de estilo de usar una letra minúscula en tipografía en
+itálicas, como se hace normalmente con las variables en muchos de los campos
+de las matemáticas. Así, por ejemplo, se podría tener la variable lógica $p$
+que representaría a la proposición
+
+\begin{quote}
+  Lloverá mañana.
+\end{quote}
+
+\noindent Como se suele hacer cuando se usan variables en otros ámbitos, se
+suele abusar de la lengua y decir cosas como ``la proposición $p$\ldots''.
+
+Como puede imaginar, que se use la letra $p$ se debe a que es la letra con
+la que comienza la palabra \emph{proposición}. Si se tienen varias
+proposiciones, se suele seguir en orden alfabético:  $p$, $q$, etc. En otros
+libros he visto que siguen la regla de designar a las proposiciones con
+letras mayúsculas: $P$, $Q$, etc. Evidentemente, esta cuestión de estilo no
+tiene relevancia para los resultados.
+
+Al tratarse de una lengua (o lenguaje dirían mal traducido), la lógica
+formal cuenta también con formas de combinar las proposiciones. Se tienen
+así, los operadores. Por ejemplo, se tiene el operador negación, que se
+suele representar por el símbolo `$\neg$', que afecta a una sola proposición
+y, por tanto, se le califica de operador unario. Tiene muchas otras
+representaciones, como TKTK. En nuestro caso, `$\neg$', se trata de un
+operador prefijo, como en $\neg p$.
+
+% TODO Notación en informática
+
+Normalmente, el operador negación será el único operador unario que usemos
+en nuestro estudio de la lógica.
+
+Dentro de una expresión lógica, se conoce como \emph{literal}
+(\emph{literal}) a una proposición, como $p$, o a la negación de una; por
+ejemplo, $\neg p$.
+
+Personalmente, aunque considero al operador negación un operador, no lo
+considero una conectiva, al ser un operador unario.
+
+Hay también operadores que actúan sobre más de una proposición. Se tiene,
+por ejemplo, al operador conjunción, que se suele representar por `$\land$'.
+Se trataría de un operador que actúa sobre dos proposiciones, pero, tal y
+como veremos más adelante, en realidad puede actuar sobre un número
+arbitrario de estas simultáneamente. Toma la forma de un operador infijo, es
+decir, se ubica entre las dos proposiciones; por ejemplo, $p \land q$. Si
+actuase, por ejemplo, sobre cuatro proposiciones, podría verse una expresión
+como la siguiente: $p \land q \land r \land s$.
+
+% TODO Hablar de la notación afija.
+
+Los operadores básicos que usaremos serán: negación, disyunción, conjunción,
+condicional y bicondicional. Existen muchos más. De hecho, veremos cuántos
+pueden existir, dependiendo del número de variables lógicas sobre las que
+operen. Dedicaremos una sección a estudiar cada uno de los básicos, además
+de que tocaremos algo de otros menos básicos.
+
+De todos modos, tal y como se demuestra en las asignaturas de diseño lógico
+digital, bastaría con un solo operador equivalente a una puerta NAND, o,
+alternativamente, uno equivalente a una puerta NOR, para poder obtener todos
+los demás y, por tanto, llegar a obtener expresiones de cualquiera de las
+funciones lógicas posibles. Esto no lo trataremos aquí.
+
+Algo que también debe saber es que la lógica en realidad no se dedica a
+analizar qué es verdad y qué no; esa es una tarea demasiado ambiciosa. Lo
+que estudia son simplemente formas correctas de razonar. Por tanto, una
+proposición puede contar con una estructura que la haga válida para la
+lógica y aun así ser falsa cuando se encuentra en el mundo real.
+
+Esto lo explica muy bien el profesor Philip Stark, de la Universidad de
+Berkeley, en su asignatura de introducción a la estadística.
+
+Lo que explica es que, en principio, el razonamiento se puede dividir en
+\emph{inductivo} y \emph{deductivo}. El deductivo es lo que informalmente se
+llama \emph{lógico}. Es una forma de pensar matemáticamente sobre todo tipo
+de cosas. Dado un conjunto de suposiciones (también llamadas premisas), ¿qué
+será cierto entonces? Por el contrario, el conocimiento inductivo trata de
+generalizar desde la experiencia (dicho de otro modo, desde los datos) a
+situaciones nuevas.\footnotemark ¿Cómo de fuerte es la evidencia de que una
+afirmación sobre el mundo es cierta o falsa? El conocimiento inductivo es
+inherentemente incierto. Por el contrario, el conocimiento deductivo es
+igual de cierto que pueden serlo las matemáticas. Gran parte de la materia
+de la estadística trata con el conocimiento inductivo. Se toma un especial
+cuidado en extraer conclusiones fiables mediante razonamiento inductivo.
+Además, el buen razonamiento inductivo requiere de razonamiento deductivo
+correcto.
+
+\footnotetext{Existe también el Principio de Inducción, que sí es riguroso.
+A este último también hay quien lo llama \emph{inducción matemática}, para
+distinguirlo del otro que mencionamos aquí, que es menos formal. Este lo
+verá más adelante. Es uno de los puntos de partida en la formalización de
+los números naturales.}
+
+El razonamiento deductivo correcto es \emph{válido} (\emph{valid}). El
+razonamiento deductivo incorrecto es \emph{falaz} (\emph{fallacious}). El
+razonamiento puede ser válido aun cuando las suposiciones en las que se basa
+son falsas. Si el razonamiento es válido y basado en premisas ciertas,
+entonces se dice que es \emph{sólido} (\emph{sound}).
+
+En realidad, no es tan sencillo. El término \emph{sound} se refiere a
+argumentos o a sistemas formales. No a proposiciones. TKTK.
+
+
+
+% --------------------------------------------
+
+
+La lengua de las matemáticas, aun siendo una lengua formal simbólica, muchas
+veces es imprecisa, por comodidad. Así, puede que vea en un texto que hablan
+de un número, sin especificar de qué tipo concreto. O, si ve que aparece la
+expresión $a + b$, eso puede representar, por ejemplo, una suma de números
+enteros o una (suma) de matrices.
+
+Además, para evitar que sea enorme la simbología que se usa, se da la
+polisemia. Así, una expresión como $a \leq b$ puede representar la relación
+de orden ``menor o igual que'' que se da en los conjuntos de números, o, si
+estamos en el álgebra abstracta, puede representar a una relación de orden
+cualquiera, en general.
+
+Debido a esto, en parte sí que hay que estar pendiente del contexto, aunque
+se trate de una lengua formal.
+
+% TODO Donde sí que no hay que estar pendiente es en Lean.
+
+
+
+
+
+\iffalse
+
+Las proposiciones son lo que constituye los \emph{argumentos}
+(\emph{arguments}) en la lógica. Estos no son más que TKTK. En matemáticas,
+un argumento podría ser, por ejemplo, una demostración de un teorema. Esta
+no es más que una proposición compuesta con varios niveles de anidamiento.
+
+Todo esto se explica en \emph{An Introduction to Formal Logic} de Peter
+Smith. En el capítulo 7, titulado \emph{Propositions and forms}. Aunque
+seguramente sea demasiado para una asignatura de este tipo. No se necesita
+tener una definición rigurosa del concepto de \emph{proposición}.
+
+\fi
+
+
+
+Además de las proposiciones, en el capítulo siguiente se verá una
+generalización de estas: los predicados, y, más adelante, una generalización
+de estos mismos, las relaciones. De momento, basta con que sepa que en
+matemáticas existen muchos enunciados que no se pueden representar por medio
+de proposiciones.
+
+
+
+
+

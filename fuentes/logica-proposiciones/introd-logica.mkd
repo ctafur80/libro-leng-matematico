@@ -1,0 +1,187 @@
+
+
+### Introducción a la lógica
+
+El gran filósofo de la Antigua Grecia Aristóteles fue el iniciador del campo
+del conocimiento que se conoce como _lógica_ (_logic_). El fin principal de
+esta es **sistematizar el razonamiento**. Es decir, en las distintas lenguas
+se pueden presentar expresiones muy extensas y con relaciones entre las
+distintas subexpresiones (cláusulas hay quien las llama) y a veces llega a
+ser difícil llegar a extraer una conclusión de la misma. Gracias a la
+lógica, este proceso se puede, en cierto modo, automatizar. Dicho de un modo
+más coloquial: podríamos hacerlo "en piloto automático".
+
+Imagine, por ejemplo, la expresión
+
+::: proposiciones
+[Si llueve, el suelo se moja.]{.prop-stat}
+:::
+
+Si se dan conjuntamente esta y la siguiente:
+
+::: proposiciones
+[El suelo no está mojado.]{.prop-stat}
+:::
+
+la lógica nos permite, gracias a una de sus _reglas_ (también llamadas
+_leyes_) de inferencia, extraer conocimiento de estas dos:
+
+::: proposiciones
+[No ha llovido.]{.prop-stat}
+:::
+
+Este es un caso bastante simple y seguramente no le haga falta usar una
+regla de inferencia lógica para llegar a la conclusión que hemos obtenido,
+pero créame que puede encontrar expresiones muy complejas en las que le
+vendrá muy bien el conocimiento de la lógica.
+
+Pero, ¿de dónde salen esas reglas de inferencia? Están "dentro" de todas las
+lenguas (idiomas) del mundo. Aristóteles lo único que hizo fue darse cuenta
+de esto.
+
+La lógica puede usarse así, como hemos hecho en este pequeño ejemplo. Sin
+embargo, como seguramente sepa, las lenguas tienen ciertas carencias, como
+la ambigüedad y la redundancia, que seguramente surjan como consecuencia de
+que estas se crean de un modo que se podría calificar de
+"emergente"[^propiedad-emergente]. Para evitar los problemas de los que
+adolecen las lenguas, lo normal es que, en la lógica, nos auxiliemos de otra
+especie de "lengua". Concretamente, no se trata de una lengua como tal, sino
+de un **lenguaje formal** (_formal language_). TKTK.
+
+[^propiedad-emergente]: Es decir, surgen, en una sociedad, de una forma no
+  planificada. TKTK.
+
+[^lenguaje-lengua]: TKTK
+
+Por cierto, a las lenguas o idiomas también se les llama _lenguajes
+naturales_ (_natural languages_).[^lenguaje-lengua] A la lógica que se
+auxilia de un lenguaje formal se la conoce como _lógica formal_.
+
+Además, resulta también útil inventar una simbología con la que manipular
+las expresiones en ese lenguaje formal. Cuando se hace esto, a esa lógica se
+la conoce como _lógica formal simbólica_. Esta es la que se suele usar.
+
+Sistema formal TKTK.
+
+Centrándonos ahora en el conocimiento matemático, que es lo que nos interesa
+en esta asignatura, hay que decir que este se registra haciendo uso de la
+lógica. Concretamente, de una lógica formal simbólica, que, casi con toda
+seguridad, habrá visto ya: ecuaciones, expresiones de objetos como
+conjuntos, etc. El uso de esa codificación del conocimiento matemático nos
+permite extraer conocimiento nuevo a partir del conocimiento ya
+establecido... y de un modo bastante sistemático, es decir, fácil de "ver".
+
+Una demostración matemática no es más que un argumento lógico. TKTK.
+
+Algo que también debe saber es que la lógica en realidad no se dedica a
+analizar qué es verdad y qué no; esa es una tarea demasiado ambiciosa. Lo
+que estudia son simplemente formas correctas de razonar. Por tanto, una
+proposición puede contar con una estructura que la haga válida para la
+lógica y aun así ser falsa cuando se encuentra en el mundo real.
+
+Esto lo explica muy bien el profesor Philip Stark, de la Universidad de
+Berkeley, en su asignatura de introducción a la estadística.
+
+Lo que explica es que, en principio, el razonamiento se puede dividir en
+_inductivo_ y _deductivo_. El deductivo es lo que informalmente se llama
+_lógico_. Es una forma de pensar matemáticamente sobre todo tipo de cosas.
+Dado un conjunto de suposiciones (también llamadas premisas), ¿qué será
+cierto entonces? Por el contrario, el conocimiento inductivo trata de
+generalizar desde la experiencia (dicho de otro modo, desde los datos) a
+situaciones nuevas.¿Cómo de fuerte es la evidencia de que una afirmación
+sobre el mundo es cierta o falsa? El conocimiento inductivo es
+inherentemente incierto. Por el contrario, el conocimiento deductivo es
+igual de cierto que pueden serlo las matemáticas. Gran parte de la materia
+de la estadística trata con el conocimiento inductivo. Se toma un especial
+cuidado en extraer conclusiones fiables mediante razonamiento inductivo.
+Además, el buen razonamiento inductivo requiere de razonamiento deductivo
+correcto.
+
+El razonamiento deductivo correcto es _válido_ (_valid_). El razonamiento
+deductivo incorrecto es _falaz_ (_fallacious_). El razonamiento puede ser
+válido aun cuando las suposiciones en las que se basa son falsas. Si el
+razonamiento es válido y basado en premisas ciertas, entonces se dice que es
+_sólido_ (_sound_).
+
+En realidad, no es tan sencillo. El término _sound_ se refiere a argumentos
+o a sistemas formales. No a proposiciones. TKTK.
+
+La lengua de las matemáticas, aun siendo una lengua formal simbólica, muchas
+veces es imprecisa, por comodidad. Así, puede que vea en un texto que hablan
+de un número, sin especificar de qué tipo concreto. O, si ve que aparece la
+expresión $a + b$, eso puede representar, por ejemplo, una suma de números
+enteros o una (suma) de matrices.
+
+Además, para evitar que sea enorme la simbología que se usa, se da la
+polisemia. Así, una expresión como $a \leq b$ puede representar la relación
+de orden "menor o igual que" que se da en los conjuntos de números, o, si
+estamos en el álgebra abstracta, puede representar a una relación de orden
+cualquiera, en general.
+
+Debido a esto, en parte sí que hay que estar pendiente del contexto, aunque
+se trate de una lengua formal.
+
+
+
+
+
+
+<!--
+La lógica no es más que las reglas de razonamiento que se encuentran en
+todas las lenguas naturales, aunque sus hablantes no seamos conscientes de
+ello. En gran medida, tiene bastante relación con la lingüística, pero no
+son lo mismo. Tanto la lingüística como la lógica se encontraban "dentro" de
+los lenguajes naturales (también conocidos como _lenguas_ o _idiomas_) antes
+de que sus hablantes se diesen cuenta de ello. Los estudiosos de estos
+campos lo único que hacen es establecer una teoría que explique ciertos
+comportamientos, a la vista del uso real de las distintas lenguas naturales.
+
+Independientemente de la curiosidad intelectual que pudo conducir al
+nacimiento del corpus teórico de la lógica, esta tiene también una razón
+práctica: llegar a **sistematizar el razonamiento**. Gracias a la lógica,
+podemos obtener conocimiento a partir de cierto conocimiento previo, en
+situaciones en las que, sin el uso de un método sistemático, sería bastante
+complicado hacer esto mismo.
+
+Llegado un punto en el estudio de la lógica, se prefirió pasar a usar una
+herramienta que nos auxiliara en la práctica de esta. Esa herramienta son
+los lenguajes formales, en contraposición a los naturales, que hemos
+mencionado antes. Esto se debe a que los naturales cuentan con bastantes
+carencias, desde el punto de vista de la eficiencia. Por ejemplo, suelen
+tener redundancia. Otro problema del que adolecen es que, para hallar el
+significado de una expresión, se suele requerir de información contextual
+que no aparece de forma explícita en esta.
+
+En un lenguaje formal, se solucionan estos problemas. Principalmente, el
+segundo de estos, es decir, a cada expresión le corresponde, sin ambigüedad,
+un único significado.
+
+Lo que se hace en la lógica, entonces, es transformar una expresión de un
+lenguaje informal (natural) a una que consideremos equivalente en ese
+lenguaje formal, y, una vez con esta nueva expresión, realizar las
+manipulaciones que estén permitidas en la lógica para esas expresiones. A
+esas manipulaciones permitidas se las suele conocer como _reglas (o leyes)
+de inferencia lógica_.
+
+De hecho, esos lenguajes formales que emplea la lógica suelen ser
+_simbólicos_ (_symbolic_). Es decir, TKTK. Es el caso, por ejemplo, de la
+notación matemática y la formulación química. La filosofía cuenta también
+con su lenguaje formal simbólico para la lógica. Es algo distinto al de las
+matemáticas. Pero, en el fondo, ambas usan la misma lógica y, por tanto,
+tienen muchos puntos comunes.
+
+A la lógica formal que emplee una lengua formal simbólica se la suele llamar
+_lógica formal simbólica_ o, simplemente, _lógica simbólica_, pues se
+sobrentiende que, si es simbólica, será también formal.
+
+Las matemáticas, al igual que otras disciplinas de la ciencia o la
+tecnología, cuenta con una lengua propia que hace uso de la lógica formal
+simbólica.
+
+Un ejemplo de aplicación de la lógica en el lenguaje de las matemáticas
+sería una demostración de un teorema. Esta sería un argumento lógico. En
+lógica, un _argumento_ no es más que TKTK.
+-->
+
+
+
